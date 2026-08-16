@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="bn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Livestock Management System</title>
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='live_stock.css') }}"
+    />
+  </head>
+
+  <body>
+    <header class="main-header">
+      <div class="header-icon"></div>
+
+      <div>
+        <h1>Livestock Management System</h1>
+        <p>পশু ও পাখি পালন, জাত, খাদ্য, রোগ ও টিকা ব্যবস্থাপনা</p>
+      </div>
+    </header>
+
+    <main class="container">
+      <!-- ================= HOME ================= -->
+
+      <section id="animalHome">
+        <div class="page-title">
+          <h2>প্রাণী নির্বাচন করুন</h2>
+
+          <p>
+            প্রথমে প্রাণী নির্বাচন করুন। এরপর ঐ প্রাণীর বিভিন্ন জাত নির্বাচন করে
+            বিস্তারিত তথ্য দেখুন।
+          </p>
+        </div>
+
+        <div id="animalGrid" class="animal-grid"></div>
+      </section>
+
+      <!-- ================= BREED PAGE ================= -->
+
+      <section id="breedPage" class="hidden">
+        <button class="back-btn" onclick="showAnimals()">
+          ← প্রাণীর তালিকায় ফিরে যান
+        </button>
+
+        <div class="selected-animal">
+          <div id="selectedAnimalIcon" class="big-icon"></div>
+
+          <div>
+            <h2 id="selectedAnimalName"></h2>
+            <p id="selectedAnimalDescription"></p>
+          </div>
+        </div>
+
+        <div class="page-title">
+          <h2>জাত নির্বাচন করুন</h2>
+        </div>
+
+        <div id="breedGrid" class="breed-grid"></div>
+      </section>
+
+      <!-- ================= DETAIL PAGE ================= -->
+
+      <section id="detailPage" class="hidden">
+        <button class="back-btn" onclick="showBreeds()">
+          ← জাতের তালিকায় ফিরে যান
+        </button>
+
+        <div class="detail-header">
+          <div id="detailIcon" class="detail-icon"></div>
+
+          <div>
+            <h2 id="detailBreedName"></h2>
+            <p id="detailScientificName"></p>
+          </div>
+        </div>
+
+        <!-- QUICK INFO -->
+
+        <div class="quick-grid">
+          <div class="info-box">
+            <span></span>
+            <b>তাপমাত্রা</b>
+            <p id="temperature"></p>
+          </div>
+
+          <div class="info-box">
+            <span></span>
+            <b>পানি</b>
+            <p id="water"></p>
+          </div>
+
+          <div class="info-box">
+            <span></span>
+            <b>খাদ্য</b>
+            <p id="feed"></p>
+          </div>
+
+          <div class="info-box">
+            <span></span>
+            <b>বাসস্থান</b>
+            <p id="housing"></p>
+          </div>
+        </div>
+
+        <!-- MANAGEMENT -->
+
+        <div class="detail-section">
+          <h3>পালন পদ্ধতি</h3>
+
+          <div id="management"></div>
+        </div>
+
+        <!-- FEED -->
+
+        <div class="detail-section">
+          <h3>খাবার ব্যবস্থাপনা</h3>
+
+          <div id="feeding"></div>
+        </div>
+
+        <!-- WATER -->
+
+        <div class="detail-section">
+          <h3>পানি ও পরিবেশ</h3>
+
+          <div id="environment"></div>
+        </div>
+
+        <!-- DISEASE -->
+
+        <div class="detail-section disease-section">
+          <h3>সাধারণ রোগ ও সমস্যা</h3>
+
+          <div id="diseases"></div>
+        </div>
+
+        <!-- VACCINATION -->
+
+        <div class="detail-section vaccine-section">
+          <h3>বয়স অনুযায়ী টিকা</h3>
+
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>বয়স</th>
+                  <th>টিকার নাম</th>
+                  <th>উদ্দেশ্য</th>
+                  <th>পরবর্তী ডোজ</th>
+                </tr>
+              </thead>
+
+              <tbody id="vaccinationTable"></tbody>
+            </table>
+          </div>
+
+          <div class="warning">
+            টিকার সময়সূচি অঞ্চল, রোগের প্রাদুর্ভাব ও সরকারি ভেটেরিনারি নির্দেশনা
+            অনুযায়ী পরিবর্তিত হতে পারে। বাস্তবে প্রয়োগের আগে স্থানীয় প্রাণিসম্পদ
+            কর্মকর্তার পরামর্শ নিন।
+          </div>
+        </div>
+
+        <!-- BREEDING -->
+
+        <div class="detail-section">
+          <h3>প্রজনন ব্যবস্থাপনা</h3>
+
+          <div id="breeding"></div>
+        </div>
+
+        <!-- PRODUCTION -->
+
+        <div class="detail-section">
+          <h3>উৎপাদন ও ব্যবহার</h3>
+
+          <div id="production"></div>
+        </div>
+
+        <!-- WARNING -->
+
+        <div class="detail-section alert-section">
+          <h3>গুরুত্বপূর্ণ সতর্কতা</h3>
+
+          <ul id="warnings"></ul>
+        </div>
+      </section>
+    </main>
+
+    <script src="{{ url_for('static', filename='live_stock.js') }}"></script>
+  </body>
+</html>

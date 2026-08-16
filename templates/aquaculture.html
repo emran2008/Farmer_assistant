@@ -1,0 +1,489 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Aquaculture System</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background: #f4f8f5;
+        color: #1f2937;
+        padding-bottom: 40px;
+      }
+
+      /* HEADER */
+
+      .header {
+        text-align: center;
+        padding: 55px 20px 35px;
+      }
+
+      .header h1 {
+        font-size: 48px;
+        color: #168a4a;
+        margin-bottom: 12px;
+      }
+
+      .header p {
+        font-size: 22px;
+        color: #64748b;
+      }
+
+      /* CULTURE CONTAINER */
+
+      .culture-container {
+        display: grid;
+
+        grid-template-columns: repeat(5, 1fr);
+
+        gap: 25px;
+
+        padding: 30px;
+
+        max-width: 1600px;
+
+        margin: 0 auto;
+      }
+
+      /* CULTURE CARD */
+
+      .culture-card {
+        min-height: 330px;
+
+        background: #20c45a;
+
+        border-radius: 25px;
+
+        padding: 35px 20px;
+
+        display: flex;
+
+        flex-direction: column;
+
+        justify-content: center;
+
+        align-items: center;
+
+        text-align: center;
+
+        text-decoration: none;
+
+        color: white;
+
+        cursor: pointer;
+
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease,
+          background 0.3s ease;
+      }
+
+      .culture-card:hover {
+        transform: translateY(-10px);
+
+        box-shadow: 0 18px 35px rgba(0, 0, 0, 0.18);
+
+        background: #168a4a;
+      }
+
+      /* ICON */
+
+      .culture-icon {
+        font-size: 70px;
+
+        margin-bottom: 25px;
+      }
+
+      /* TITLE */
+
+      .culture-card h2 {
+        font-size: 30px;
+
+        margin-bottom: 18px;
+      }
+
+      /* BANGLA TITLE */
+
+      .culture-card .bangla {
+        font-size: 20px;
+
+        margin-bottom: 12px;
+      }
+
+      /* DESCRIPTION */
+
+      .culture-card .description {
+        font-size: 16px;
+
+        line-height: 1.5;
+
+        opacity: 0.95;
+
+        max-width: 240px;
+      }
+
+      /* DETAILS AREA */
+
+      .details {
+        display: none;
+
+        max-width: 1200px;
+
+        margin: 20px auto;
+
+        padding: 40px;
+
+        background: white;
+
+        border-radius: 25px;
+
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      }
+
+      .details.active {
+        display: block;
+      }
+
+      .details h2 {
+        color: #168a4a;
+
+        font-size: 34px;
+
+        margin-bottom: 15px;
+      }
+
+      .details p {
+        font-size: 18px;
+
+        line-height: 1.7;
+
+        color: #64748b;
+
+        margin-bottom: 20px;
+      }
+
+      .details ul {
+        padding-left: 25px;
+
+        line-height: 2;
+
+        font-size: 17px;
+      }
+
+      /* BACK BUTTON */
+
+      .back-button {
+        margin-top: 25px;
+
+        padding: 12px 25px;
+
+        border: none;
+
+        border-radius: 25px;
+
+        background: #168a4a;
+
+        color: white;
+
+        font-size: 16px;
+
+        cursor: pointer;
+      }
+
+      /* RESPONSIVE */
+
+      @media (max-width: 1200px) {
+        .culture-container {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+
+      @media (max-width: 750px) {
+        .header h1 {
+          font-size: 36px;
+        }
+
+        .header p {
+          font-size: 18px;
+        }
+
+        .culture-container {
+          grid-template-columns: repeat(2, 1fr);
+
+          padding: 20px;
+        }
+
+        .culture-card {
+          min-height: 280px;
+        }
+      }
+
+      @media (max-width: 500px) {
+        .culture-container {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- HEADER -->
+
+    <header class="header">
+      <h1>Aquaculture System</h1>
+
+      <p>Fish Farming Management & Calculator</p>
+    </header>
+
+    <!-- CULTURE CARDS -->
+
+    <div class="culture-container">
+      <!-- POND CULTURE -->
+
+      <div
+        class="culture-card"
+        onclick="window.location.href='{{ url_for('pond_prediction') }}'"
+      >
+        <div class="culture-icon">🐟</div>
+
+        <h2>Pond Culture</h2>
+
+        <div class="bangla">পুকুরে মাছ চাষ</div>
+
+        <div class="description">Traditional fish farming in ponds.</div>
+      </div>
+
+      <!-- BIOFLOC -->
+      <div class="culture-card" onclick="openBiofloc()">
+        <div class="culture-icon">💧</div>
+
+        <h2>Biofloc</h2>
+
+        <div class="bangla">বায়োফ্লক মাছ চাষ</div>
+
+        <div class="description">Modern intensive fish farming system.</div>
+      </div>
+      <!-- RAS -->
+
+      <div class="culture-card" onclick="window.location.href = '/ras'">
+        <div class="sector-icon">♻️</div>
+
+        <h2>RAS</h2>
+        <div class="bangla">পুনঃসঞ্চালন জলজ চাষ ব্যবস্থা</div>
+
+        <h3>Recirculating Aquaculture System</h3>
+
+        <p>Water recirculation based fish farming.</p>
+      </div>
+      <!-- CAGE -->
+
+      <div
+        class="culture-card"
+        onclick="window.location.href = '/cage-culture'"
+      >
+        <div class="culture-icon">🎣</div>
+
+        <h2>Cage Culture</h2>
+
+        <div class="bangla">খাঁচায় মাছ চাষ</div>
+
+        <div class="description">Fish farming using floating cages.</div>
+      </div>
+
+      <!-- MARINE -->
+
+      <div
+        class="culture-card"
+        onclick="window.location.href = '/marine-culture'"
+      >
+        <div class="culture-icon">🌊</div>
+
+        <h2>Marine Culture</h2>
+
+        <div class="bangla">সামুদ্রিক মাছ চাষ</div>
+
+        <div class="description">Aquaculture in marine environments.</div>
+      </div>
+    </div>
+
+    <!-- POND DETAILS -->
+
+    <div id="pond" class="details">
+      <h2>🐟 Pond Culture</h2>
+
+      <p>
+        Pond culture is a traditional and popular method of fish farming where
+        fish are cultivated in managed ponds.
+      </p>
+
+      <ul>
+        <li>Suitable pond size selection</li>
+
+        <li>Water quality management</li>
+
+        <li>Proper fish stocking density</li>
+
+        <li>Regular feeding</li>
+
+        <li>Disease monitoring</li>
+      </ul>
+
+      <button class="back-button" onclick="hideDetails()">← Back</button>
+    </div>
+
+    <!-- BIOFLOC DETAILS -->
+
+    <div id="biofloc" class="details">
+      <h2>💧 Biofloc System</h2>
+
+      <p>
+        Biofloc technology uses beneficial microorganisms to improve water
+        quality and reduce water exchange.
+      </p>
+
+      <ul>
+        <li>High stocking capacity</li>
+
+        <li>Water quality monitoring</li>
+
+        <li>Carbon source management</li>
+
+        <li>Proper aeration</li>
+
+        <li>Regular feeding control</li>
+      </ul>
+
+      <button class="back-button" onclick="hideDetails()">← Back</button>
+    </div>
+
+    <!-- RAS DETAILS -->
+
+    <div id="ras" class="details">
+      <h2>♻️ RAS</h2>
+
+      <p>
+        Recirculating Aquaculture System continuously filters and reuses water
+        for fish farming.
+      </p>
+
+      <ul>
+        <li>Mechanical filtration</li>
+
+        <li>Biological filtration</li>
+
+        <li>Water circulation</li>
+
+        <li>Oxygen management</li>
+
+        <li>Temperature monitoring</li>
+      </ul>
+
+      <button class="back-button" onclick="hideDetails()">← Back</button>
+    </div>
+
+    <!-- CAGE DETAILS -->
+
+    <div id="cage" class="details">
+      <h2>🎣 Cage Culture</h2>
+
+      <p>
+        Cage culture is a fish farming technique where fish are raised inside
+        floating or fixed cages in natural water bodies.
+      </p>
+
+      <ul>
+        <li>Suitable cage location</li>
+
+        <li>Proper cage size</li>
+
+        <li>Stocking management</li>
+
+        <li>Regular feeding</li>
+
+        <li>Net and cage maintenance</li>
+      </ul>
+
+      <button class="back-button" onclick="hideDetails()">← Back</button>
+    </div>
+
+    <!-- MARINE DETAILS -->
+
+    <div id="marine" class="details">
+      <h2>🌊 Marine Culture</h2>
+
+      <p>
+        Marine aquaculture involves cultivating aquatic organisms in seawater
+        environments.
+      </p>
+
+      <ul>
+        <li>Water salinity monitoring</li>
+
+        <li>Suitable marine species</li>
+
+        <li>Feed management</li>
+
+        <li>Water quality monitoring</li>
+
+        <li>Environmental management</li>
+      </ul>
+
+      <button class="back-button" onclick="hideDetails()">← Back</button>
+    </div>
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+      function showDetails(id) {
+        // Hide all details
+
+        const details = document.querySelectorAll(".details");
+
+        details.forEach(function (item) {
+          item.classList.remove("active");
+        });
+
+        // Show selected detail
+
+        const selected = document.getElementById(id);
+
+        selected.classList.add("active");
+
+        // Scroll to details
+
+        selected.scrollIntoView({
+          behavior: "smooth",
+
+          block: "start",
+        });
+      }
+
+      function hideDetails() {
+        const details = document.querySelectorAll(".details");
+
+        details.forEach(function (item) {
+          item.classList.remove("active");
+        });
+
+        window.scrollTo({
+          top: 0,
+
+          behavior: "smooth",
+        });
+      }
+      function openBiofloc() {
+        window.location.href = "/biofloc";
+      }
+    </script>
+  </body>
+</html>

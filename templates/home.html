@@ -1,0 +1,346 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Farmer Assistant</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='home.css') }}">
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='fish_information.css') }}">
+
+</head>
+
+
+<body>
+
+
+    <!-- HEADER -->
+
+    <header class="header">
+
+        <h1 class="logo">
+            Farmer Assistant
+        </h1>
+
+    </header>
+
+
+    <!-- MAIN -->
+
+    <main>
+
+        <section id="home" class="page-section">
+
+            <h2>
+                Welcome to Farmer Assistant
+            </h2>
+
+            <p class="subtitle">
+                Your smart agricultural assistant.
+            </p>
+
+
+            <!-- TWO CARDS -->
+
+            <div class="feature-container">
+
+
+<!-- CROP -->
+
+<a href="{{ url_for('index') }}"
+   class="feature-card">
+
+    <div class="card-icon">
+        🌾
+    </div>
+
+    <h3>
+        Crop Recommendation
+    </h3>
+
+    <p>
+        Get the best crop recommendation
+        based on soil and weather conditions.
+    </p>
+
+    <span class="card-button">
+        Explore →
+    </span>
+
+</a>
+
+
+<!-- FISH -->
+
+<a href="{{ url_for('aquaculture') }}"
+   class="feature-card">
+
+    <div class="card-icon">
+        🐟
+    </div>
+
+    <h3>
+        Fish Recommendation
+    </h3>
+
+    <p>
+        Get smart fish farming recommendations
+        for better aquaculture management.
+    </p>
+
+    <span class="card-button">
+        Explore →
+    </span>
+
+</a>
+<a href="{{ url_for('live_stock') }}" class="feature-card">
+   
+
+    <div class="card-icon">
+        🐄
+    </div>
+
+    <h3>
+        Live Stock information
+    </h3>
+
+    <p>
+        Get smart live stock management information
+        for better livestock farming.
+    </p>
+
+    <span class="card-button">
+        Explore →
+    </span>
+
+</a>
+</section> 
+
+    </main>
+
+
+</body>
+
+</html>
+
+ 
+
+<!-- BOTTOM NAVIGATION -->
+
+<nav class="bottom-nav">
+
+    <!-- HOME -->
+
+<a href="#home" class="nav-item">
+
+    <svg viewBox="0 0 24 24"
+         fill="currentColor">
+
+        <path d="
+        M3 10
+        L12 3
+        L21 10
+        V21
+        H14
+        V14
+        H10
+        V21
+        H3
+        Z">
+        </path>
+
+    </svg>
+
+    <span>Home</span>
+
+</a>
+
+    <!-- Market Price -->
+
+    <a href="{{ url_for('market_price') }}" class="nav-item">
+
+        <svg viewBox="0 0 24 24"
+             fill="none"
+             stroke="currentColor"
+             stroke-width="2.5"
+             stroke-linecap="round">
+
+            <circle
+                cx="10.5"
+                cy="10.5"
+                r="6.5">
+            </circle>
+
+            <line
+                x1="16"
+                y1="16"
+                x2="22"
+                y2="22">
+            </line>
+
+        </svg>
+
+       <i class="fas fa-tags"></i>
+        <span>Market Price</span>
+
+    </a>
+
+
+
+    <!-- WEATHER INFORMATION -->
+
+    <a href="{{ url_for('weather_info') }}" class="nav-item">
+
+        <svg viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+            stroke-linecap="round">
+
+            <circle
+                cx="10.5"
+                cy="10.5"
+                r="6.5">
+            </circle>
+
+            <line
+                x1="16"
+                y1="16"
+                x2="22"
+                y2="22">
+            </line>
+
+        </svg>
+
+        <i class="fas fa-cloud-sun"></i>
+        <span>Weather Information</span>
+
+    </a>
+
+
+    <!-- fish_information -->
+
+    <a href="{{ url_for('fish_information') }}" class="nav-item">
+
+        <svg viewBox="0 0 24 24">
+
+            <path d="
+            M3 16
+            C5 14 7 14 9 15
+            L12 17
+            H20
+            C21 17 22 18 21 19
+            C20 21 16 21 13 21
+            H7
+            L3 19
+            Z">
+            </path>
+
+            <rect
+                x="11.3"
+                y="8"
+                width="1.5"
+                height="8">
+            </rect>
+
+            <path d="
+            M12 11
+            C8 11 7 8 7 6
+            C10 6 12 8 12 11
+            Z">
+            </path>
+
+            <path d="
+            M13 10
+            C13 6 16 4 19 4
+            C19 7 17 10 13 10
+            Z">
+            </path>
+
+        </svg>
+
+        <span>Fish Information</span>
+
+    </a>
+    
+<!-- Agriculture Office -->
+   <a href="{{ url_for('agriculture_office') }}" class="nav-item">
+     <svg viewBox="0 0 24 24">
+
+            <path d="
+            M12 2
+            C7.6 2 4 5.5 4 9.8
+            C4 15.5 12 22 12 22
+            C12 22 20 15.5 20 9.8
+            C20 5.5 16.4 2 12 2
+            Z">
+            </path>
+
+            <circle
+                cx="12"
+                cy="9.5"
+                r="3.2"
+                fill="white">
+            </circle>
+
+        </svg>
+<!--  -->
+        
+
+        <i class="fas fa-building"></i>
+        <span>Agriculture Office</span>
+
+    </a>
+
+
+
+    <!-- MAPS -->
+
+    <a href="#maps" class="nav-item">
+
+       
+        <svg viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+            stroke-linecap="round">
+
+            <circle
+                cx="10.5"
+                cy="10.5"
+                r="6.5">
+            </circle>
+
+            <line
+                x1="16"
+                y1="16"
+                x2="22"
+                y2="22">
+            </line>
+
+        </svg>
+        <i class="fas fa-location-dot"></i>
+        <span>Maps</span>
+
+    </a>
+
+</nav>
+
+
+<!-- JavaScript File -->
+
+<script src="script.js"></script>
+<script src="{{ url_for('static', filename='fish_information.js') }}"></script>
+
+
+</body>
+
+</html>

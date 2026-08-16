@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Pond Fish Prediction</title>
+
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #f2f8f5;
+        color: #333;
+      }
+
+      .header {
+        background: white;
+        padding: 25px 60px;
+        border-bottom: 1px solid #eee;
+      }
+
+      .header h1 {
+        margin: 0;
+        color: #159447;
+        font-size: 34px;
+      }
+
+      .container {
+        max-width: 1100px;
+        margin: 40px auto;
+        padding: 20px;
+      }
+
+      .title {
+        text-align: center;
+        margin-bottom: 35px;
+      }
+
+      .title h2 {
+        color: #159447;
+        font-size: 34px;
+        margin-bottom: 8px;
+      }
+
+      .title p {
+        color: #607080;
+        font-size: 17px;
+      }
+
+      .card {
+        background: white;
+        border-radius: 18px;
+        padding: 35px;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+      }
+
+      .form-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 22px;
+      }
+
+      .form-group {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .form-group label {
+        font-weight: bold;
+        margin-bottom: 8px;
+        color: #34495e;
+      }
+
+      .form-group input {
+        padding: 13px;
+        border: 1px solid #d4ddd8;
+        border-radius: 8px;
+        font-size: 16px;
+        outline: none;
+      }
+
+      .form-group input:focus {
+        border-color: #159447;
+      }
+
+      .predict-btn {
+        display: block;
+        margin: 35px auto 0;
+        padding: 14px 45px;
+        border: none;
+        border-radius: 30px;
+        background: #159447;
+        color: white;
+        font-size: 17px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+
+      .predict-btn:hover {
+        background: #117a39;
+      }
+
+      .back-btn {
+        display: inline-block;
+        margin-top: 25px;
+        color: #159447;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      @media (max-width: 700px) {
+        .header {
+          padding: 20px;
+        }
+
+        .container {
+          margin: 20px auto;
+        }
+
+        .form-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="header">
+      <h1>Farmer Assistant</h1>
+    </div>
+
+    <div class="container">
+      <div class="title">
+        <h2>Pond Fish Prediction</h2>
+
+        <p>AI-powered fish recommendation for pond culture</p>
+      </div>
+
+      <div class="card">
+        <form method="POST" action="{{ url_for('pond_prediction') }}">
+          <div class="form-grid">
+            <div class="form-group">
+              <label> Pond Size (decimal) </label>
+
+              <input
+                type="number"
+                name="pond_size"
+                step="any"
+                min="0"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label> Pond Depth (meter) </label>
+
+              <input
+                type="number"
+                name="pond_depth"
+                step="any"
+                min="0"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label> Temperature (°C) </label>
+
+              <input type="number" name="temperature" step="any" required />
+            </div>
+
+            <div class="form-group">
+              <label> pH </label>
+
+              <input type="number" name="ph" step="any" required />
+            </div>
+
+            <div class="form-group">
+              <label> Dissolved Oxygen - DO (mg/L) </label>
+
+              <input type="number" name="do" step="any" required />
+            </div>
+
+            <div class="form-group">
+              <label> Turbidity </label>
+
+              <input type="number" name="turbidity" step="any" required />
+            </div>
+          </div>
+
+          <button type="submit" class="predict-btn">🐟 Predict Fish</button>
+        </form>
+
+        {% if error %}
+
+        <div
+          style="
+            margin-top: 25px;
+            padding: 15px;
+            background: #ffe6e6;
+            color: #b00020;
+            border-radius: 10px;
+          "
+        >
+          {{ error }}
+        </div>
+
+        {% endif %} {% if result and result.success %}
+
+        <div
+          style="
+            margin-top: 35px;
+            padding: 30px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+          "
+        >
+          <h2 style="color: #159447">🐟 Prediction Result</h2>
+
+          <p>
+            <strong>Fish Name:</strong>
+            {{ result.fish_name }}
+          </p>
+
+          <p>
+            <strong>Confidence:</strong>
+            {{ "%.2f"|format(result.confidence) }}%
+          </p>
+
+          <hr />
+
+          <p>
+            <strong>Recommended Stocking Density:</strong>
+            {{ result.stocking_density }} {{ result.density_unit }}
+          </p>
+
+          <p>
+            <strong>Recommended Total Fish:</strong>
+            {{ result.total_fish }}
+          </p>
+
+          <p>
+            <strong>Expected Growth:</strong>
+
+            {% if result.expected_growth is not none %} {{
+            result.expected_growth }} kg/fish {% else %} Data unavailable {%
+            endif %}
+          </p>
+
+          <p>
+            <strong>Recommended Daily Feed:</strong>
+
+            {% if result.daily_feed is not none %} {{
+            "%.2f"|format(result.daily_feed) }} kg/day {% else %} Data
+            unavailable {% endif %}
+          </p>
+
+          <p>
+            <strong>Estimated Culture Period:</strong>
+
+            {% if result.culture_period_days is not none %} {{
+            result.culture_period_days }} days {% else %} Data unavailable {%
+            endif %}
+          </p>
+
+          <p>
+            <strong>Estimated Production:</strong>
+
+            {% if result.estimated_production is not none %} {{
+            "%.2f"|format(result.estimated_production) }} kg {% else %} Data
+            unavailable {% endif %}
+          </p>
+        </div>
+
+        {% endif %}
+
+        <a href="{{ url_for('home') }}" class="back-btn"> ← Back to Home </a>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,76 @@
+﻿mapping_id,farm_id,farm_name,division,district,upazila,fish_species,service_type,source,source_year,verification_status
+1,1,"Sreepur Mini Hatchery, Sreepur, Gazipur",Dhaka,Gazipur,Sreepur,,,Department of Fisheries Bangladesh - Farm List,2026,Species not yet verified
+2,2,"F.S.M.F, Tongi, Gazipur",Dhaka,Gazipur,Tongi,,,Department of Fisheries Bangladesh - Farm List,2026,Species not yet verified
+3,3,"F.S.M.F, Shamvuganj, Mymensingh",Dhaka,Mymensingh,Sadar,,,Department of Fisheries Bangladesh - Farm List,2026,Species not yet verified
+4,4,"F.S.M.F, Phulpur, Mymensingh",Dhaka,Mymensingh,Phulpur,,,Department of Fisheries Bangladesh - Farm List,2026,Species not yet verified
+5,5,"F.S.M.F, Ishwarganj, Mymensingh",Dhaka,Mymensingh,Ishwarganj,,,Department of Fisheries Bangladesh - Farm List,2026,Species not yet verified
+6,6,"F.S.M.F, Nandail, Mymensingh",Dhaka,Mymensingh,Nandail,,,Department of Fisheries Bangladesh - Farm List,2026,Species not yet verified
+7,7,"F.S.M.F, Kishoreganj Sadar, Kishoreganj",Dhaka,Kishoreganj,Sadar,,,Department of Fisheries Bangladesh - Farm List,2026,Species not yet verified
+8,8,"Fish Hatchery Complex, Katiadi, Kishoreganj",Dhaka,Kishoreganj,Katiadi,,,Department of Fisheries Bangladesh - Farm List,2026,Species not yet verified
+9,9,"F.S.M.F, Gopalganj Sadar, Gopalganj",Dhaka,Gopalganj,Sadar,,,Department of Fisheries Bangladesh - Farm List,2026,Species not yet verified
+10,10,"F.S.M.F, Baghata, Narsingdi",Dhaka,Narsingdi,Sadar/Baghata,,,Department of Fisheries Bangladesh - Farm List,2026,Species not yet verified
+11,11,"F.S.M.F, Faridpur Sadar, Faridpur",Dhaka,Faridpur,Sadar,,,Department of Fisheries Bangladesh - Farm List,2026,Species not yet verified
+12,12,"Fisheries Training & Extention Center, Faridpur",Dhaka,Faridpur,,,,Department of Fisheries Bangladesh - Farm List,2026,Species not yet verified
+13,13,"F.S.M.F, Tangail Sadar, Tangail",Dhaka,Tangail,Sadar,,,Department of Fisheries Bangladesh - Farm List,2026,Species not yet verified
+14,14,"F.S.M.F, Munshiganj Sadar, Munshiganj",Dhaka,Munshiganj,Sadar,,,Department of Fisheries Bangladesh - Farm List,2026,Species not yet verified
+15,15,"F.S.M.F, Gosairhat, Shariatpur",Dhaka,Shariatpur,Gosairhat,,,Department of Fisheries Bangladesh - Farm List,2026,Species not yet verified
+16,16,"F.S.M.F, Chapainawabganj Sadar, Chapainawabganj",Rajshahi,Chapainawabganj,Sadar,,,Department of Fisheries Bangladesh - Farm List,2026,Species not yet verified
+17,17,"F.S.M.F, Nachole, Chapainawabganj",Rajshahi,Chapainawabganj,Nachole,,,Department of Fisheries Bangladesh - Farm List,2026,Species not yet verified
+18,18,"F.S.M.F, Natore Sadar, Natore",Rajshahi,Natore,Sadar,,,Department of Fisheries Bangladesh - Farm List,2026,Species not yet verified
+19,19,"F.S.M.F, Karbala, Boraigram, Natore",Rajshahi,Natore,Boraigram,,,Department of Fisheries Bangladesh - Farm List,2026,Species not yet verified
+20,20,"F.S.M.F, Boraigram, Natore",Rajshahi,Natore,Boraigram,,,Department of Fisheries Bangladesh - Farm List,2026,Species not yet verified
+21,21,"F.S.M.F, Malatinagar, Bogura",Rajshahi,Bogura,Sadar/Malatinagar,,,Department of Fisheries Bangladesh - Farm List,2026,Species not yet verified
+22,22,"F.S.M.F, Sherpur, Bogura",Rajshahi,Bogura,Sherpur,,,Department of Fisheries Bangladesh - Farm List,2026,Species not yet verified
+23,23,"F.S.M.F, Naogaon Sadar, Naogaon",Rajshahi,Naogaon,Sadar,,,Department of Fisheries Bangladesh - Farm List,2026,Species not yet verified
+24,24,"F.S.M.F, Bagherhat Sadar, Bagherhat",Khulna,Bagerhat,Sadar,,,Department of Fisheries Bangladesh - Farm List,2026,Species not yet verified
+25,25,"F.S.M.F, Jashore Sadar, Jashore",Khulna,Jashore,Sadar,,,Department of Fisheries Bangladesh - Farm List,2026,Species not yet verified
+26,26,"F.S.M.F, Jikargachha, Jashore",Khulna,Jashore,Jhikargachha,,,Department of Fisheries Bangladesh - Farm List,2026,Species not yet verified
+27,27,"F.S.M.F, Bagachra, Sharsha, Jashore",Khulna,Jashore,Sharsha,,,Department of Fisheries Bangladesh - Farm List,2026,Species not yet verified
+28,28,"F.S.M.F, Jhikargacha, Jessore",Khulna,Jashore,Jhikargachha,,,Department of Fisheries Bangladesh - Farm List,2026,Species not yet verified
+29,29,"F.S.M.F, Chuadanga Sadar, Chuadanga",Khulna,Chuadanga,Sadar,,,Department of Fisheries Bangladesh - Farm List,2026,Species not yet verified
+30,30,"F.S.M.F, Jibannagar, Chuadanga",Khulna,Chuadanga,Jibannagar,,,Department of Fisheries Bangladesh - Farm List,2026,Species not yet verified
+31,31,"F.S.M.F, Meherpur Sadar, Meherpur",Khulna,Meherpur,Sadar,,,Department of Fisheries Bangladesh - Farm List,2026,Species not yet verified
+32,32,"F.S.M.F, Jhenaidah Sadar, Jhenaidah",Khulna,Jhenaidah,Sadar,,,Department of Fisheries Bangladesh - Farm List,2026,Species not yet verified
+33,33,"Central Hatchery, Kotchandpur, Jhenaidah",Khulna,Jhenaidah,Kotchandpur,,,Department of Fisheries Bangladesh - Farm List,2026,Species not yet verified
+34,34,"F.S.M.F, Satkhira Sadar, Satkhira",Khulna,Satkhira,Sadar,,,Department of Fisheries Bangladesh - Farm List,2026,Species not yet verified
+35,35,"F.S.M.F, Debhata, Satkhira",Khulna,Satkhira,Debhata,,,Department of Fisheries Bangladesh - Farm List,2026,Species not yet verified
+36,36,"RFO Office in/c Shrimp Demonstration Firm & Hatchery Unit, Kaliganj, Satkhira",Khulna,Satkhira,Kaliganj,,,Department of Fisheries Bangladesh - Farm List,2026,Species not yet verified
+37,37,"F.S.M.F, Khulna Sadar, Khulna",Khulna,Khulna,Sadar,,,Department of Fisheries Bangladesh - Farm List,2026,Species not yet verified
+38,38,"F.S.M.F, Dumuria, Khulna",Khulna,Khulna,Dumuria,,,Department of Fisheries Bangladesh - Farm List,2026,Species not yet verified
+39,39,"F.S.M.F, Gaibandha Sadar, Gaibandha",Rangpur,Gaibandha,Sadar,,,Department of Fisheries Bangladesh - Farm List,2026,Species not yet verified
+40,40,"F.S.M.F, Gobindaganj, Gaibandha",Rangpur,Gaibandha,Gobindaganj,,,Department of Fisheries Bangladesh - Farm List,2026,Species not yet verified
+41,41,"F.S.M.F, Saidpur, Nilphamari",Rangpur,Dinajpur,Saidpur,,,Department of Fisheries Bangladesh - Farm List,2026,Species not yet verified
+42,42,"F.S.M.F, Thakurgaon Sadar, Thakurgaon",Rangpur,Dinajpur,Thakurgaon Sadar,,,Department of Fisheries Bangladesh - Farm List,2026,Species not yet verified
+43,43,"F.S.M.F, Kaharole, Dinajpur",Rangpur,Dinajpur,Kaharole,,,Department of Fisheries Bangladesh - Farm List,2026,Species not yet verified
+44,44,"F.S.M.F, Setabganj, Dinajpur",Rangpur,Dinajpur,Setabganj,,,Department of Fisheries Bangladesh - Farm List,2026,Species not yet verified
+45,45,"F.S.M.F, Pulhat, Dinajpur",Rangpur,Dinajpur,Parbatipur,,,Department of Fisheries Bangladesh - Farm List,2026,Species not yet verified
+46,46,"F.S.M.F, Charkai, Birampur, Dinajpur",Rangpur,Dinajpur,Birampur,,,Department of Fisheries Bangladesh - Farm List,2026,Species not yet verified
+47,47,"F.S.M.F, Birganj, Dinajpur",Rangpur,Dinajpur,Birganj,,,Department of Fisheries Bangladesh - Farm List,2026,Species not yet verified
+48,48,"F.S.M.F, Golapganj, Sylhet",Sylhet,Sylhet,Golapganj,,,Department of Fisheries Bangladesh - Farm List,2026,Species not yet verified
+49,49,"F.S.M.F, Khadimnagar, Sylhet",Sylhet,Sylhet,Khadimnagar,,,Department of Fisheries Bangladesh - Farm List,2026,Species not yet verified
+50,50,"F.S.M.F, Moulvibazar Sadar, Moulvibazar",Sylhet,Moulvibazar,Sadar,,,Department of Fisheries Bangladesh - Farm List,2026,Species not yet verified
+51,51,"Fish Hatchery Complex, Shantiganj, Sunamganj",Sylhet,Sunamganj,Shantiganj,,,Department of Fisheries Bangladesh - Farm List,2026,Species not yet verified
+52,52,"F.S.M.F, Jangalia, Cumilla",Chattogram,Cumilla,Jangalia,,,Department of Fisheries Bangladesh - Farm List,2026,Species not yet verified
+53,53,"F.S.M.F, Burichang, Cumilla",Chattogram,Cumilla,Burichang,,,Department of Fisheries Bangladesh - Farm List,2026,Species not yet verified
+54,54,"F.S.M.F, Choddogram, Cumilla",Chattogram,Cumilla,Choddogram,,,Department of Fisheries Bangladesh - Farm List,2026,Species not yet verified
+55,55,"F.S.M.F, Chandina, Cumilla",Chattogram,Cumilla,Chandina,,,Department of Fisheries Bangladesh - Farm List,2026,Species not yet verified
+56,56,"F.S.M.F, Mandari, Lakshmipur Sadar, Lakshmipur",Chattogram,Lakshmipur,Sadar,,,Department of Fisheries Bangladesh - Farm List,2026,Species not yet verified
+57,57,"F.S.M.F, Feni Sadar, Feni",Chattogram,Feni,Sadar,,,Department of Fisheries Bangladesh - Farm List,2026,Species not yet verified
+58,58,"F.S.M.F, Sonagazi, Feni",Chattogram,Feni,Sonagazi,,,Department of Fisheries Bangladesh - Farm List,2026,Species not yet verified
+59,59,"F.S.M.F, Chhagalnaiya, Feni",Chattogram,Feni,Chhagalnaiya,,,Department of Fisheries Bangladesh - Farm List,2026,Species not yet verified
+60,60,"F.S.M.F, Chowmuhani, Begumganj, Noakhali",Chattogram,Noakhali,Begumganj,,,Department of Fisheries Bangladesh - Farm List,2026,Species not yet verified
+61,61,"F.S.M.F, Mirsharai, Chattogram",Chattogram,Chattogram,Mirsharai,,,Department of Fisheries Bangladesh - Farm List,2026,Species not yet verified
+62,62,"F.S.M.F, Patiya, Chattogram",Chattogram,Chattogram,Patiya,,,Department of Fisheries Bangladesh - Farm List,2026,Species not yet verified
+63,63,"F.S.M.F, Kachua, Chandpur",Chattogram,Chandpur,Kachua,,,Department of Fisheries Bangladesh - Farm List,2026,Species not yet verified
+64,64,"Shrimp Demonstration Firm Teknaf, Cox's Bazar",Chattogram,Cox's Bazar,Teknaf,,,Department of Fisheries Bangladesh - Farm List,2026,Species not yet verified
+65,65,"F.S.M.F, Ramrail, Brahmanbaria",Chattogram,Brahmanbaria,Sadar,,,Department of Fisheries Bangladesh - Farm List,2026,Species not yet verified
+66,66,"Jiol F.S.M.F, Kasba, Brahmanbaria",Chattogram,Brahmanbaria,Kasba,,,Department of Fisheries Bangladesh - Farm List,2026,Species not yet verified
+67,67,"F.S.M.F, Kawkhali, Rangamati",Chattogram,Rangamati,Kawkhali,,,Department of Fisheries Bangladesh - Farm List,2026,Species not yet verified
+68,68,"F.S.M.F Sadar, Khagrachhari",Chattogram,Khagrachhari,Sadar,,,Department of Fisheries Bangladesh - Farm List,2026,Species not yet verified
+69,69,"F.S.M.F, Sadar, Pirojpur",Barishal,Pirojpur,Sadar,,,Department of Fisheries Bangladesh - Farm List,2026,Species not yet verified
+70,70,"F.S.M.F, Jhalokati Sadar, Jhalokati",Barishal,Jhalokati,Sadar,,,Department of Fisheries Bangladesh - Farm List,2026,Species not yet verified
+71,71,"F.S.M.F, Barguna Sadar, Barguna",Barishal,Barguna,Sadar,,,Department of Fisheries Bangladesh - Farm List,2026,Species not yet verified
+72,72,"F.S.M.F, Patuakhali Sadar, Patuakhali",Barishal,Patuakhali,Sadar,,,Department of Fisheries Bangladesh - Farm List,2026,Species not yet verified
+73,73,"F.S.M.F, Bhola Sadar, Bhola",Barishal,Bhola,Sadar,,,Department of Fisheries Bangladesh - Farm List,2026,Species not yet verified
+74,74,"F.S.M.F Charkachhopia, Charfesson, Bhola",Barishal,Bhola,Charfesson,,,Department of Fisheries Bangladesh - Farm List,2026,Species not yet verified
+75,75,"TEST Hatchery",Dhaka,Gazipur,Tongi,রুই,মাছ / পোনা,Test data,2026,TEST

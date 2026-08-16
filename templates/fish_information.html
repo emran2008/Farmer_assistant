@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="bn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>মৎস্য তথ্য ও মাছ কেনা</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='fish_information.css') }}"
+    />
+  </head>
+
+  <body>
+    <div class="container">
+      <!-- HEADER -->
+      <header class="main-header">
+        <div class="header-icon">🐟</div>
+
+        <div>
+          <h1>মৎস্য তথ্য ও মাছ কেনার সেবা</h1>
+
+          <p>আপনার এলাকার হ্যাচারি, মাছ/পোনা এবং সরকারি তথ্য সহজে খুঁজুন</p>
+        </div>
+      </header>
+
+      <!-- LOCATION -->
+      <section class="card">
+        <div class="section-title">
+          <div class="number">১</div>
+
+          <div>
+            <h2>📍 এলাকা নির্বাচন</h2>
+
+            <p>বিভাগ → জেলা → উপজেলা</p>
+          </div>
+        </div>
+
+        <div class="form-grid">
+          <!-- DIVISION -->
+          <div class="form-group">
+            <label> বিভাগ </label>
+
+            <select id="division">
+              <option value="">বিভাগ নির্বাচন করুন</option>
+            </select>
+          </div>
+
+          <!-- DISTRICT -->
+          <div class="form-group">
+            <label> জেলা </label>
+
+            <select id="district" disabled>
+              <option value="">প্রথমে বিভাগ নির্বাচন করুন</option>
+            </select>
+          </div>
+
+          <!-- UPAZILA -->
+          <div class="form-group">
+            <label> উপজেলা </label>
+
+            <select id="upazila" disabled>
+              <option value="">প্রথমে জেলা নির্বাচন করুন</option>
+            </select>
+          </div>
+        </div>
+
+        <div id="locationStatus" class="status">
+          📍 প্রথমে বিভাগ নির্বাচন করুন
+        </div>
+      </section>
+
+      <!-- FISH SEARCH -->
+      <section class="card">
+        <div class="section-title">
+          <div class="number">২</div>
+
+          <div>
+            <h2>🐟 মাছ / পোনা নির্বাচন</h2>
+
+            <p>আপনার প্রয়োজন অনুযায়ী মাছ নির্বাচন করুন</p>
+          </div>
+        </div>
+
+        <div class="form-grid">
+          <div class="form-group">
+            <label> মাছের নাম </label>
+
+            <select id="fish">
+              <option value="">মাছ নির্বাচন করুন</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label> সেবা </label>
+
+            <select id="service">
+              <option value="hatchery">🏭 হ্যাচারি খুঁজুন</option>
+
+              <option value="buy">🛒 মাছ / পোনা কিনুন</option>
+            </select>
+          </div>
+        </div>
+
+        <button id="searchBtn" class="primary-btn">🔎 খুঁজুন</button>
+      </section>
+
+      <!-- RESULTS -->
+
+      <section id="results" class="results"></section>
+
+      <!-- BUY PROCESS -->
+
+      <section class="card">
+        <div class="section-title">
+          <div class="number">৩</div>
+
+          <div>
+            <h2>🛒 মাছ কেনার পদ্ধতি</h2>
+
+            <p>খুব সহজে অর্ডার রিকোয়েস্ট পাঠান</p>
+          </div>
+        </div>
+
+        <div class="buy-process">
+          <div class="process">
+            <span> ১ </span>
+
+            <p>বিভাগ, জেলা ও উপজেলা নির্বাচন করুন</p>
+          </div>
+
+          <div class="process">
+            <span> ২ </span>
+
+            <p>মাছ বা পোনা নির্বাচন করুন</p>
+          </div>
+
+          <div class="process">
+            <span> ৩ </span>
+
+            <p>হ্যাচারি / বিক্রেতা নির্বাচন করুন</p>
+          </div>
+
+          <div class="process">
+            <span> ৪ </span>
+
+            <p>🛒 অর্ডার করুন</p>
+          </div>
+
+          <div class="process">
+            <span> ৫ </span>
+
+            <p>আপনার নাম, মোবাইল ও ঠিকানা দিন</p>
+          </div>
+
+          <div class="process">
+            <span> ৬ </span>
+
+            <p>অর্ডার রিকোয়েস্ট পাঠান</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- OFFICIAL SOURCES -->
+
+      <section class="card">
+        <div class="section-title">
+          <div class="number">৪</div>
+
+          <div>
+            <h2>🏛️ সরকারি অফিসিয়াল তথ্য</h2>
+
+            <p>সরকারি মূল ওয়েবসাইটে যেতে পারবেন</p>
+          </div>
+        </div>
+
+        <div id="officialSources" class="source-grid"></div>
+      </section>
+
+      <!-- ORDERS -->
+
+      <section class="card">
+        <div class="section-title">
+          <div class="number">৫</div>
+
+          <div>
+            <h2>📦 আমার অর্ডার</h2>
+
+            <p>আপনার পাঠানো অর্ডার রিকোয়েস্ট</p>
+          </div>
+        </div>
+
+        <div id="orders"></div>
+      </section>
+    </div>
+
+    <!-- ORDER MODAL -->
+
+    <div id="orderModal" class="modal hidden">
+      <div class="modal-box">
+        <button id="closeModal" class="close-btn">×</button>
+
+        <h2>🛒 মাছ / পোনা অর্ডার</h2>
+
+        <div id="sellerInfo" class="seller-info"></div>
+
+        <form id="orderForm">
+          <div class="form-group">
+            <label> আপনার নাম </label>
+
+            <input
+              id="buyerName"
+              type="text"
+              required
+              placeholder="আপনার নাম"
+            />
+          </div>
+
+          <div class="form-group">
+            <label> মোবাইল নম্বর </label>
+
+            <input
+              id="buyerPhone"
+              type="tel"
+              required
+              placeholder="01XXXXXXXXX"
+            />
+          </div>
+
+          <div class="form-group">
+            <label> ঠিকানা </label>
+
+            <textarea id="buyerAddress" required placeholder="সম্পূর্ণ ঠিকানা">
+            </textarea>
+          </div>
+
+          <div class="two-column">
+            <div class="form-group">
+              <label> পরিমাণ </label>
+
+              <input id="quantity" type="number" min="1" value="1" required />
+            </div>
+
+            <div class="form-group">
+              <label> একক </label>
+
+              <select id="unit">
+                <option>কেজি</option>
+
+                <option>টি</option>
+
+                <option>পোনা</option>
+              </select>
+            </div>
+          </div>
+
+          <button type="submit" class="primary-btn">
+            ✅ অর্ডার রিকোয়েস্ট পাঠান
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='fish_information.js') }}"></script>
+  </body>
+</html>

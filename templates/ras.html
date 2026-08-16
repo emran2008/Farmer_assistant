@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="bn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>RAS Fish Farming System</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='ras.css') }}" />
+  </head>
+
+  <body>
+    <div class="ras-container">
+      <!-- HEADER -->
+      <header class="ras-header">
+        <button class="back-btn" onclick="goBack()">← ফিরে যান</button>
+
+        <div class="header-icon">♻️🐟</div>
+
+        <h1>RAS Fish Farming System</h1>
+
+        <p>Recirculating Aquaculture System</p>
+
+        <span>
+          মাছ নির্বাচন → পানি পরীক্ষা → চাষের তথ্য → সমস্যা বিশ্লেষণ
+        </span>
+      </header>
+
+      <!-- STEP 1 -->
+      <section class="ras-card">
+        <div class="section-title">
+          <span>১</span>
+          <div>
+            <h2>🐟 মাছ নির্বাচন</h2>
+            <p>আপনি যে মাছ RAS পদ্ধতিতে চাষ করছেন সেটি নির্বাচন করুন</p>
+          </div>
+        </div>
+
+        <div class="form-grid">
+          <div class="form-group full">
+            <label>মাছের নাম</label>
+
+            <select id="fishSelect">
+              <option value="">-- মাছ নির্বাচন করুন --</option>
+            </select>
+          </div>
+        </div>
+
+        <div id="fishInfo" class="fish-info hidden"></div>
+      </section>
+
+      <!-- STEP 2 WATER -->
+      <section class="ras-card">
+        <div class="section-title">
+          <span>২</span>
+
+          <div>
+            <h2>💧 পানির মান</h2>
+            <p>আপনার RAS সিস্টেমের বর্তমান পানির তথ্য দিন</p>
+          </div>
+        </div>
+
+        <div class="form-grid">
+          <div class="form-group">
+            <label>🌡️ Temperature (°C)</label>
+            <input
+              id="temperature"
+              type="number"
+              step="0.1"
+              placeholder="যেমন: 27"
+            />
+          </div>
+
+          <div class="form-group">
+            <label>⚗️ pH</label>
+            <input id="ph" type="number" step="0.1" placeholder="যেমন: 7.2" />
+          </div>
+
+          <div class="form-group">
+            <label>🫧 Dissolved Oxygen - DO (mg/L)</label>
+            <input
+              id="doValue"
+              type="number"
+              step="0.1"
+              placeholder="যেমন: 6"
+            />
+          </div>
+
+          <div class="form-group">
+            <label>☠️ Ammonia (mg/L)</label>
+            <input
+              id="ammonia"
+              type="number"
+              step="0.01"
+              placeholder="যেমন: 0.02"
+            />
+          </div>
+
+          <div class="form-group">
+            <label>☠️ Nitrite (mg/L)</label>
+            <input
+              id="nitrite"
+              type="number"
+              step="0.01"
+              placeholder="যেমন: 0.05"
+            />
+          </div>
+
+          <div class="form-group">
+            <label>🧪 Alkalinity (mg/L)</label>
+            <input
+              id="alkalinity"
+              type="number"
+              step="1"
+              placeholder="যেমন: 120"
+            />
+          </div>
+
+          <div class="form-group">
+            <label>🪨 Hardness (mg/L)</label>
+            <input
+              id="hardness"
+              type="number"
+              step="1"
+              placeholder="যেমন: 150"
+            />
+          </div>
+
+          <div class="form-group">
+            <label>🌊 Salinity (ppt)</label>
+            <input
+              id="salinity"
+              type="number"
+              step="0.1"
+              placeholder="যেমন: 0"
+            />
+          </div>
+
+          <div class="form-group">
+            <label>👁️ পানির স্বচ্ছতা</label>
+
+            <select id="waterClarity">
+              <option value="">নির্বাচন করুন</option>
+              <option value="clear">স্বচ্ছ</option>
+              <option value="slightly">সামান্য ঘোলা</option>
+              <option value="turbid">অনেক ঘোলা</option>
+            </select>
+          </div>
+        </div>
+      </section>
+
+      <!-- STEP 3 RAS SYSTEM -->
+      <section class="ras-card">
+        <div class="section-title">
+          <span>৩</span>
+
+          <div>
+            <h2>🔄 RAS সিস্টেমের তথ্য</h2>
+            <p>আপনার সিস্টেমের তথ্য দিন</p>
+          </div>
+        </div>
+
+        <div class="form-grid">
+          <div class="form-group">
+            <label>🏊 Tank Volume (Liter)</label>
+
+            <input id="tankVolume" type="number" placeholder="যেমন: 10000" />
+          </div>
+
+          <div class="form-group">
+            <label>🔄 Water Flow (L/hour)</label>
+
+            <input id="waterFlow" type="number" placeholder="যেমন: 5000" />
+          </div>
+
+          <div class="form-group">
+            <label>🐟 মাছের সংখ্যা</label>
+
+            <input id="fishCount" type="number" placeholder="যেমন: 1000" />
+          </div>
+
+          <div class="form-group">
+            <label>⚖️ গড় মাছের ওজন (গ্রাম)</label>
+
+            <input id="fishWeight" type="number" placeholder="যেমন: 100" />
+          </div>
+
+          <div class="form-group">
+            <label>🧹 Mechanical Filter</label>
+
+            <select id="mechanicalFilter">
+              <option value="">নির্বাচন করুন</option>
+              <option value="yes">আছে</option>
+              <option value="no">নেই</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>🦠 Biofilter</label>
+
+            <select id="biofilter">
+              <option value="">নির্বাচন করুন</option>
+              <option value="yes">আছে</option>
+              <option value="no">নেই</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>💨 Aeration</label>
+
+            <select id="aeration">
+              <option value="">নির্বাচন করুন</option>
+              <option value="strong">ভালো</option>
+              <option value="medium">মাঝারি</option>
+              <option value="weak">দুর্বল</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>💡 UV / Disinfection</label>
+
+            <select id="uv">
+              <option value="">নির্বাচন করুন</option>
+              <option value="yes">আছে</option>
+              <option value="no">নেই</option>
+            </select>
+          </div>
+        </div>
+      </section>
+
+      <!-- STEP 4 FEED -->
+      <section class="ras-card">
+        <div class="section-title">
+          <span>৪</span>
+
+          <div>
+            <h2>🍚 খাবার ও মাছের ব্যবস্থাপনা</h2>
+            <p>দৈনিক ব্যবস্থাপনার তথ্য দিন</p>
+          </div>
+        </div>
+
+        <div class="form-grid">
+          <div class="form-group">
+            <label>🍚 Feed Type</label>
+
+            <select id="feedType">
+              <option value="">নির্বাচন করুন</option>
+
+              <option value="floating">Floating Feed</option>
+
+              <option value="sinking">Sinking Feed</option>
+
+              <option value="mixed">Mixed Feed</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>🍚 দৈনিক Feed (kg)</label>
+
+            <input
+              id="feedAmount"
+              type="number"
+              step="0.01"
+              placeholder="যেমন: 5"
+            />
+          </div>
+
+          <div class="form-group">
+            <label>⏰ দিনে কয়বার খাবার?</label>
+
+            <input id="feedingTimes" type="number" placeholder="যেমন: 3" />
+          </div>
+
+          <div class="form-group">
+            <label>🍽️ খাবার গ্রহণ</label>
+
+            <select id="appetite">
+              <option value="">নির্বাচন করুন</option>
+
+              <option value="normal">স্বাভাবিক</option>
+
+              <option value="low">কম</option>
+
+              <option value="none">প্রায় খাচ্ছে না</option>
+            </select>
+          </div>
+        </div>
+      </section>
+
+      <!-- STEP 5 HEALTH -->
+      <section class="ras-card">
+        <div class="section-title">
+          <span>৫</span>
+
+          <div>
+            <h2>🦠 মাছের স্বাস্থ্য / ইনফেকশনের লক্ষণ</h2>
+
+            <p>কৃষক যে লক্ষণ দেখছেন সেগুলো নির্বাচন করুন</p>
+          </div>
+        </div>
+
+        <div class="symptoms-grid">
+          <label class="check-item">
+            <input type="checkbox" value="white_spots" />
+            সাদা দাগ / White spots
+          </label>
+
+          <label class="check-item">
+            <input type="checkbox" value="red_spots" />
+            শরীরে লাল দাগ
+          </label>
+
+          <label class="check-item">
+            <input type="checkbox" value="ulcer" />
+            ঘা / Ulcer
+          </label>
+
+          <label class="check-item">
+            <input type="checkbox" value="fin_rot" />
+            পাখনা পচা
+          </label>
+
+          <label class="check-item">
+            <input type="checkbox" value="cotton" />
+            তুলার মতো ছত্রাক
+          </label>
+
+          <label class="check-item">
+            <input type="checkbox" value="gill" />
+            ফুলকা ক্ষত / অস্বাভাবিক
+          </label>
+
+          <label class="check-item">
+            <input type="checkbox" value="surface" />
+            পানির উপরে উঠে হাঁসফাঁস
+          </label>
+
+          <label class="check-item">
+            <input type="checkbox" value="slow" />
+            ধীরে সাঁতার কাটছে
+          </label>
+
+          <label class="check-item">
+            <input type="checkbox" value="flashing" />
+            শরীর ঘষছে
+          </label>
+
+          <label class="check-item">
+            <input type="checkbox" value="swollen" />
+            পেট ফুলে গেছে
+          </label>
+
+          <label class="check-item">
+            <input type="checkbox" value="eye" />
+            চোখ ফুলে গেছে
+          </label>
+
+          <label class="check-item">
+            <input type="checkbox" value="dark" />
+            শরীর কালচে
+          </label>
+
+          <label class="check-item">
+            <input type="checkbox" value="mucus" />
+            অতিরিক্ত শ্লেষ্মা
+          </label>
+
+          <label class="check-item">
+            <input type="checkbox" value="balance" />
+            ভারসাম্য হারাচ্ছে
+          </label>
+
+          <label class="check-item">
+            <input type="checkbox" value="death" />
+            হঠাৎ মৃত্যু
+          </label>
+        </div>
+
+        <div class="form-group description-box">
+          <label> 📝 অন্যান্য লক্ষণ / কৃষকের পর্যবেক্ষণ </label>
+
+          <textarea
+            id="otherSymptoms"
+            rows="5"
+            placeholder="যেমন: মাছ খাবার খাচ্ছে না, পানির উপরে থাকে, গায়ে লাল দাগ দেখা যাচ্ছে..."
+          ></textarea>
+        </div>
+
+        <div class="form-grid">
+          <div class="form-group">
+            <label> 💀 গত ২৪ ঘণ্টায় মৃত মাছ </label>
+
+            <input id="deadFish" type="number" min="0" placeholder="যেমন: 5" />
+          </div>
+
+          <div class="form-group">
+            <label> 📅 সমস্যা কতদিন ধরে? </label>
+
+            <input
+              id="problemDays"
+              type="number"
+              min="0"
+              placeholder="যেমন: 3"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- ANALYZE BUTTON -->
+
+      <section class="action-area">
+        <button class="analyze-btn" onclick="analyzeRAS()">
+          🤖 RAS বিশ্লেষণ করুন
+        </button>
+
+        <button class="reset-btn" onclick="resetRAS()">↻ সব Reset</button>
+      </section>
+
+      <!-- RESULT -->
+
+      <section id="resultSection" class="result-section hidden">
+        <div class="result-header">
+          <h2>📊 RAS Analysis Result</h2>
+
+          <span id="riskBadge"> -- </span>
+        </div>
+
+        <div id="waterResult"></div>
+
+        <div id="diseaseResult"></div>
+
+        <div id="systemResult"></div>
+
+        <div id="recommendationResult"></div>
+      </section>
+
+      <!-- DISCLAIMER -->
+
+      <div class="notice">
+        ⚠️ <strong>গুরুত্বপূর্ণ:</strong>
+        এই সিস্টেমটি পানি ও দৃশ্যমান লক্ষণের ভিত্তিতে সম্ভাব্য সমস্যা শনাক্ত
+        করার জন্য তৈরি। এটি চূড়ান্ত রোগ নির্ণয় নয়। গুরুতর মৃত্যু বা রোগের
+        ক্ষেত্রে মৎস্য বিশেষজ্ঞ / ভেটেরিনারি বিশেষজ্ঞের পরামর্শ নেওয়া উচিত।
+      </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='ras.js') }}"></script>
+  </body>
+</html>

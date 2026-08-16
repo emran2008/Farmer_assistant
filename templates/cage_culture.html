@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="bn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Cage Culture System</title>
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='cage_culture.css') }}"
+    />
+  </head>
+
+  <body>
+    <header class="page-header">
+      <h1>🪝 Cage Culture System</h1>
+      <p>খাঁচায় মাছ চাষ ব্যবস্থাপনা ও পূর্বাভাস</p>
+    </header>
+
+    <main class="container">
+      <button class="back-btn" onclick="goBack()">← ফিরে যান</button>
+
+      <!-- মাছ নির্বাচন -->
+      <section class="panel">
+        <div class="panel-title">
+          <span>🐟</span>
+          <div>
+            <h2>মাছ নির্বাচন</h2>
+            <p>আপনি যে মাছ চাষ করছেন সেটি নির্বাচন করুন</p>
+          </div>
+        </div>
+
+        <div class="form-grid">
+          <div class="field">
+            <label>মাছের নাম</label>
+
+            <select id="fishSelect">
+              <option value="">-- মাছ নির্বাচন করুন --</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label>খাঁচার ধরন</label>
+
+            <select id="cageType">
+              <option value="floating">ভাসমান খাঁচা</option>
+
+              <option value="fixed">স্থির খাঁচা</option>
+
+              <option value="submersible">নিমজ্জিত খাঁচা</option>
+            </select>
+          </div>
+        </div>
+
+        <div id="fishProfile" class="fish-profile hidden"></div>
+      </section>
+
+      <!-- খাঁচার তথ্য -->
+      <section class="panel">
+        <div class="panel-title">
+          <span>🪝</span>
+
+          <div>
+            <h2>খাঁচার তথ্য</h2>
+            <p>খাঁচার আকার ও মাছের মজুদের তথ্য দিন</p>
+          </div>
+        </div>
+
+        <div class="form-grid">
+          <div class="field">
+            <label>দৈর্ঘ্য (মিটার)</label>
+            <input id="cageLength" type="number" min="0" step="0.1" />
+          </div>
+
+          <div class="field">
+            <label>প্রস্থ (মিটার)</label>
+            <input id="cageWidth" type="number" min="0" step="0.1" />
+          </div>
+
+          <div class="field">
+            <label>গভীরতা (মিটার)</label>
+            <input id="cageDepth" type="number" min="0" step="0.1" />
+          </div>
+
+          <div class="field">
+            <label>মোট মাছের সংখ্যা</label>
+            <input id="fishCount" type="number" min="1" />
+          </div>
+
+          <div class="field">
+            <label>একটি মাছের গড় ওজন (গ্রাম)</label>
+            <input id="fishWeight" type="number" min="1" />
+          </div>
+        </div>
+      </section>
+
+      <!-- পানি -->
+      <section class="panel">
+        <div class="panel-title">
+          <span>💧</span>
+
+          <div>
+            <h2>পানির গুণমান</h2>
+            <p>বর্তমান পানির পরীক্ষার ফলাফল দিন</p>
+          </div>
+        </div>
+
+        <div class="form-grid">
+          <div class="field">
+            <label>🌡️ তাপমাত্রা (°C)</label>
+            <input id="temperature" type="number" step="0.1" />
+          </div>
+
+          <div class="field">
+            <label>🧪 pH</label>
+            <input id="ph" type="number" step="0.1" />
+          </div>
+
+          <div class="field">
+            <label>💨 DO (mg/L)</label>
+            <input id="doValue" type="number" step="0.1" />
+          </div>
+
+          <div class="field">
+            <label>☠️ Ammonia (mg/L)</label>
+            <input id="ammonia" type="number" step="0.01" />
+          </div>
+
+          <div class="field">
+            <label>☠️ Nitrite (mg/L)</label>
+            <input id="nitrite" type="number" step="0.01" />
+          </div>
+
+          <div class="field">
+            <label>💧 পানির স্বচ্ছতা (cm)</label>
+            <input id="transparency" type="number" />
+          </div>
+        </div>
+      </section>
+
+      <!-- খাবার -->
+      <section class="panel">
+        <div class="panel-title">
+          <span>🍚</span>
+
+          <div>
+            <h2>খাদ্য ব্যবস্থাপনা</h2>
+            <p>খাবার সম্পর্কিত তথ্য দিন</p>
+          </div>
+        </div>
+
+        <div class="form-grid">
+          <div class="field">
+            <label>Feed Protein (%)</label>
+            <input id="protein" type="number" step="1" />
+          </div>
+
+          <div class="field">
+            <label>প্রতিদিন কতবার খাবার দেন?</label>
+
+            <select id="feedingTimes">
+              <option value="2">২ বার</option>
+              <option value="3">৩ বার</option>
+              <option value="4">৪ বার</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label>বর্তমান মৃত্যুহার (%)</label>
+            <input id="mortality" type="number" step="0.1" />
+          </div>
+        </div>
+      </section>
+
+      <button class="analyze-btn" onclick="analyzeCage()">
+        🔍 বিশ্লেষণ করুন
+      </button>
+
+      <!-- ফলাফল -->
+      <section id="resultSection" class="hidden">
+        <section class="panel">
+          <div class="panel-title">
+            <span>📊</span>
+
+            <div>
+              <h2>চাষের হিসাব</h2>
+              <p>আপনার দেওয়া তথ্যের ভিত্তিতে হিসাব</p>
+            </div>
+          </div>
+
+          <div class="result-grid">
+            <div class="result-card">
+              <span>খাঁচার আয়তন</span>
+              <strong id="volumeResult">-</strong>
+            </div>
+
+            <div class="result-card">
+              <span>মাছের Biomass</span>
+              <strong id="biomassResult">-</strong>
+            </div>
+
+            <div class="result-card">
+              <span>মাছের ঘনত্ব</span>
+              <strong id="densityResult">-</strong>
+            </div>
+
+            <div class="result-card">
+              <span>প্রস্তাবিত Feed</span>
+              <strong id="feedResult">-</strong>
+            </div>
+          </div>
+        </section>
+
+        <!-- পানি বিশ্লেষণ -->
+        <section class="panel">
+          <div class="panel-title">
+            <span>💧</span>
+
+            <div>
+              <h2>পানি বিশ্লেষণ</h2>
+            </div>
+          </div>
+
+          <div id="waterResults" class="water-results"></div>
+        </section>
+
+        <!-- Prediction -->
+        <section class="panel">
+          <div class="panel-title">
+            <span>🤖</span>
+
+            <div>
+              <h2>চাষের অবস্থা ও পূর্বাভাস</h2>
+            </div>
+          </div>
+
+          <div id="predictionBox"></div>
+        </section>
+
+        <!-- পরামর্শ -->
+        <section class="panel">
+          <div class="panel-title">
+            <span>💡</span>
+
+            <div>
+              <h2>কৃষকের জন্য পরামর্শ</h2>
+            </div>
+          </div>
+
+          <div id="adviceList"></div>
+        </section>
+      </section>
+     </div>
+
+    <script src="{{ url_for('static', filename='cage_culture.js') }}"></script>
+  </body>
+</html>

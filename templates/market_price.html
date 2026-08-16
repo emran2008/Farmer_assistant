@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="bn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>দৈনিক বাজার দর | Farmer Assistant</title>
+
+        <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='market_price.css') }}"
+    >
+  </head>
+
+  <body>
+    <!-- ================= DAILY MARKET PAGE ================= -->
+
+    <section id="marketSection" class="section active">
+      <!-- HEADER -->
+      <div class="market-header">
+        <div class="header-left">
+          <div class="market-title">
+            🛒
+            <span>দৈনিক বাজার দর</span>
+          </div>
+
+          <div class="market-subtitle">নির্বাচিত এলাকার আজকের বাজার মূল্য</div>
+        </div>
+
+        <button class="market-back-btn" onclick="goBack()">← ফিরে যান</button>
+      </div>
+
+      <!-- ================= STEP 1 ================= -->
+
+      <div class="market-card">
+        <div class="market-step-title">
+          <div class="step-number">১</div>
+
+          <div>
+            <h3>এলাকা নির্বাচন</h3>
+
+            <p>বিভাগ → জেলা → উপজেলা → বাজার নির্বাচন করুন</p>
+          </div>
+        </div>
+
+        <div class="market-location-grid">
+          <!-- বিভাগ -->
+
+          <div class="market-field">
+            <label for="marketDivision"> বিভাগ </label>
+
+            <select id="marketDivision">
+              <option value="">বিভাগ নির্বাচন করুন</option>
+
+              <option value="ঢাকা">ঢাকা</option>
+
+              <option value="চট্টগ্রাম">চট্টগ্রাম</option>
+
+              <option value="রাজশাহী">রাজশাহী</option>
+
+              <option value="খুলনা">খুলনা</option>
+
+              <option value="বরিশাল">বরিশাল</option>
+
+              <option value="সিলেট">সিলেট</option>
+
+              <option value="রংপুর">রংপুর</option>
+
+              <option value="ময়মনসিংহ">ময়মনসিংহ</option>
+            </select>
+          </div>
+
+          <!-- জেলা -->
+
+          <div class="market-field">
+            <label for="marketDistrict"> জেলা </label>
+
+            <select id="marketDistrict" disabled>
+              <option value="">প্রথমে বিভাগ নির্বাচন করুন</option>
+            </select>
+          </div>
+
+          <!-- উপজেলা -->
+
+          <div class="market-field">
+            <label for="marketUpazila"> উপজেলা </label>
+
+            <select id="marketUpazila" disabled>
+              <option value="">প্রথমে জেলা নির্বাচন করুন</option>
+            </select>
+          </div>
+
+          <!-- বাজার -->
+
+          <div class="market-field">
+            <label for="marketName"> বাজার </label>
+
+            <select id="marketName" disabled>
+              <option value="">প্রথমে উপজেলা নির্বাচন করুন</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- STATUS -->
+
+        <div id="marketLocationStatus" class="market-location-status">
+          📍 প্রথমে আপনার বিভাগ নির্বাচন করুন
+        </div>
+      </div>
+
+      <!-- ================= STEP 2 ================= -->
+
+      <div class="market-card">
+        <div class="market-step-title">
+          <div class="step-number">২</div>
+
+          <div>
+            <h3>বাজার দর নির্বাচন করুন</h3>
+
+            <p>আপনি কোন ধরনের বাজার দর দেখতে চান?</p>
+          </div>
+        </div>
+
+        <div class="market-type-grid">
+          <!-- কৃষিপণ্য -->
+
+          <button
+            type="button"
+            class="market-type-card agriculture-card"
+            onclick="showAgriculturePrices()"
+          >
+            <div class="market-type-icon">🌱</div>
+
+            <div class="market-type-content">
+              <h3>শাকসবজি ও কৃষিপণ্যের মূল্য</h3>
+
+              <p>আলু, পেঁয়াজ, রসুন, মরিচ, ডালসহ বিভিন্ন কৃষিপণ্যের বাজার দর</p>
+            </div>
+
+            <div class="market-arrow">→</div>
+          </button>
+
+          <!-- মাছ -->
+
+          <button
+            type="button"
+            class="market-type-card fish-card"
+            onclick="showFishPrices()"
+          >
+            <div class="market-type-icon">🐟</div>
+
+            <div class="market-type-content">
+              <h3>মাছের বাজার দর</h3>
+
+              <p>রুই, কাতলা, ইলিশ, তেলাপিয়া, পাঙ্গাসসহ বিভিন্ন মাছের দর</p>
+            </div>
+
+            <div class="market-arrow">→</div>
+          </button>
+        </div>
+      </div>
+
+      <!-- ================= RESULT ================= -->
+
+      <div id="marketResult"></div>
+
+      <!-- ================= GOVERNMENT SOURCE ================= -->
+
+      <div class="market-source-card">
+        <div class="source-icon">📌</div>
+
+        <div class="source-content">
+          <h3>সরকারি মূল উৎস</h3>
+
+          <p>
+            বাজারদরের তথ্য যাচাই ও বিস্তারিত রিপোর্টের জন্য কৃষি বিপণন
+            অধিদপ্তরের সরকারি Daily Market Price System ব্যবহার করুন।
+          </p>
+
+          <a
+            href="https://market.dam.gov.bd/market_daily_price_report"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="market-source-btn"
+          >
+            সরকারি বাজারদর দেখুন ↗
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- JAVASCRIPT -->
+
+    
+      </a>
+    </div>
+  </div>
+</section>
+    </section>
+
+    <!-- JAVASCRIPT -->
+    <script src="{{ url_for('static', filename='market_price.js') }}"></script>
+
+</body>
+</html>

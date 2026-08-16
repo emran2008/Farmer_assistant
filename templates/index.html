@@ -1,0 +1,434 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap demo</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    
+    <style>
+
+    h1{
+        color: rgb(65, 157, 165);
+        text-align:center;
+    }
+
+    .warning{
+        color: rgba(18, 225, 215, 0.749);
+        font-weight:bold;
+        text-align:center;
+    }
+
+    .card{
+        margin-top:20px;
+        border-radius:20px;
+    }
+
+    .card img{
+        border-radius:20px 20px 0 0;
+    }
+
+    .card-body{
+        font-size:16px;
+    }
+
+    h4{
+        font-weight:bold;
+    }
+
+    p{
+        margin-bottom:8px;
+    }
+
+    .container{
+        background:white;
+        border-radius:20px;
+        padding:30px;
+        box-shadow:0px 8px 25px rgba(0,0,0,0.15);
+    }
+
+    </style>
+
+   </head>
+  <style>
+    h1 {
+      color: rgb(116, 208, 157);
+      text-align: center;
+    }
+
+    .warning {
+      color: rgba(67, 142, 148, 0.749);
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .card {
+      margin-left: 410px;
+      margin-top: 20px;
+      color: rgb(20, 57, 99);
+    }
+    .container {
+      background: rgb(143, 212, 210);
+
+      border-radius: 20px;
+
+      padding: 30px;
+
+      box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.15);
+    }
+  </style>
+  <body style="background: #f3f6f8">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Crop Recommendation</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          </ul>
+          <form class="d-flex" role="search">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-success" type="submit">
+              Search
+            </button>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-3">
+      <h1 class="text-success">
+        Smart Crop Recommendation System <span class="text-success">🌱</span>
+      </h1>
+      <div class="mb-3">
+        <label class="form-label">City</label>
+
+        <input
+          type="text"
+          id="city"
+          class="form-control"
+          name="city"
+          placeholder="Enter City Name"
+          required
+        />
+    <label for="season" class="form-label">Select Season</label>
+
+<select
+  id="season"
+  name="season"
+  class="form-select"
+  required
+>
+  <option value="" selected disabled>Choose Season</option>
+  <option value="winter">Winter</option>
+  <option value="summer">Summer</option>
+  <option value="monsoon">Monsoon</option>
+  <option value="post_monsoon">Post Monsoon</option>
+</select>
+</div>
+
+      <div class="row mt-3">
+        <div class="col-md-12">
+          
+        </div>
+      </div>
+
+      <button type="button" id="weatherBtn" class="btn btn-primary">
+        Get Weather in your suggest city
+      </button>
+
+      <div
+        id="weatherCard"
+        class="card text-white shadow"
+        style="
+          display: none;
+          background: linear-gradient(135deg, #76cbe2, #1292d6);
+          color: rgb(90, 222, 134);
+        "
+      >
+        <h4 class="text-primary">📍 <span id="cityName"></span></h4>
+
+        <hr />
+
+        <h5>🌡 Temperature : <span id="tempText"></span> °C</h5>
+
+        <h5>💧 Humidity : <span id="humidityText"></span> %</h5>
+
+        <h5>🌧 Rainfall : <span id="rainText"></span> mm</h5>
+      </div>
+
+      <form action="/predict" method="POST">
+        <div class="row">
+          <div class="col-md-4">
+            <label for="Nitrogen">Nitrogen</label>
+            <input
+              type="number"
+              id="Nitrogen"
+              name="Nitrogen"
+              placeholder="Enter Nitrogen"
+              class="form-control"
+              required
+            />
+          </div>
+
+          <div class="col-md-4">
+            <label for="Phosphorus">Phosphorus</label>
+            <input
+              type="number"
+              id="Phosphorus"
+              name="Phosphorus"
+              placeholder="Enter Phosphorus"
+              class="form-control"
+              required
+            />
+          </div>
+
+          <div class="col-md-4">
+            <label for="Potassium">Potassium</label>
+            <input
+              type="number"
+              id="Potassium"
+              name="Potassium"
+              placeholder="Enter Potassium"
+              class="form-control"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="row mt-3">
+          <div class="col-md-4">
+            <label for="Temperature">Temperature</label>
+            <input
+              type="number"
+              step="0.01"
+              id="Temperature"
+              name="Temperature"
+              placeholder="Enter Temperature in °C"
+              class="form-control"
+              required
+            />
+          </div>
+
+          <div class="col-md-4">
+            <label for="Humidity">Humidity</label>
+            <input
+              type="number"
+              step="0.01"
+              id="Humidity"
+              name="Humidity"
+              placeholder="Enter Humidity in %"
+              class="form-control"
+              required
+            />
+          </div>
+
+          <div class="col-md-4">
+            <label for="pH">pH</label>
+            <input
+              type="number"
+              step="0.01"
+              id="pH"
+              name="pH"
+              placeholder="Enter pH value"
+              class="form-control"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="row mt-3">
+          <div class="col-md-4">
+            <label for="Rainfall">Rainfall</label>
+            <input
+              type="number"
+              step="0.01"
+              id="Rainfall"
+              name="Rainfall"
+              placeholder="Enter Rainfall in mm"
+              class="form-control"
+              required
+            />
+          </div>
+          <div class="col-md-4 d-flex align-items-end">
+            <button type="submit" class="btn btn-primary btn-lg">
+              Get Recommendation
+            </button>
+          </div>
+        </div>
+      </form>
+
+
+
+
+    <!-- Crop Image -->
+    
+
+      <div class="text-center">
+
+      {% if crop %}
+      <img src="{{ url_for('static', filename=crop.image) }}"
+           class="img-fluid rounded"
+           style="width:400px; height:280px; object-fit:cover; margin-top:30px;">
+      {% endif %}
+
+       
+    </div>
+
+    <div class="card-body">
+
+      <h2 class="text-success text-center">{{ result }}</h2>
+
+      <div class="text-center mb-3">
+        <span class="badge bg-primary fs-6">
+          Confidence: {{ confidence }}%
+        </span>
+
+        <span class="badge bg-success fs-6">
+          {{ level }}
+        </span>
+      </div>
+
+      <div class="progress mb-4" style="height:25px;">
+        <div class="progress-bar progress-bar-striped progress-bar-animated bg-success"
+             style="width: {{ confidence }}%">
+             {{ confidence }}%
+        </div>
+      </div>
+
+
+      
+    <!-- Basic Information -->
+
+        {% if details %}
+
+        <h4 class="text-primary">🌱 Basic Information</h4>
+        <hr>
+
+        <p><strong>বাংলা নাম:</strong> {{ details.name_bn }}</p>
+        <p><strong>ইংরেজি নাম:</strong> {{ details.name_en }}</p>
+        <p><strong>Scientific Name:</strong> {{ details.scientific_name }}</p>
+        <p><strong>মাটি:</strong> {{ details.soil }}</p>
+        <p><strong>সেচ:</strong> {{ details.irrigation }}</p>
+
+        <!-- Growing Conditions -->
+
+        <h4 class="text-success mt-4">🌦 Growing Conditions</h4>
+        <hr>
+
+        <p><strong>Soil:</strong> {{ details.soil }}</p>
+        <p><strong>Temperature:</strong> {{ details.temperature }}</p>
+        <p><strong>Humidity:</strong> {{ details.humidity }}</p>
+        <p><strong>Rainfall:</strong> {{ details.rainfall }}</p>
+        <p><strong>pH:</strong> {{ details.ph }}</p>
+        <p><strong>Sowing Time:</strong> {{ details.sowing_time }}</p>
+        <p><strong>Harvest Time:</strong> {{ details.harvest_time }}</p>
+
+        <!-- Management -->
+
+        <h4 class="text-warning mt-4">🌾 Crop Management</h4>
+        <hr>
+
+        <p><strong>Fertilizer:</strong> {{ details.fertilizer }}</p>
+        <p><strong>Irrigation:</strong> {{ details.irrigation }}</p>
+        <p><strong>Care:</strong> {{ details.care }}</p>
+
+        <!-- Disease -->
+
+        <h4 class="text-danger mt-4">🦠 Disease & Pest</h4>
+        <hr>
+
+        <p><strong>Disease:</strong> {{ details.disease }}</p>
+        <p><strong>Pests:</strong> {{ details.pests }}</p>
+        <p><strong>Solution:</strong> {{ details.solution }}</p>
+
+        <!-- Yield -->
+
+        <h4 class="text-info mt-4">📈 Production</h4>
+        <hr>
+
+        <p><strong>Expected Yield:</strong> {{ details.yield }}</p>
+        <p><strong>Uses:</strong> {{ details.uses }}</p>
+
+        {% endif %}
+</div>
+
+</div>
+
+</div>
+
+
+    </div>
+
+
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+      console.log("JavaScript Working");
+    </script>
+
+    <script>
+
+      document
+        .getElementById("weatherBtn")
+        .addEventListener("click", function () {
+          let city = document.getElementById("city").value;
+
+          fetch("/weather", {
+            method: "POST",
+
+            headers: {
+              "Content-Type": "application/x-www-form-urlencoded",
+            },
+
+          body:
+            "city=" + encodeURIComponent(city) +
+            "&season=" + encodeURIComponent(document.getElementById("season").value),
+          })
+            .then((response) => response.json())
+
+            .then((data) => {
+              if (data.success) {
+                document.getElementById("Temperature").value = data.temperature;
+
+                document.getElementById("Humidity").value = data.humidity;
+
+                document.getElementById("Rainfall").value = data.rainfall;
+
+                document.getElementById("cityName").innerHTML = city;
+
+                document.getElementById("tempText").innerHTML =
+                  data.temperature;
+
+                document.getElementById("humidityText").innerHTML =
+                  data.humidity;
+
+                document.getElementById("rainText").innerHTML = data.rainfall;
+
+                document.getElementById("weatherCard").style.display = "block";
+              } else {
+                alert("City not found!");
+              }
+            });
+        });
+    </script>
+  </body>
+</html>

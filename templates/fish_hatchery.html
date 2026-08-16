@@ -1,0 +1,878 @@
+<!doctype html>
+<html lang="bn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Fish Hatchery / Farm</title>
+
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Noto Sans Bengali", "Nirmala UI", Arial, sans-serif;
+        background: #eef5f3;
+        color: #173b35;
+      }
+
+      .page-header {
+        background: linear-gradient(135deg, #087f5b, #10b981);
+        color: white;
+        padding: 28px 30px;
+        border-radius: 0 0 25px 25px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+      }
+
+      .page-header h1 {
+        margin: 0;
+        font-size: 30px;
+      }
+
+      .page-header p {
+        margin: 7px 0 0;
+        font-size: 17px;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 22px auto;
+        padding: 0 15px;
+      }
+
+      .section-card {
+        background: white;
+        border-radius: 20px;
+        padding: 24px;
+        margin-bottom: 22px;
+        box-shadow: 0 3px 14px rgba(0, 0, 0, 0.07);
+      }
+
+      .section-title {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 5px;
+      }
+
+      .step-number {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: #079669;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 21px;
+        font-weight: bold;
+        flex-shrink: 0;
+      }
+
+      .section-title h2 {
+        margin: 0;
+        font-size: 24px;
+      }
+
+      .section-subtitle {
+        margin: 0 0 20px 52px;
+        color: #6b7280;
+        font-size: 15px;
+      }
+
+      .form-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+      }
+
+      .form-group label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 7px;
+        font-size: 16px;
+      }
+
+      select {
+        width: 100%;
+        height: 52px;
+        border: 1px solid #cbd5e1;
+        border-radius: 11px;
+        padding: 0 14px;
+        font-size: 16px;
+        background: white;
+        color: #173b35;
+        outline: none;
+      }
+
+      select:focus {
+        border-color: #079669;
+        box-shadow: 0 0 0 3px rgba(7, 150, 105, 0.12);
+      }
+
+      select:disabled {
+        background: #f1f5f9;
+        color: #94a3b8;
+      }
+
+      .location-preview {
+        margin-top: 18px;
+        padding: 13px 16px;
+        background: #ecfdf5;
+        border: 1px solid #bbf7d0;
+        border-radius: 11px;
+        color: #087f5b;
+        font-size: 17px;
+      }
+
+      .fish-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+      }
+
+      .search-button {
+        width: 100%;
+        height: 54px;
+        margin-top: 18px;
+        border: none;
+        border-radius: 12px;
+        background: linear-gradient(135deg, #079669, #087f5b);
+        color: white;
+        font-size: 18px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.2s;
+      }
+
+      .search-button:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 5px 12px rgba(0, 128, 96, 0.2);
+      }
+
+      .result-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 18px;
+      }
+
+      .result-header h2 {
+        margin: 0;
+        font-size: 23px;
+      }
+
+      .result-count {
+        background: #d1fae5;
+        color: #047857;
+        padding: 7px 14px;
+        border-radius: 20px;
+        font-weight: bold;
+      }
+
+      .farm-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+      }
+
+      .farm-card {
+        border: 1px solid #dce8e4;
+        border-radius: 17px;
+        padding: 20px;
+        background: #ffffff;
+        transition: 0.2s;
+      }
+
+      .farm-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+        border-color: #9adbc6;
+      }
+
+      .farm-name {
+        font-size: 20px;
+        font-weight: bold;
+        color: #087f5b;
+        margin-bottom: 12px;
+      }
+
+      .farm-type {
+        display: inline-block;
+        background: #ecfdf5;
+        color: #047857;
+        border-radius: 20px;
+        padding: 5px 10px;
+        font-size: 13px;
+        margin-bottom: 12px;
+      }
+
+      .info-row {
+        margin: 8px 0;
+        font-size: 15px;
+        line-height: 1.5;
+      }
+
+      .info-label {
+        font-weight: bold;
+        color: #374151;
+      }
+
+      .contact-link {
+        color: #087f5b;
+        text-decoration: none;
+      }
+
+      .contact-link:hover {
+        text-decoration: underline;
+      }
+
+      .website-button {
+        display: inline-block;
+        margin-top: 12px;
+        padding: 9px 14px;
+        border-radius: 9px;
+        background: #087f5b;
+        color: white;
+        text-decoration: none;
+        font-size: 14px;
+      }
+
+      .empty-result {
+        text-align: center;
+        padding: 35px 20px;
+        background: #f8fafc;
+        border-radius: 15px;
+        color: #64748b;
+        font-size: 17px;
+      }
+
+      .hidden {
+        display: none !important;
+      }
+
+      @media (max-width: 800px) {
+        .form-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .fish-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .farm-list {
+          grid-template-columns: 1fr;
+        }
+
+        .page-header h1 {
+          font-size: 24px;
+        }
+
+        .section-card {
+          padding: 18px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- HEADER -->
+    <header class="page-header">
+      <h1>🐟 বাংলাদেশের Fish Hatchery / Farm</h1>
+      <p>আপনার এলাকার হ্যাচারি, মাছ/পোনা এবং সরকারি তথ্য সহজে খুঁজুন</p>
+    </header>
+
+    <main class="container">
+      <!-- LOCATION -->
+      <section class="section-card">
+        <div class="section-title">
+          <div class="step-number">১</div>
+          <h2>📍 এলাকা নির্বাচন</h2>
+        </div>
+
+        <p class="section-subtitle">বিভাগ → জেলা → উপজেলা নির্বাচন করুন</p>
+
+        <div class="form-grid">
+          <!-- DIVISION -->
+          <div class="form-group">
+            <label for="division">বিভাগ</label>
+
+            <select id="division">
+              <option value="">বিভাগ নির্বাচন করুন</option>
+
+              {% for division in hatcheries | map(attribute='division') | unique
+              %} {% if division and division == division %}
+              <option value="{{ division }}">{{ division }}</option>
+              {% endif %} {% endfor %}
+            </select>
+          </div>
+
+          <!-- DISTRICT -->
+          <div class="form-group">
+            <label for="district">জেলা</label>
+
+            <select id="district" disabled>
+              <option value="">আগে বিভাগ নির্বাচন করুন</option>
+            </select>
+          </div>
+
+          <!-- UPAZILA -->
+          <div class="form-group">
+            <label for="upazila">উপজেলা</label>
+
+            <select id="upazila" disabled>
+              <option value="">আগে জেলা নির্বাচন করুন</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="location-preview" id="locationPreview">
+          📍 এলাকা নির্বাচন করুন
+        </div>
+      </section>
+
+      <!-- FISH / SERVICE -->
+      <section class="section-card">
+        <div class="section-title">
+          <div class="step-number">২</div>
+          <h2>🐟 মাছ / পোনা নির্বাচন</h2>
+        </div>
+
+        <p class="section-subtitle">
+          আপনার প্রয়োজন অনুযায়ী মাছ বা সেবা নির্বাচন করুন
+        </p>
+
+        <div class="fish-grid">
+          <!-- FISH -->
+          <div class="form-group">
+            <label for="fish">মাছের নাম</label>
+
+            <div class="form-group">
+              <label for="fish">মাছের নাম</label>
+
+              <select id="fish">
+                <option value="">🐟 সব মাছ / পোনা</option>
+
+                {% for fish in fishes %} {% if fish.fish_name_bn %}
+
+                <option value="{{ fish.fish_name_bn }}">
+                  {{ fish.fish_name_bn }} {% if fish.fish_name_en %} ({{
+                  fish.fish_name_en }}) {% endif %}
+                </option>
+
+                {% endif %} {% endfor %}
+              </select>
+            </div>
+          </div>
+
+          <!-- SERVICE -->
+          <div class="form-group">
+            <label for="service">সেবা</label>
+
+            <select id="service">
+              <option value="">🐟 মাছ / পোনা</option>
+
+              {% set service_list = hatcheries | map(attribute='service_type') |
+              unique | list %} {% for service in service_list %} {% if service
+              and service == service %}
+              <option value="{{ service }}">{{ service }}</option>
+              {% endif %} {% endfor %}
+            </select>
+          </div>
+        </div>
+
+        <!-- SEARCH BUTTON -->
+        <button class="search-button" onclick="searchByFishAndLocation()">
+          🔎 খুঁজুন
+        </button>
+      </section>
+
+      <!-- RESULTS -->
+      <section class="section-card">
+        <div class="result-header">
+          <h2>📋 পাওয়া গেছে</h2>
+
+          <span class="result-count" id="resultCount">
+            {{ hatcheries|length }} টি
+          </span>
+        </div>
+
+        <div class="farm-list" id="farmList">
+          {% for farm in hatcheries %}
+
+          <div
+            class="farm-card farm-item"
+            data-division="{{ farm.division }}"
+            data-district="{{ farm.district }}"
+            data-upazila="{{ farm.upazila }}"
+            data-fish="{{ farm.fish_species }}"
+            data-service="{{ farm.service_type }}"
+          >
+            <div class="farm-name">🏢 {{ farm.farm_name }}</div>
+
+            {% if farm.farm_type and farm.farm_type == farm.farm_type %}
+            <span class="farm-type"> {{ farm.farm_type }} </span>
+            {% endif %}
+
+            <div class="info-row">
+              <span class="info-label">📍 এলাকা:</span>
+              {{ farm.division }} → {{ farm.district }} → {{ farm.upazila }}
+            </div>
+
+            {% if farm.manager_name and farm.manager_name == farm.manager_name
+            %}
+            <div class="info-row">
+              <span class="info-label">👤 Manager:</span>
+              {{ farm.manager_name }}
+            </div>
+            {% endif %} {% if farm.phone and farm.phone == farm.phone %}
+            <div class="info-row">
+              <span class="info-label">📞 ফোন:</span>
+
+              <a class="contact-link" href="tel:{{ farm.phone }}">
+                {{ farm.phone }}
+              </a>
+            </div>
+            {% endif %} {% if farm.email and farm.email == farm.email %}
+            <div class="info-row">
+              <span class="info-label">✉️ Email:</span>
+
+              <a class="contact-link" href="mailto:{{ farm.email }}">
+                {{ farm.email }}
+              </a>
+            </div>
+            {% endif %} {% if farm.website and farm.website == farm.website %}
+            <a
+              class="website-button"
+              href="{{ farm.website }}"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              🌐 Website দেখুন ↗
+            </a>
+            {% endif %}
+          </div>
+
+          {% endfor %}
+        </div>
+
+        <!-- NO RESULT -->
+        <div id="noResult" class="empty-result hidden">
+          😔
+
+          <br />
+
+          এই এলাকায় কোনো Hatchery / Farm পাওয়া যায়নি।
+
+          <br />
+
+          অন্য উপজেলা নির্বাচন করে আবার চেষ্টা করুন।
+        </div>
+      </section>
+    </main>
+    <script>
+                  const hatcheryMappings = {{ mappings | tojson }};
+                  function displayMappingResults(results) {
+
+          const farmList =
+              document.getElementById("farmList");
+
+          const resultCount =
+              document.getElementById("resultCount");
+
+          const noResult =
+              document.getElementById("noResult");
+
+
+          farmList.innerHTML = "";
+
+          resultCount.textContent =
+              results.length + " টি";
+
+
+          if (results.length === 0) {
+
+              noResult.classList.remove("hidden");
+
+              return;
+
+          }
+
+
+          noResult.classList.add("hidden");
+
+
+          results.forEach(function (item) {
+
+              const card =
+                  document.createElement("div");
+
+              card.className = "farm-card";
+
+
+              card.innerHTML = `
+
+                  <div class="farm-name">
+                      🏢 ${item.farm_name}
+                  </div>
+
+                  <div class="info-row">
+                      <span class="info-label">
+                          📍 এলাকা:
+                      </span>
+
+                      ${item.division}
+                      → ${item.district}
+                      → ${item.upazila}
+                  </div>
+
+                  <div class="info-row">
+                      <span class="info-label">
+                          🐟 মাছ:
+                      </span>
+
+                      ${item.fish_species}
+                  </div>
+
+                  <div class="info-row">
+                      <span class="info-label">
+                          🛠️ সেবা:
+                      </span>
+
+                      ${item.service_type || "তথ্য নেই"}
+                  </div>
+
+                  <div class="info-row">
+                      <span class="info-label">
+                          📚 Source:
+                      </span>
+
+                      ${item.source || "তথ্য নেই"}
+                  </div>
+
+                  <div class="info-row">
+                      <span class="info-label">
+                          📅 তথ্যের বছর:
+                      </span>
+
+                      ${item.source_year || "তথ্য নেই"}
+                  </div>
+
+                  <div class="info-row">
+                      <span class="info-label">
+                          ⚠️ Status:
+                      </span>
+
+                      ${item.verification_status || "Not verified"}
+                  </div>
+
+              `;
+
+
+              farmList.appendChild(card);
+
+          });
+
+      }
+                  function searchByFishAndLocation() {
+
+                const division =
+                    document.getElementById("division").value;
+
+                const district =
+                    document.getElementById("district").value;
+
+                const upazila =
+                    document.getElementById("upazila").value;
+
+                const fish =
+                    document.getElementById("fish").value;
+
+
+                const results = hatcheryMappings.filter(function (item) {
+
+                    let match = true;
+
+
+                    if (
+                        division &&
+                        item.division !== division
+                    ) {
+                        match = false;
+                    }
+
+
+                    if (
+                        district &&
+                        item.district !== district
+                    ) {
+                        match = false;
+                    }
+
+
+                    if (
+                        upazila &&
+                        item.upazila !== upazila
+                    ) {
+                        match = false;
+                    }
+
+
+                    if (
+                        fish &&
+                        item.fish_species !== fish
+                    ) {
+                        match = false;
+                    }
+
+
+                    return match;
+
+                });
+
+
+                displayMappingResults(results);
+            }
+    </script>
+    <script>
+      const divisionSelect = document.getElementById("division");
+      const districtSelect = document.getElementById("district");
+      const upazilaSelect = document.getElementById("upazila");
+
+      const fishSelect = document.getElementById("fish");
+      const serviceSelect = document.getElementById("service");
+
+      const locationPreview = document.getElementById("locationPreview");
+
+      const farmItems = document.querySelectorAll(".farm-item");
+
+      const resultCount = document.getElementById("resultCount");
+
+      const noResult = document.getElementById("noResult");
+
+      // -----------------------------------
+      // ALL FARM DATA FROM HTML
+      // -----------------------------------
+
+      const farms = Array.from(farmItems);
+
+      // -----------------------------------
+      // DIVISION CHANGE
+      // -----------------------------------
+
+      divisionSelect.addEventListener("change", function () {
+        const division = this.value;
+
+        districtSelect.innerHTML =
+          '<option value="">জেলা নির্বাচন করুন</option>';
+
+        upazilaSelect.innerHTML =
+          '<option value="">আগে জেলা নির্বাচন করুন</option>';
+
+        upazilaSelect.disabled = true;
+
+        if (!division) {
+          districtSelect.disabled = true;
+
+          updatePreview();
+
+          return;
+        }
+
+        const districts = [
+          ...new Set(
+            farms
+              .filter((farm) => farm.dataset.division === division)
+              .map((farm) => farm.dataset.district)
+              .filter(Boolean),
+          ),
+        ].sort();
+
+        districts.forEach(function (district) {
+          const option = document.createElement("option");
+
+          option.value = district;
+          option.textContent = district;
+
+          districtSelect.appendChild(option);
+        });
+
+        districtSelect.disabled = districts.length === 0;
+
+        updatePreview();
+      });
+
+      // -----------------------------------
+      // DISTRICT CHANGE
+      // -----------------------------------
+
+      districtSelect.addEventListener("change", function () {
+        const division = divisionSelect.value;
+
+        const district = this.value;
+
+        upazilaSelect.innerHTML =
+          '<option value="">উপজেলা নির্বাচন করুন</option>';
+
+        if (!district) {
+          upazilaSelect.disabled = true;
+
+          updatePreview();
+
+          return;
+        }
+
+        const upazilas = [
+          ...new Set(
+            farms
+              .filter(
+                (farm) =>
+                  farm.dataset.division === division &&
+                  farm.dataset.district === district,
+              )
+              .map((farm) => farm.dataset.upazila)
+              .filter(Boolean),
+          ),
+        ].sort();
+
+        upazilas.forEach(function (upazila) {
+          const option = document.createElement("option");
+
+          option.value = upazila;
+          option.textContent = upazila;
+
+          upazilaSelect.appendChild(option);
+        });
+
+        upazilaSelect.disabled = upazilas.length === 0;
+
+        updatePreview();
+      });
+
+      // -----------------------------------
+      // UPAZILA CHANGE
+      // -----------------------------------
+
+      upazilaSelect.addEventListener("change", function () {
+        updatePreview();
+      });
+
+      // -----------------------------------
+      // PREVIEW
+      // -----------------------------------
+
+      function updatePreview() {
+        const division = divisionSelect.value;
+
+        const district = districtSelect.value;
+
+        const upazila = upazilaSelect.value;
+
+        if (!division) {
+          locationPreview.innerHTML = "📍 এলাকা নির্বাচন করুন";
+
+          return;
+        }
+
+        let text = "📍 " + division;
+
+        if (district) {
+          text += " → " + district;
+        }
+
+        if (upazila) {
+          text += " → " + upazila;
+        }
+
+        locationPreview.innerHTML = "✅ " + text;
+      }
+
+      // -----------------------------------
+      // SEARCH
+      // -----------------------------------
+
+      function searchHatcheries() {
+        const division = divisionSelect.value;
+
+        const district = districtSelect.value;
+
+        const upazila = upazilaSelect.value;
+
+        const fish = fishSelect.value;
+
+        const service = serviceSelect.value;
+
+        let count = 0;
+
+        farms.forEach(function (farm) {
+          const farmDivision = farm.dataset.division;
+
+          const farmDistrict = farm.dataset.district;
+
+          const farmUpazila = farm.dataset.upazila;
+
+          const farmFish = farm.dataset.fish;
+
+          const farmService = farm.dataset.service;
+
+          let match = true;
+
+          // Division filter
+
+          if (division && farmDivision !== division) {
+            match = false;
+          }
+
+          // District filter
+
+          if (district && farmDistrict !== district) {
+            match = false;
+          }
+
+          // Upazila filter
+
+          if (upazila && farmUpazila !== upazila) {
+            match = false;
+          }
+
+          // Fish filter
+
+          if (fish && farmFish !== fish) {
+            match = false;
+          }
+
+          // Service filter
+
+          if (service && farmService !== service) {
+            match = false;
+          }
+
+          if (match) {
+            farm.classList.remove("hidden");
+
+            count++;
+          } else {
+            farm.classList.add("hidden");
+          }
+        });
+
+        resultCount.textContent = count + " টি";
+
+        if (count === 0) {
+          noResult.classList.remove("hidden");
+        } else {
+          noResult.classList.add("hidden");
+        }
+
+        // Scroll to results
+
+        document.querySelector(".result-header").scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
+    </script>
+  </body>
+</html>

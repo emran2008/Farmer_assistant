@@ -1,0 +1,962 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background: #f4f7f6;
+
+    color: #1f2937;
+
+    line-height: 1.5;
+}
+
+
+.top-header {
+    background: #166534;
+
+    color: white;
+
+    padding: 28px 20px;
+
+    box-shadow:
+        0 3px 12px rgba(0, 0, 0, 0.12);
+}
+
+
+.header-content {
+    max-width: 1100px;
+
+    margin: auto;
+}
+
+
+.top-header h1 {
+    font-size: 30px;
+
+    margin-bottom: 5px;
+}
+
+
+.top-header p {
+    opacity: 0.9;
+
+    font-size: 15px;
+}
+
+
+.container {
+    max-width: 1100px;
+
+    margin: 30px auto;
+
+    padding: 0 20px;
+}
+
+
+.card {
+    background: white;
+
+    border-radius: 16px;
+
+    padding: 25px;
+
+    margin-bottom: 22px;
+
+    box-shadow:
+        0 4px 18px rgba(0, 0, 0, 0.07);
+}
+
+
+.section-title {
+    margin-bottom: 22px;
+}
+
+
+.section-title h2 {
+    font-size: 21px;
+
+    color: #14532d;
+
+    margin-bottom: 4px;
+}
+
+
+.section-title p {
+    color: #6b7280;
+
+    font-size: 14px;
+}
+
+
+.form-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 18px;
+}
+
+
+.form-group {
+    display: flex;
+
+    flex-direction: column;
+}
+
+
+.form-group label {
+    font-weight: 600;
+
+    font-size: 14px;
+
+    margin-bottom: 7px;
+}
+
+
+.form-group input,
+.form-group select {
+    width: 100%;
+
+    padding: 12px 13px;
+
+    border: 1px solid #d1d5db;
+
+    border-radius: 9px;
+
+    background: white;
+
+    font-size: 15px;
+
+    outline: none;
+
+    transition: 0.2s;
+}
+
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #16a34a;
+
+    box-shadow:
+        0 0 0 3px rgba(22, 163, 74, 0.12);
+}
+
+
+.analyze-btn {
+    width: 100%;
+
+    margin-top: 25px;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #16a34a;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+
+.analyze-btn:hover {
+    background: #15803d;
+
+    transform: translateY(-1px);
+}
+
+
+.analyze-btn:disabled {
+    opacity: 0.6;
+
+    cursor: not-allowed;
+}
+
+
+.status-card {
+    background: #166534;
+
+    color: white;
+
+    border-radius: 16px;
+
+    padding: 25px;
+
+    margin-bottom: 22px;
+
+    text-align: center;
+}
+
+
+.status-label {
+    display: block;
+
+    font-size: 13px;
+
+    opacity: 0.85;
+
+    margin-bottom: 5px;
+}
+
+
+.status-card h2 {
+    font-size: 27px;
+}
+
+
+.result-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 15px;
+}
+
+
+.result-box {
+    padding: 18px;
+
+    background: #f0fdf4;
+
+    border: 1px solid #dcfce7;
+
+    border-radius: 12px;
+}
+
+
+.result-box span,
+.prediction-box span {
+    display: block;
+
+    font-size: 13px;
+
+    color: #6b7280;
+
+    margin-bottom: 6px;
+}
+
+
+.result-box strong {
+    font-size: 20px;
+
+    color: #166534;
+}
+
+
+.quality-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 14px;
+}
+
+
+.quality-item {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 10px;
+
+    padding: 15px;
+
+    background: #f9fafb;
+
+    border-radius: 10px;
+
+    border: 1px solid #e5e7eb;
+}
+
+
+.quality-item span {
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+
+.quality-item strong {
+    font-size: 13px;
+
+    padding: 4px 9px;
+
+    border-radius: 20px;
+
+    background: #dcfce7;
+
+    color: #166534;
+}
+
+
+.prediction-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 15px;
+}
+
+
+.prediction-box {
+    padding: 20px;
+
+    border-radius: 12px;
+
+    background: #eff6ff;
+
+    border: 1px solid #dbeafe;
+
+    text-align: center;
+}
+
+
+.prediction-box strong {
+    font-size: 23px;
+
+    color: #1d4ed8;
+}
+
+
+.recommendations {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+
+.recommendation-item {
+    padding: 13px 15px;
+
+    background: #f0fdf4;
+
+    border-left: 4px solid #16a34a;
+
+    border-radius: 7px;
+
+    font-size: 14px;
+}
+
+
+.error-box {
+    margin-top: 18px;
+
+    padding: 14px;
+
+    background: #fef2f2;
+
+    color: #b91c1c;
+
+    border: 1px solid #fecaca;
+
+    border-radius: 9px;
+}
+
+
+.loading {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    margin-top: 18px;
+
+    color: #166534;
+
+    font-weight: 600;
+}
+
+
+.spinner {
+    width: 20px;
+
+    height: 20px;
+
+    border: 3px solid #dcfce7;
+
+    border-top-color: #16a34a;
+
+    border-radius: 50%;
+
+    animation:
+        spin 0.8s linear infinite;
+}
+
+
+.hidden {
+    display: none !important;
+}
+
+
+@keyframes spin {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+@media (max-width: 800px) {
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .result-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .quality-grid {
+        grid-template-columns:
+            1fr;
+    }
+
+    .prediction-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .container {
+        padding: 0 12px;
+    }
+
+    .card {
+        padding: 18px;
+    }
+
+    .result-grid,
+    .prediction-grid {
+        grid-template-columns:
+            1fr;
+    }
+
+    .top-header h1 {
+        font-size: 24px;
+    }
+
+}
+
+/* ============================================================
+   WATER QUALITY STATUS
+============================================================ */
+
+.status-good {
+    background: #dcfce7 !important;
+    color: #166534 !important;
+}
+
+.status-warning {
+    background: #fef3c7 !important;
+    color: #92400e !important;
+}
+
+.status-critical {
+    background: #fee2e2 !important;
+    color: #991b1b !important;
+}
+
+
+/* ============================================================
+   PARAMETER VALUE
+============================================================ */
+
+.parameter-value {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 3px;
+}
+
+
+.parameter-number {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+
+.parameter-status {
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+
+/* ============================================================
+   WARNING
+============================================================ */
+
+.warning-item {
+    padding: 14px 16px;
+
+    background: #fff7ed;
+
+    border-left: 4px solid #f97316;
+
+    border-radius: 8px;
+
+    margin-bottom: 10px;
+}
+
+
+.critical-item {
+    padding: 14px 16px;
+
+    background: #fef2f2;
+
+    border-left: 4px solid #dc2626;
+
+    border-radius: 8px;
+
+    margin-bottom: 10px;
+}
+
+
+/* ============================================================
+   ACTION BOX
+============================================================ */
+
+.action-box {
+    margin-top: 18px;
+
+    padding: 18px;
+
+    background: #f0fdf4;
+
+    border-radius: 12px;
+
+    border: 1px solid #bbf7d0;
+}
+
+
+.action-box h3 {
+    margin-bottom: 10px;
+
+    color: #166534;
+
+    font-size: 17px;
+}
+
+
+.action-box ul {
+    padding-left: 20px;
+}
+
+
+.action-box li {
+    margin-bottom: 6px;
+
+    font-size: 14px;
+}
+/* ============================================================
+   ADVANCED PARAMETERS
+============================================================ */
+
+.advanced-section {
+    margin-top: 22px;
+
+    border: 1px solid #d1fae5;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    background: #f8fffa;
+}
+
+
+.advanced-toggle {
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 15px 18px;
+
+    border: none;
+
+    background: #ecfdf5;
+
+    color: #166534;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    text-align: left;
+}
+
+
+.advanced-toggle:hover {
+    background: #dcfce7;
+}
+
+
+.advanced-content {
+    padding: 18px;
+}
+
+
+.advanced-info {
+    margin-bottom: 18px;
+
+    padding: 11px 13px;
+
+    background: #eff6ff;
+
+    border-left: 3px solid #3b82f6;
+
+    border-radius: 6px;
+
+    color: #475569;
+
+    font-size: 13px;
+}
+
+
+.form-group small {
+    margin-top: 5px;
+
+    color: #6b7280;
+
+    font-size: 11px;
+}
+/* ============================================================
+   UNIT INPUT
+============================================================ */
+
+.unit-input {
+    display: flex;
+
+    gap: 8px;
+}
+
+
+.unit-input input {
+    flex: 1;
+}
+
+
+.unit-input select {
+    width: 110px;
+
+    padding: 12px 10px;
+
+    border: 1px solid #d1d5db;
+
+    border-radius: 9px;
+
+    background: white;
+
+    font-size: 14px;
+
+    outline: none;
+}
+
+
+.unit-input select:focus {
+    border-color: #16a34a;
+
+    box-shadow:
+        0 0 0 3px rgba(22, 163, 74, 0.12);
+}
+
+
+#volumeConversionText {
+    display: block;
+
+    margin-top: 5px;
+
+    color: #166534;
+
+    font-size: 11px;
+
+    font-weight: 600;
+}
+/* ============================================================
+   FISH INFORMATION
+============================================================ */
+
+.fish-info {
+    margin-top: 15px;
+
+    padding: 15px;
+
+    background: #f0fdf4;
+
+    border: 1px solid #bbf7d0;
+
+    border-radius: 10px;
+}
+
+
+.fish-info > strong {
+    display: block;
+
+    margin-bottom: 12px;
+
+    color: #166534;
+
+    font-size: 16px;
+}
+
+
+.fish-info-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 10px;
+}
+
+
+.fish-info-grid div {
+    padding: 10px;
+
+    background: white;
+
+    border-radius: 8px;
+}
+
+
+.fish-info-grid span {
+    display: block;
+
+    color: #6b7280;
+
+    font-size: 11px;
+
+    margin-bottom: 3px;
+}
+
+
+.fish-info-grid strong {
+    color: #166534;
+
+    font-size: 13px;
+}
+
+
+@media (max-width: 700px) {
+
+    .fish-info-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+// ============================================================
+// FISH BIOFLOC PARAMETERS
+// ============================================================
+
+const fishParameters = {
+
+    "Tilapia": {
+        temperature: "24–30°C",
+        ph: "6.5–8.5",
+        do: "≥ 4 mg/L",
+        suitability: "Excellent"
+    },
+
+    "Pangasius": {
+        temperature: "25–30°C",
+        ph: "6.5–8.5",
+        do: "≥ 4 mg/L",
+        suitability: "Excellent"
+    },
+
+    "Thai Koi": {
+        temperature: "24–30°C",
+        ph: "6.5–8.5",
+        do: "≥ 4 mg/L",
+        suitability: "Very Good"
+    },
+
+    "Koi": {
+        temperature: "20–30°C",
+        ph: "6.5–8.5",
+        do: "≥ 4 mg/L",
+        suitability: "Very Good"
+    },
+
+    "Magur": {
+        temperature: "24–30°C",
+        ph: "6.5–8.5",
+        do: "≥ 3 mg/L",
+        suitability: "Very Good"
+    },
+
+    "Shing": {
+        temperature: "24–30°C",
+        ph: "6.5–8.5",
+        do: "≥ 3 mg/L",
+        suitability: "Very Good"
+    },
+
+    "Pabda": {
+        temperature: "24–30°C",
+        ph: "6.5–8.5",
+        do: "≥ 4 mg/L",
+        suitability: "Good"
+    },
+
+    "Rohu": {
+        temperature: "25–30°C",
+        ph: "7.0–8.5",
+        do: "≥ 4 mg/L",
+        suitability: "Good"
+    },
+
+    "Mrigal": {
+        temperature: "25–30°C",
+        ph: "7.0–8.5",
+        do: "≥ 4 mg/L",
+        suitability: "Good"
+    },
+
+    "Catla": {
+        temperature: "25–30°C",
+        ph: "7.0–8.5",
+        do: "≥ 4 mg/L",
+        suitability: "Good"
+    },
+
+    "Silver Carp": {
+        temperature: "22–30°C",
+        ph: "6.5–8.5",
+        do: "≥ 4 mg/L",
+        suitability: "Moderate"
+    },
+
+    "Common Carp": {
+        temperature: "20–30°C",
+        ph: "6.5–8.5",
+        do: "≥ 4 mg/L",
+        suitability: "Good"
+    },
+
+    "Gulsha": {
+        temperature: "24–30°C",
+        ph: "6.5–8.5",
+        do: "≥ 3 mg/L",
+        suitability: "Good"
+    }
+
+};
+// ============================================================
+// UPDATE FISH INFORMATION
+// ============================================================
+
+function updateFishInformation() {
+
+    const fishName =
+        document.getElementById(
+            "fish_name"
+        ).value;
+
+    const fish =
+        fishParameters[fishName];
+
+
+    if (!fish) {
+        return;
+    }
+
+
+    document
+        .getElementById(
+            "fishInfoTitle"
+        )
+        .textContent =
+            fishName;
+
+
+    document
+        .getElementById(
+            "fishTempRange"
+        )
+        .textContent =
+            fish.temperature;
+
+
+    document
+        .getElementById(
+            "fishPhRange"
+        )
+        .textContent =
+            fish.ph;
+
+
+    document
+        .getElementById(
+            "fishDoRange"
+        )
+        .textContent =
+            fish.do;
+
+
+    document
+        .getElementById(
+            "fishBioflocSuitability"
+        )
+        .textContent =
+            fish.suitability;
+}
+// ============================================================
+// FISH SELECT EVENT
+// ============================================================
+
+document
+    .getElementById("fish_name")
+    .addEventListener(
+        "change",
+        updateFishInformation
+    );
+
+
+// Load default fish information
+updateFishInformation();

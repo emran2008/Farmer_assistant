@@ -1,0 +1,961 @@
+/* =========================================================
+   DAILY MARKET PRICE
+   ========================================================= */
+
+
+* {
+  box-sizing: border-box;
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+body {
+
+  margin: 0;
+
+  padding: 0;
+
+  background: #f3f8f5;
+
+  font-family:
+    "Noto Sans Bengali",
+    "SolaimanLipi",
+    "Segoe UI",
+    Arial,
+    sans-serif;
+
+  color: #222;
+}
+
+
+/* =========================================================
+   SECTION
+   ========================================================= */
+
+.section {
+  display: none;
+}
+
+
+.section.active {
+  display: block !important;
+}
+
+
+#marketSection {
+
+  display: block !important;
+
+  width: 100%;
+
+  min-height: 100vh;
+
+  padding: 30px 20px 60px;
+
+}
+
+
+/* =========================================================
+   MAIN CONTAINER
+   ========================================================= */
+
+#marketSection {
+
+  max-width: 1250px;
+
+  margin: 0 auto;
+
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.market-header {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  gap: 20px;
+
+  margin-bottom: 25px;
+
+}
+
+
+.market-title {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  font-size: 34px;
+
+  font-weight: 800;
+
+  color: #087f3f;
+
+}
+
+
+.market-title span {
+
+  color: #087f3f;
+
+}
+
+
+.market-subtitle {
+
+  margin-top: 8px;
+
+  color: #707070;
+
+  font-size: 16px;
+
+}
+
+
+.market-back-btn {
+
+  border: none;
+
+  background: #087f3f;
+
+  color: white;
+
+  padding: 12px 20px;
+
+  border-radius: 10px;
+
+  font-size: 15px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.25s;
+
+}
+
+
+.market-back-btn:hover {
+
+  background: #056b34;
+
+  transform: translateY(-2px);
+
+}
+
+
+/* =========================================================
+   CARD
+   ========================================================= */
+
+.market-card {
+
+  width: 100%;
+
+  background: #ffffff;
+
+  border-radius: 20px;
+
+  padding: 28px;
+
+  margin-bottom: 22px;
+
+  border: 1px solid #e5eee8;
+
+  box-shadow:
+    0 8px 30px rgba(0, 0, 0, 0.06);
+
+}
+
+
+/* =========================================================
+   STEP TITLE
+   ========================================================= */
+
+.market-step-title {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  margin-bottom: 24px;
+
+}
+
+
+.step-number {
+
+  width: 45px;
+
+  height: 45px;
+
+  min-width: 45px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #087f3f;
+
+  color: #ffffff;
+
+  font-size: 20px;
+
+  font-weight: 800;
+
+}
+
+
+.market-step-title h3 {
+
+  margin: 0;
+
+  color: #087f3f;
+
+  font-size: 21px;
+
+}
+
+
+.market-step-title p {
+
+  margin: 5px 0 0;
+
+  color: #777;
+
+  font-size: 14px;
+
+}
+
+
+/* =========================================================
+   LOCATION GRID
+   ========================================================= */
+
+.market-location-grid {
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 20px;
+
+}
+
+
+/* =========================================================
+   FORM
+   ========================================================= */
+
+.market-field {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 8px;
+
+}
+
+
+.market-field label {
+
+  color: #333;
+
+  font-size: 15px;
+
+  font-weight: 700;
+
+}
+
+
+.market-field select {
+
+  width: 100%;
+
+  height: 53px;
+
+  padding: 0 15px;
+
+  border: 1px solid #d8e1dc;
+
+  border-radius: 12px;
+
+  background: #ffffff;
+
+  color: #222;
+
+  font-size: 15px;
+
+  outline: none;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+
+}
+
+
+.market-field select:hover {
+
+  border-color: #087f3f;
+
+}
+
+
+.market-field select:focus {
+
+  border-color: #087f3f;
+
+  box-shadow:
+    0 0 0 3px rgba(8, 127, 63, 0.10);
+
+}
+
+
+.market-field select:disabled {
+
+  background: #f1f4f2;
+
+  color: #999;
+
+  cursor: not-allowed;
+
+}
+
+
+/* =========================================================
+   STATUS
+   ========================================================= */
+
+.market-location-status {
+
+  margin-top: 20px;
+
+  padding: 14px 16px;
+
+  border-radius: 11px;
+
+  background: #f1faf4;
+
+  border: 1px solid #d9efdf;
+
+  color: #087f3f;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+}
+
+
+/* =========================================================
+   MARKET TYPE
+   ========================================================= */
+
+.market-type-grid {
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 20px;
+
+}
+
+
+.market-type-card {
+
+  width: 100%;
+
+  min-height: 155px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 17px;
+
+  position: relative;
+
+  padding: 22px;
+
+  border-radius: 17px;
+
+  border: 1px solid #e3ebe6;
+
+  background: white;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  transition: 0.25s;
+
+}
+
+
+.market-type-card:hover {
+
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 12px 30px rgba(0,0,0,0.09);
+
+}
+
+
+/* Agriculture */
+
+.agriculture-card:hover {
+
+  background: #f5fff7;
+
+  border-color: #22a34a;
+
+}
+
+
+/* Fish */
+
+.fish-card:hover {
+
+  background: #f4fbff;
+
+  border-color: #279bc6;
+
+}
+
+
+/* =========================================================
+   ICON
+   ========================================================= */
+
+.market-type-icon {
+
+  width: 65px;
+
+  height: 65px;
+
+  min-width: 65px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 16px;
+
+  background: #edf9f0;
+
+  font-size: 34px;
+
+}
+
+
+.fish-card .market-type-icon {
+
+  background: #edf8fc;
+
+}
+
+
+/* =========================================================
+   CONTENT
+   ========================================================= */
+
+.market-type-content {
+
+  flex: 1;
+
+}
+
+
+.market-type-content h3 {
+
+  margin: 0 0 8px;
+
+  color: #087f3f;
+
+  font-size: 18px;
+
+}
+
+
+.fish-card .market-type-content h3 {
+
+  color: #08769c;
+
+}
+
+
+.market-type-content p {
+
+  margin: 0;
+
+  color: #777;
+
+  font-size: 14px;
+
+  line-height: 1.6;
+
+}
+
+
+/* =========================================================
+   ARROW
+   ========================================================= */
+
+.market-arrow {
+
+  font-size: 28px;
+
+  font-weight: 700;
+
+  color: #087f3f;
+
+}
+
+
+.fish-card .market-arrow {
+
+  color: #08769c;
+
+}
+
+
+/* =========================================================
+   RESULT
+   ========================================================= */
+
+.market-result-card {
+
+  width: 100%;
+
+  background: white;
+
+  border-radius: 20px;
+
+  padding: 25px;
+
+  margin-bottom: 22px;
+
+  border: 1px solid #e5eee8;
+
+  box-shadow:
+    0 8px 30px rgba(0,0,0,0.06);
+
+}
+
+
+.market-result-title {
+
+  color: #087f3f;
+
+  font-size: 23px;
+
+  font-weight: 800;
+
+}
+
+
+.market-result-location {
+
+  margin-top: 7px;
+
+  color: #777;
+
+  font-size: 14px;
+
+}
+
+
+/* =========================================================
+   TABLE
+   ========================================================= */
+
+.market-table-wrapper {
+
+  width: 100%;
+
+  margin-top: 20px;
+
+  overflow-x: auto;
+
+  border-radius: 12px;
+
+  border: 1px solid #e3e9e5;
+
+}
+
+
+.market-table {
+
+  width: 100%;
+
+  min-width: 760px;
+
+  border-collapse: collapse;
+
+}
+
+
+.market-table th {
+
+  padding: 14px 12px;
+
+  background: #087f3f;
+
+  color: white;
+
+  text-align: center;
+
+  font-size: 14px;
+
+  white-space: nowrap;
+
+}
+
+
+.market-table td {
+
+  padding: 13px 12px;
+
+  border-bottom: 1px solid #edf0ee;
+
+  text-align: center;
+
+  font-size: 14px;
+
+}
+
+
+.market-table tr:last-child td {
+
+  border-bottom: none;
+
+}
+
+
+.market-table tbody tr:hover {
+
+  background: #f7faf8;
+
+}
+
+
+.market-product-name {
+
+  text-align: left !important;
+
+  font-weight: 700;
+
+  color: #087f3f;
+
+}
+
+
+.price-unavailable {
+
+  color: #999;
+
+}
+
+
+/* =========================================================
+   STATUS
+   ========================================================= */
+
+.market-status {
+
+  display: inline-block;
+
+  padding: 5px 10px;
+
+  border-radius: 20px;
+
+  background: #fff4df;
+
+  color: #996000;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+}
+
+
+/* =========================================================
+   NOTICE
+   ========================================================= */
+
+.market-notice {
+
+  margin-top: 18px;
+
+  padding: 14px 16px;
+
+  border-radius: 10px;
+
+  background: #fff9ed;
+
+  border: 1px solid #f1dfb7;
+
+  color: #765c25;
+
+  font-size: 14px;
+
+  line-height: 1.6;
+
+}
+
+
+/* =========================================================
+   SOURCE
+   ========================================================= */
+
+.market-source-card {
+
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 15px;
+
+  padding: 22px;
+
+  margin-top: 20px;
+
+  background: #ffffff;
+
+  border: 1px solid #e2e9e4;
+
+  border-radius: 17px;
+
+  box-shadow:
+    0 5px 20px rgba(0,0,0,0.04);
+
+}
+
+
+.source-icon {
+
+  font-size: 28px;
+
+}
+
+
+.source-content {
+
+  flex: 1;
+
+}
+
+
+.source-content h3 {
+
+  margin: 0 0 7px;
+
+  color: #087f3f;
+
+  font-size: 18px;
+
+}
+
+
+.source-content p {
+
+  margin: 0 0 15px;
+
+  color: #666;
+
+  font-size: 14px;
+
+  line-height: 1.6;
+
+}
+
+
+.market-source-btn {
+
+  display: inline-block;
+
+  padding: 10px 17px;
+
+  background: #087f3f;
+
+  color: white;
+
+  border-radius: 9px;
+
+  text-decoration: none;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+}
+
+
+.market-source-btn:hover {
+
+  background: #056b34;
+
+}
+
+
+/* =========================================================
+   ERROR
+   ========================================================= */
+
+.market-error {
+
+  padding: 16px;
+
+  margin-bottom: 20px;
+
+  border-radius: 10px;
+
+  background: #fff1f1;
+
+  border: 1px solid #efcccc;
+
+  color: #a12828;
+
+  font-weight: 600;
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+  #marketSection {
+
+    padding: 20px 12px 40px;
+
+  }
+
+
+  .market-header {
+
+    flex-direction: column;
+
+    align-items: stretch;
+
+  }
+
+
+  .market-back-btn {
+
+    width: 100%;
+
+  }
+
+
+  .market-location-grid {
+
+    grid-template-columns: 1fr;
+
+  }
+
+
+  .market-type-grid {
+
+    grid-template-columns: 1fr;
+
+  }
+
+}
+
+
+@media (max-width: 500px) {
+
+  .market-card {
+
+    padding: 18px;
+
+  }
+
+
+  .market-title {
+
+    font-size: 25px;
+
+  }
+
+
+  .market-subtitle {
+
+    font-size: 14px;
+
+  }
+
+
+  .market-step-title h3 {
+
+    font-size: 18px;
+
+  }
+
+
+  .market-type-card {
+
+    min-height: 135px;
+
+    padding: 16px;
+
+  }
+
+
+  .market-type-icon {
+
+    width: 52px;
+
+    min-width: 52px;
+
+    height: 52px;
+
+    font-size: 28px;
+
+  }
+
+
+  .market-type-content h3 {
+
+    font-size: 16px;
+
+  }
+
+
+  .market-type-content p {
+
+    font-size: 13px;
+
+  }
+
+}

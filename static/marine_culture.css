@@ -1,0 +1,483 @@
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+
+body{
+
+    font-family:
+    "Noto Sans Bengali",
+    "Segoe UI",
+    Arial,
+    sans-serif;
+
+    background:#eef8f7;
+
+    color:#173d3a;
+
+    line-height:1.6;
+}
+
+
+.page-header{
+
+    text-align:center;
+
+    padding:45px 20px 30px;
+}
+
+
+.marine-icon{
+
+    font-size:48px;
+
+    margin-bottom:8px;
+}
+
+
+.page-header h1{
+
+    color:#087f86;
+
+    font-size:44px;
+
+    margin-bottom:8px;
+}
+
+
+.page-header p{
+
+    color:#597777;
+
+    font-size:18px;
+}
+
+
+.container{
+
+    width:94%;
+
+    max-width:1200px;
+
+    margin:auto;
+
+    padding-bottom:60px;
+}
+
+
+.back-btn{
+
+    border:none;
+
+    background:#087f86;
+
+    color:white;
+
+    padding:12px 20px;
+
+    border-radius:10px;
+
+    font-size:16px;
+
+    cursor:pointer;
+
+    margin-bottom:20px;
+}
+
+
+.back-btn:hover{
+
+    background:#055c61;
+}
+
+
+.panel{
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:25px;
+
+    margin-bottom:22px;
+
+    box-shadow:
+    0 8px 25px rgba(0,0,0,.07);
+}
+
+
+.panel-title{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    margin-bottom:24px;
+}
+
+
+.panel-title > span{
+
+    font-size:34px;
+}
+
+
+.panel-title h2{
+
+    color:#087f86;
+
+    font-size:25px;
+}
+
+
+.panel-title p{
+
+    color:#718282;
+
+    font-size:14px;
+}
+
+
+.form-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(2,minmax(0,1fr));
+
+    gap:18px;
+}
+
+
+.field{
+
+    display:flex;
+
+    flex-direction:column;
+}
+
+
+.field label{
+
+    font-weight:700;
+
+    margin-bottom:7px;
+
+    color:#294f4d;
+}
+
+
+.field input,
+.field select{
+
+    width:100%;
+
+    padding:13px 14px;
+
+    border:
+    1px solid #c9dcda;
+
+    border-radius:10px;
+
+    background:white;
+
+    color:#173d3a;
+
+    font-size:16px;
+
+    outline:none;
+}
+
+
+.field input:focus,
+.field select:focus{
+
+    border-color:#08a0a7;
+
+    box-shadow:
+    0 0 0 3px
+    rgba(8,160,167,.12);
+}
+
+
+.analyze-btn{
+
+    width:100%;
+
+    border:none;
+
+    background:#08a0a7;
+
+    color:white;
+
+    padding:17px;
+
+    border-radius:13px;
+
+    font-size:19px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    margin-bottom:25px;
+}
+
+
+.analyze-btn:hover{
+
+    background:#067d82;
+}
+
+
+.fish-profile{
+
+    margin-top:20px;
+
+    padding:20px;
+
+    background:#edfafa;
+
+    border-left:
+    5px solid #08a0a7;
+
+    border-radius:12px;
+}
+
+
+.fish-profile h3{
+
+    color:#087f86;
+
+    margin-bottom:12px;
+}
+
+
+.fish-profile-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:10px;
+}
+
+
+.profile-item{
+
+    background:white;
+
+    padding:12px;
+
+    border-radius:8px;
+}
+
+
+.profile-item b{
+
+    display:block;
+
+    color:#087f86;
+}
+
+
+.result-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(4,1fr);
+
+    gap:15px;
+}
+
+
+.result-card{
+
+    background:#edfafa;
+
+    padding:20px;
+
+    border-radius:12px;
+
+    border-left:
+    5px solid #08a0a7;
+}
+
+
+.result-card span{
+
+    display:block;
+
+    color:#587777;
+
+    font-size:14px;
+}
+
+
+.result-card strong{
+
+    display:block;
+
+    margin-top:5px;
+
+    color:#087f86;
+
+    font-size:21px;
+}
+
+
+.water-results{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:15px;
+}
+
+
+.water-item{
+
+    padding:17px;
+
+    border-radius:12px;
+
+    background:#f7fbfb;
+
+    border-left:
+    5px solid #08a0a7;
+}
+
+
+.water-item h3{
+
+    font-size:17px;
+
+    margin-bottom:5px;
+}
+
+
+.water-item strong{
+
+    font-size:18px;
+}
+
+
+.good{
+
+    color:#08753b;
+
+    background:#e9f8ef;
+}
+
+
+.warning{
+
+    color:#876400;
+
+    background:#fff7dc;
+}
+
+
+.danger{
+
+    color:#a32323;
+
+    background:#ffeaea;
+}
+
+
+.prediction{
+
+    padding:22px;
+
+    border-radius:15px;
+
+    font-size:18px;
+}
+
+
+.advice-item{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:12px;
+
+    padding:14px 15px;
+
+    margin-bottom:10px;
+
+    background:#f4faf9;
+
+    border-radius:10px;
+
+    border-left:
+    4px solid #08a0a7;
+}
+
+
+.advice-icon{
+
+    font-size:20px;
+}
+
+
+.hidden{
+
+    display:none !important;
+}
+
+
+@media(max-width:900px){
+
+    .result-grid{
+
+        grid-template-columns:
+        repeat(2,1fr);
+    }
+
+    .water-results{
+
+        grid-template-columns:
+        repeat(2,1fr);
+    }
+
+    .fish-profile-grid{
+
+        grid-template-columns:
+        repeat(2,1fr);
+    }
+
+}
+
+
+@media(max-width:650px){
+
+    .page-header h1{
+
+        font-size:30px;
+    }
+
+    .form-grid,
+    .result-grid,
+    .water-results,
+    .fish-profile-grid{
+
+        grid-template-columns:1fr;
+    }
+
+    .panel{
+
+        padding:18px;
+    }
+
+}

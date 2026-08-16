@@ -1,0 +1,1304 @@
+<!doctype html>
+<html lang="bn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Agriculture Office</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, "Noto Sans Bengali", sans-serif;
+      }
+      body {
+        background: #f3f8f5;
+        color: #222;
+        padding-bottom: 40px;
+      }
+      .header {
+        background: #fff;
+        padding: 18px 5%;
+        border-bottom: 1px solid #e5e5e5;
+
+        display: flex;
+        align-items: center;
+        gap: 45px;
+      }
+
+      .back-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+
+        padding: 10px 18px;
+        background: #fff;
+        color: #168c4b;
+
+        border: 1.5px solid #168c4b;
+        border-radius: 8px;
+
+        text-decoration: none;
+        font-size: 17px;
+        font-weight: 600;
+
+        transition: all 0.2s ease;
+      }
+
+      .back-btn:hover {
+        background: #168c4b;
+        color: #fff;
+      }
+
+      .header h1 {
+        font-size: 28px;
+        color: #168c4b;
+        margin: 0;
+      }
+      .container {
+        max-width: 1000px;
+        margin: auto;
+        padding: 30px 15px;
+      }
+      .title {
+        text-align: center;
+        margin-bottom: 25px;
+      }
+      .title h2 {
+        color: #168b4d;
+        font-size: 26px;
+        margin-bottom: 8px;
+      }
+      .title p {
+        color: #666;
+        font-size: 15px;
+      }
+      .search-box {
+        background: #fff;
+        padding: 25px;
+        border-radius: 16px;
+        box-shadow: 0 4px 18px rgba(0, 0, 0, 0.07);
+        margin-bottom: 25px;
+      }
+      .search-box h3 {
+        color: #168b4d;
+        margin-bottom: 18px;
+      }
+      .form-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+      }
+      .form-group label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 6px;
+        font-size: 14px;
+      }
+      select {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        font-size: 15px;
+        background: #fff;
+      }
+      select:focus {
+        border-color: #168b4d;
+        outline: none;
+      }
+      .search-btn {
+        width: 100%;
+        margin-top: 18px;
+        padding: 14px;
+        border: none;
+        border-radius: 10px;
+        background: #168b4d;
+        color: #fff;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+      .search-btn:hover {
+        background: #10733e;
+      }
+      .result-title {
+        color: #168b4d;
+        margin: 20px 0 12px;
+        display: none;
+      }
+      .results {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+      .office-card {
+        background: #fff;
+        border-radius: 16px;
+        padding: 22px;
+        box-shadow: 0 4px 18px rgba(0, 0, 0, 0.07);
+        border-left: 5px solid #168b4d;
+      }
+      .office-card h3 {
+        color: #168b4d;
+        font-size: 20px;
+        margin-bottom: 15px;
+      }
+      .info {
+        margin-bottom: 9px;
+        line-height: 1.5;
+        font-size: 15px;
+      }
+      .info strong {
+        color: #333;
+      }
+      .service-box {
+        background: #f3f8f5;
+        padding: 14px;
+        border-radius: 12px;
+        margin-top: 16px;
+      }
+      .service-box h4 {
+        color: #168b4d;
+        margin-bottom: 8px;
+      }
+      .service-box ul {
+        padding-left: 18px;
+      }
+      .service-box li {
+        margin-bottom: 5px;
+        font-size: 14px;
+      }
+      .call-btn {
+        display: block;
+        text-align: center;
+        text-decoration: none;
+        background: #168b4d;
+        color: #fff;
+        padding: 13px;
+        border-radius: 10px;
+        margin-top: 16px;
+        font-weight: bold;
+      }
+      .call-btn:hover {
+        background: #10733e;
+      }
+      .note {
+        background: #fff8e6;
+        padding: 12px;
+        border-radius: 10px;
+        margin-top: 14px;
+        font-size: 14px;
+        color: #555;
+        border: 1px solid #ffe0a0;
+      }
+      .hotline {
+        margin-top: 30px;
+        background: #fff;
+        padding: 22px;
+        border-radius: 16px;
+        box-shadow: 0 4px 18px rgba(0, 0, 0, 0.07);
+      }
+      .hotline h3 {
+        color: #168b4d;
+        margin-bottom: 15px;
+      }
+      .hotline-card {
+        padding: 14px;
+        background: #f3f8f5;
+        border-radius: 10px;
+        margin-bottom: 10px;
+      }
+      .hotline-card strong {
+        display: block;
+        margin-bottom: 4px;
+      }
+      .hotline-card a {
+        color: #168b4d;
+        font-weight: bold;
+        text-decoration: none;
+        font-size: 17px;
+      }
+      @media (max-width: 700px) {
+        .form-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <a href="javascript:history.back()" class="back-btn">← ফিরে যান</a>
+
+      <h1>🌾 Farmer Assistant</h1>
+    </div>
+
+    <main class="container">
+      <div class="title">
+        <h2>📍 নিকটবর্তী কৃষি অফিস খুঁজুন</h2>
+        <p>বিভাগ, জেলা ও উপজেলা নির্বাচন করে কৃষি অফিসের তথ্য দেখুন</p>
+      </div>
+
+      <div class="search-box">
+        <h3>🔎 কৃষি অফিস অনুসন্ধান</h3>
+        <div class="form-grid">
+          <div class="form-group">
+            <label>বিভাগ</label>
+            <select id="division" onchange="loadDistricts()">
+              <option value="">বিভাগ নির্বাচন করুন</option>
+              <option value="dhaka">ঢাকা</option>
+              <option value="chattogram">চট্টগ্রাম</option>
+              <option value="rajshahi">রাজশাহী</option>
+              <option value="khulna">খুলনা</option>
+              <option value="barishal">বরিশাল</option>
+              <option value="sylhet">সিলেট</option>
+              <option value="rangpur">রংপুর</option>
+              <option value="mymensingh">ময়মনসিংহ</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>জেলা</label>
+            <select id="district" onchange="loadUpazilas()" disabled>
+              <option value="">আগে বিভাগ নির্বাচন করুন</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>উপজেলা</label>
+            <select id="upazila" disabled>
+              <option value="">আগে জেলা নির্বাচন করুন</option>
+            </select>
+          </div>
+        </div>
+        <button class="search-btn" onclick="searchOffice()">
+          🔍 কৃষি অফিস খুঁজুন
+        </button>
+      </div>
+
+      <h3 class="result-title" id="resultTitle">🏢 কৃষি অফিসের তথ্য</h3>
+      <div class="results" id="results"></div>
+
+      <div class="hotline">
+        <h3>☎️ গুরুত্বপূর্ণ যোগাযোগ</h3>
+        <div class="hotline-card">
+          <strong>কৃষি কল সেন্টার</strong>
+          যেকোনো কৃষি পরামর্শের জন্য<br />
+          <a href="tel:16123">📞 ১৬১২৩</a>
+        </div>
+        <div class="hotline-card">
+          <strong>জাতীয় তথ্য সেবা</strong>
+          <a href="tel:333">📞 ৩৩৩</a>
+        </div>
+        <div class="hotline-card">
+          <strong>কৃষি সম্প্রসারণ অধিদপ্তর (DAE)</strong>
+          মাঠ পর্যায়ের কৃষি সেবা
+        </div>
+      </div>
+    </main>
+
+    <script>
+      const districts = {
+        dhaka: [
+          {
+            id: "dhaka",
+            name: "ঢাকা",
+            upazilas: [
+              "ঢাকা সদর",
+              "সাভার",
+              "ধামরাই",
+              "কেরানীগঞ্জ",
+              "নবাবগঞ্জ",
+              "দোহার",
+            ],
+          },
+          {
+            id: "faridpur",
+            name: "ফরিদপুর",
+            upazilas: [
+              "ফরিদপুর সদর",
+              "আলফাডাঙ্গা",
+              "ভাঙ্গা",
+              "বোয়ালমারী",
+              "চরভদ্রাসন",
+              "মধুখালী",
+              "নগরকান্দা",
+              "সদরপুর",
+              "সালথা",
+            ],
+          },
+          {
+            id: "gazipur",
+            name: "গাজীপুর",
+            upazilas: [
+              "গাজীপুর সদর",
+              "কালিয়াকৈর",
+              "কালীগঞ্জ",
+              "কাপাসিয়া",
+              "শ্রীপুর",
+            ],
+          },
+          {
+            id: "gopalganj",
+            name: "গোপালগঞ্জ",
+            upazilas: [
+              "গোপালগঞ্জ সদর",
+              "কাশিয়ানী",
+              "কোটালীপাড়া",
+              "মুকসুদপুর",
+              "টুঙ্গিপাড়া",
+            ],
+          },
+          {
+            id: "kishoreganj",
+            name: "কিশোরগঞ্জ",
+            upazilas: [
+              "কিশোরগঞ্জ সদর",
+              "অষ্টগ্রাম",
+              "বাজিতপুর",
+              "ভৈরব",
+              "হোসেনপুর",
+              "ইটনা",
+              "করিমগঞ্জ",
+              "কটিয়াদী",
+              "কুলিয়ারচর",
+              "মিঠামইন",
+              "নিকলী",
+              "পাকুন্দিয়া",
+              "তাড়াইল",
+            ],
+          },
+          {
+            id: "madaripur",
+            name: "মাদারীপুর",
+            upazilas: ["মাদারীপুর সদর", "কালকিনি", "রাজৈর", "শিবচর", "ডাসার"],
+          },
+          {
+            id: "manikganj",
+            name: "মানিকগঞ্জ",
+            upazilas: [
+              "মানিকগঞ্জ সদর",
+              "দৌলতপুর",
+              "ঘিওর",
+              "হরিরামপুর",
+              "সাটুরিয়া",
+              "শিবালয়",
+              "সিংগাইর",
+            ],
+          },
+          {
+            id: "munshiganj",
+            name: "মুন্সিগঞ্জ",
+            upazilas: [
+              "মুন্সিগঞ্জ সদর",
+              "গজারিয়া",
+              "লৌহজং",
+              "সিরাজদিখান",
+              "শ্রীনগর",
+              "টঙ্গিবাড়ী",
+            ],
+          },
+          {
+            id: "narayanganj",
+            name: "নারায়ণগঞ্জ",
+            upazilas: [
+              "নারায়ণগঞ্জ সদর",
+              "আড়াইহাজার",
+              "বন্দর",
+              "রূপগঞ্জ",
+              "সোনারগাঁ",
+            ],
+          },
+          {
+            id: "narsingdi",
+            name: "নরসিংদী",
+            upazilas: [
+              "নরসিংদী সদর",
+              "বেলাবো",
+              "মনোহরদী",
+              "পলাশ",
+              "রায়পুরা",
+              "শিবপুর",
+            ],
+          },
+          {
+            id: "rajbari",
+            name: "রাজবাড়ী",
+            upazilas: [
+              "রাজবাড়ী সদর",
+              "বালিয়াকান্দি",
+              "গোয়ালন্দ",
+              "পাংশা",
+              "কালুখালী",
+            ],
+          },
+          {
+            id: "shariatpur",
+            name: "শরীয়তপুর",
+            upazilas: [
+              "শরীয়তপুর সদর",
+              "ভেদরগঞ্জ",
+              "ডামুড্যা",
+              "গোসাইরহাট",
+              "নড়িয়া",
+              "জাজিরা",
+            ],
+          },
+          {
+            id: "tangail",
+            name: "টাঙ্গাইল",
+            upazilas: [
+              "টাঙ্গাইল সদর",
+              "বাসাইল",
+              "ভূঞাপুর",
+              "দেলদুয়ার",
+              "ধনবাড়ী",
+              "ঘাটাইল",
+              "গোপালপুর",
+              "কালিহাতী",
+              "মধুপুর",
+              "মির্জাপুর",
+              "নাগরপুর",
+              "সখীপুর",
+            ],
+          },
+        ],
+        chattogram: [
+          {
+            id: "bandarban",
+            name: "বান্দরবান",
+            upazilas: [
+              "বান্দরবান সদর",
+              "আলীকদম",
+              "লামা",
+              "নাইক্ষ্যংছড়ি",
+              "রোয়াংছড়ি",
+              "রুমা",
+              "থানচি",
+            ],
+          },
+          {
+            id: "brahmanbaria",
+            name: "ব্রাহ্মণবাড়িয়া",
+            upazilas: [
+              "ব্রাহ্মণবাড়িয়া সদর",
+              "আখাউড়া",
+              "বাঞ্ছারামপুর",
+              "বিজয়নগর",
+              "কসবা",
+              "নবীনগর",
+              "নাসিরনগর",
+              "সরাইল",
+              "আশুগঞ্জ",
+            ],
+          },
+          {
+            id: "chandpur",
+            name: "চাঁদপুর",
+            upazilas: [
+              "চাঁদপুর সদর",
+              "ফরিদগঞ্জ",
+              "হাইমচর",
+              "হাজীগঞ্জ",
+              "কচুয়া",
+              "মতলব দক্ষিণ",
+              "মতলব উত্তর",
+              "শাহরাস্তি",
+            ],
+          },
+          {
+            id: "chattogram",
+            name: "চট্টগ্রাম",
+            upazilas: [
+              "চট্টগ্রাম সদর",
+              "আনোয়ারা",
+              "বাঁশখালী",
+              "বোয়ালখালী",
+              "চন্দনাইশ",
+              "ফটিকছড়ি",
+              "হাটহাজারী",
+              "লোহাগাড়া",
+              "মিরসরাই",
+              "পটিয়া",
+              "রাঙ্গুনিয়া",
+              "রাউজান",
+              "সন্দ্বীপ",
+              "সাতকানিয়া",
+              "সীতাকুণ্ড",
+            ],
+          },
+          {
+            id: "cumilla",
+            name: "কুমিল্লা",
+            upazilas: [
+              "কুমিল্লা সদর",
+              "কুমিল্লা সদর দক্ষিণ",
+              "বরুড়া",
+              "ব্রাহ্মণপাড়া",
+              "বুড়িচং",
+              "চান্দিনা",
+              "চৌদ্দগ্রাম",
+              "দাউদকান্দি",
+              "দেবিদ্বার",
+              "হোমনা",
+              "লাকসাম",
+              "লালমাই",
+              "মেঘনা",
+              "মনোহরগঞ্জ",
+              "মুরাদনগর",
+              "নাঙ্গলকোট",
+              "তিতাস",
+            ],
+          },
+          {
+            id: "coxsbazar",
+            name: "কক্সবাজার",
+            upazilas: [
+              "কক্সবাজার সদর",
+              "চকরিয়া",
+              "কুতুবদিয়া",
+              "মহেশখালী",
+              "পেকুয়া",
+              "রামু",
+              "টেকনাফ",
+              "উখিয়া",
+            ],
+          },
+          {
+            id: "feni",
+            name: "ফেনী",
+            upazilas: [
+              "ফেনী সদর",
+              "ছাগলনাইয়া",
+              "দাগনভূঞা",
+              "পরশুরাম",
+              "ফুলগাজী",
+              "সোনাগাজী",
+            ],
+          },
+          {
+            id: "khagrachhari",
+            name: "খাগড়াছড়ি",
+            upazilas: [
+              "খাগড়াছড়ি সদর",
+              "দীঘিনালা",
+              "লক্ষ্মীছড়ি",
+              "মহালছড়ি",
+              "মানিকছড়ি",
+              "মাটিরাঙ্গা",
+              "পানছড়ি",
+              "রামগড়",
+            ],
+          },
+          {
+            id: "lakshmipur",
+            name: "লক্ষ্মীপুর",
+            upazilas: [
+              "লক্ষ্মীপুর সদর",
+              "কমলনগর",
+              "রায়পুর",
+              "রামগঞ্জ",
+              "রামগতি",
+            ],
+          },
+          {
+            id: "noakhali",
+            name: "নোয়াখালী",
+            upazilas: [
+              "নোয়াখালী সদর",
+              "বেগমগঞ্জ",
+              "চাটখিল",
+              "কোম্পানীগঞ্জ",
+              "হাতিয়া",
+              "কবিরহাট",
+              "সেনবাগ",
+              "সোনাইমুড়ী",
+              "সুবর্ণচর",
+            ],
+          },
+          {
+            id: "rangamati",
+            name: "রাঙ্গামাটি",
+            upazilas: [
+              "রাঙ্গামাটি সদর",
+              "বাঘাইছড়ি",
+              "বরকল",
+              "বিলাইছড়ি",
+              "জুরাছড়ি",
+              "কাপ্তাই",
+              "কাউখালী",
+              "লংগদু",
+              "নানিয়ারচর",
+              "রাজস্থলী",
+            ],
+          },
+        ],
+        rajshahi: [
+          {
+            id: "bogura",
+            name: "বগুড়া",
+            upazilas: [
+              "বগুড়া সদর",
+              "আদমদীঘি",
+              "ধুনট",
+              "দুপচাঁচিয়া",
+              "গাবতলী",
+              "কাহালু",
+              "নন্দীগ্রাম",
+              "সারিয়াকান্দি",
+              "শাজাহানপুর",
+              "শেরপুর",
+              "শিবগঞ্জ",
+              "সোনাতলা",
+            ],
+          },
+          {
+            id: "joypurhat",
+            name: "জয়পুরহাট",
+            upazilas: [
+              "জয়পুরহাট সদর",
+              "আক্কেলপুর",
+              "কালাই",
+              "ক্ষেতলাল",
+              "পাঁচবিবি",
+            ],
+          },
+          {
+            id: "naogaon",
+            name: "নওগাঁ",
+            upazilas: [
+              "নওগাঁ সদর",
+              "আত্রাই",
+              "বদলগাছী",
+              "ধামইরহাট",
+              "মান্দা",
+              "মহাদেবপুর",
+              "নিয়ামতপুর",
+              "পত্নীতলা",
+              "পোরশা",
+              "রাণীনগর",
+              "সাপাহার",
+            ],
+          },
+          {
+            id: "natore",
+            name: "নাটোর",
+            upazilas: [
+              "নাটোর সদর",
+              "বাগাতিপাড়া",
+              "বড়াইগ্রাম",
+              "গুরুদাসপুর",
+              "লালপুর",
+              "সিংড়া",
+            ],
+          },
+          {
+            id: "chapainawabganj",
+            name: "চাঁপাইনবাবগঞ্জ",
+            upazilas: [
+              "চাঁপাইনবাবগঞ্জ সদর",
+              "ভোলাহাট",
+              "গোমস্তাপুর",
+              "নাচোল",
+              "শিবগঞ্জ",
+            ],
+          },
+          {
+            id: "pabna",
+            name: "পাবনা",
+            upazilas: [
+              "পাবনা সদর",
+              "আটঘরিয়া",
+              "বেড়া",
+              "ভাঙ্গুড়া",
+              "চাটমোহর",
+              "ফরিদপুর",
+              "ঈশ্বরদী",
+              "সাঁথিয়া",
+              "সুজানগর",
+            ],
+          },
+          {
+            id: "rajshahi",
+            name: "রাজশাহী",
+            upazilas: [
+              "পবা",
+              "বাগমারা",
+              "বাঘা",
+              "চারঘাট",
+              "দুর্গাপুর",
+              "গোদাগাড়ী",
+              "মোহনপুর",
+              "পুঠিয়া",
+              "তানোর",
+            ],
+          },
+          {
+            id: "sirajganj",
+            name: "সিরাজগঞ্জ",
+            upazilas: [
+              "সিরাজগঞ্জ সদর",
+              "বেলকুচি",
+              "চৌহালী",
+              "কামারখন্দ",
+              "কাজীপুর",
+              "রায়গঞ্জ",
+              "শাহজাদপুর",
+              "তাড়াশ",
+              "উল্লাপাড়া",
+            ],
+          },
+        ],
+        khulna: [
+          {
+            id: "bagerhat",
+            name: "বাগেরহাট",
+            upazilas: [
+              "বাগেরহাট সদর",
+              "চিতলমারী",
+              "ফকিরহাট",
+              "কচুয়া",
+              "মোল্লাহাট",
+              "মোংলা",
+              "মোরেলগঞ্জ",
+              "রামপাল",
+              "শরণখোলা",
+            ],
+          },
+          {
+            id: "chuadanga",
+            name: "চুয়াডাঙ্গা",
+            upazilas: ["চুয়াডাঙ্গা সদর", "আলমডাঙ্গা", "দামুড়হুদা", "জীবননগর"],
+          },
+          {
+            id: "jashore",
+            name: "যশোর",
+            upazilas: [
+              "যশোর সদর",
+              "অভয়নগর",
+              "বাঘারপাড়া",
+              "চৌগাছা",
+              "ঝিকরগাছা",
+              "কেশবপুর",
+              "মণিরামপুর",
+              "শার্শা",
+            ],
+          },
+          {
+            id: "jhenaidah",
+            name: "ঝিনাইদহ",
+            upazilas: [
+              "ঝিনাইদহ সদর",
+              "হরিণাকুণ্ডু",
+              "কালীগঞ্জ",
+              "কোটচাঁদপুর",
+              "মহেশপুর",
+              "শৈলকুপা",
+            ],
+          },
+          {
+            id: "khulna",
+            name: "খুলনা",
+            upazilas: [
+              "বটিয়াঘাটা",
+              "দাকোপ",
+              "দিঘলিয়া",
+              "ডুমুরিয়া",
+              "কয়রা",
+              "পাইকগাছা",
+              "ফুলতলা",
+              "রূপসা",
+              "তেরখাদা",
+            ],
+          },
+          {
+            id: "kushtia",
+            name: "কুষ্টিয়া",
+            upazilas: [
+              "কুষ্টিয়া সদর",
+              "ভেড়ামারা",
+              "দৌলতপুর",
+              "খোকসা",
+              "কুমারখালী",
+              "মিরপুর",
+            ],
+          },
+          {
+            id: "magura",
+            name: "মাগুরা",
+            upazilas: ["মাগুরা সদর", "মহম্মদপুর", "শালিখা", "শ্রীপুর"],
+          },
+          {
+            id: "meherpur",
+            name: "মেহেরপুর",
+            upazilas: ["মেহেরপুর সদর", "গাংনী", "মুজিবনগর"],
+          },
+          {
+            id: "narail",
+            name: "নড়াইল",
+            upazilas: ["নড়াইল সদর", "কালিয়া", "লোহাগড়া"],
+          },
+          {
+            id: "satkhira",
+            name: "সাতক্ষীরা",
+            upazilas: [
+              "সাতক্ষীরা সদর",
+              "আশাশুনি",
+              "দেবহাটা",
+              "কলারোয়া",
+              "কালীগঞ্জ",
+              "শ্যামনগর",
+              "তালা",
+            ],
+          },
+        ],
+        barishal: [
+          {
+            id: "barguna",
+            name: "বরগুনা",
+            upazilas: [
+              "বরগুনা সদর",
+              "আমতলী",
+              "বামনা",
+              "বেতাগী",
+              "পাথরঘাটা",
+              "তালতলী",
+            ],
+          },
+          {
+            id: "barishal",
+            name: "বরিশাল",
+            upazilas: [
+              "বরিশাল সদর",
+              "আগৈলঝাড়া",
+              "বাবুগঞ্জ",
+              "বাকেরগঞ্জ",
+              "বানারীপাড়া",
+              "গৌরনদী",
+              "হিজলা",
+              "মেহেন্দিগঞ্জ",
+              "মুলাদী",
+              "উজিরপুর",
+            ],
+          },
+          {
+            id: "bhola",
+            name: "ভোলা",
+            upazilas: [
+              "ভোলা সদর",
+              "বোরহানউদ্দিন",
+              "চরফ্যাশন",
+              "দৌলতখান",
+              "লালমোহন",
+              "মনপুরা",
+              "তজুমদ্দিন",
+            ],
+          },
+          {
+            id: "jhalokati",
+            name: "ঝালকাঠি",
+            upazilas: ["ঝালকাঠি সদর", "কাঁঠালিয়া", "নলছিটি", "রাজাপুর"],
+          },
+          {
+            id: "patuakhali",
+            name: "পটুয়াখালী",
+            upazilas: [
+              "পটুয়াখালী সদর",
+              "বাউফল",
+              "দশমিনা",
+              "দুমকি",
+              "গলাচিপা",
+              "কলাপাড়া",
+              "মির্জাগঞ্জ",
+              "রাঙ্গাবালী",
+            ],
+          },
+          {
+            id: "pirojpur",
+            name: "পিরোজপুর",
+            upazilas: [
+              "পিরোজপুর সদর",
+              "ভান্ডারিয়া",
+              "কাউখালী",
+              "মঠবাড়িয়া",
+              "নাজিরপুর",
+              "নেছারাবাদ",
+              "জিয়ানগর",
+            ],
+          },
+        ],
+        sylhet: [
+          {
+            id: "habiganj",
+            name: "হবিগঞ্জ",
+            upazilas: [
+              "হবিগঞ্জ সদর",
+              "আজমিরীগঞ্জ",
+              "বাহুবল",
+              "বানিয়াচং",
+              "চুনারুঘাট",
+              "লাখাই",
+              "মাধবপুর",
+              "নবীগঞ্জ",
+              "শায়েস্তাগঞ্জ",
+            ],
+          },
+          {
+            id: "moulvibazar",
+            name: "মৌলভীবাজার",
+            upazilas: [
+              "মৌলভীবাজার সদর",
+              "বড়লেখা",
+              "জুড়ী",
+              "কমলগঞ্জ",
+              "কুলাউড়া",
+              "রাজনগর",
+              "শ্রীমঙ্গল",
+            ],
+          },
+          {
+            id: "sunamganj",
+            name: "সুনামগঞ্জ",
+            upazilas: [
+              "সুনামগঞ্জ সদর",
+              "বিশ্বম্ভরপুর",
+              "ছাতক",
+              "দিরাই",
+              "ধরমপাশা",
+              "দোয়ারাবাজার",
+              "জগন্নাথপুর",
+              "জামালগঞ্জ",
+              "শান্তিগঞ্জ",
+              "শাল্লা",
+              "তাহিরপুর",
+              "মধ্যনগর",
+            ],
+          },
+          {
+            id: "sylhet",
+            name: "সিলেট",
+            upazilas: [
+              "সিলেট সদর",
+              "বালাগঞ্জ",
+              "বিয়ানীবাজার",
+              "বিশ্বনাথ",
+              "কোম্পানীগঞ্জ",
+              "ফেঞ্চুগঞ্জ",
+              "গোলাপগঞ্জ",
+              "গোয়াইনঘাট",
+              "জৈন্তাপুর",
+              "কানাইঘাট",
+              "ওসমানীনগর",
+              "জকিগঞ্জ",
+              "দক্ষিণ সুরমা",
+            ],
+          },
+        ],
+        rangpur: [
+          {
+            id: "dinajpur",
+            name: "দিনাজপুর",
+            upazilas: [
+              "দিনাজপুর সদর",
+              "বিরামপুর",
+              "বীরগঞ্জ",
+              "বিরল",
+              "বোচাগঞ্জ",
+              "চিরিরবন্দর",
+              "ফুলবাড়ী",
+              "ঘোড়াঘাট",
+              "হাকিমপুর",
+              "কাহারোল",
+              "খানসামা",
+              "নবাবগঞ্জ",
+              "পার্বতীপুর",
+            ],
+          },
+          {
+            id: "gaibandha",
+            name: "গাইবান্ধা",
+            upazilas: [
+              "গাইবান্ধা সদর",
+              "ফুলছড়ি",
+              "গোবিন্দগঞ্জ",
+              "পলাশবাড়ী",
+              "সাদুল্লাপুর",
+              "সাঘাটা",
+              "সুন্দরগঞ্জ",
+            ],
+          },
+          {
+            id: "kurigram",
+            name: "কুড়িগ্রাম",
+            upazilas: [
+              "কুড়িগ্রাম সদর",
+              "ভুরুঙ্গামারী",
+              "চর রাজিবপুর",
+              "চিলমারী",
+              "ফুলবাড়ী",
+              "নাগেশ্বরী",
+              "রাজারহাট",
+              "রৌমারী",
+              "উলিপুর",
+            ],
+          },
+          {
+            id: "lalmonirhat",
+            name: "লালমনিরহাট",
+            upazilas: [
+              "লালমনিরহাট সদর",
+              "আদিতমারী",
+              "হাতীবান্ধা",
+              "কালীগঞ্জ",
+              "পাটগ্রাম",
+            ],
+          },
+          {
+            id: "nilphamari",
+            name: "নীলফামারী",
+            upazilas: [
+              "নীলফামারী সদর",
+              "ডিমলা",
+              "ডোমার",
+              "জলঢাকা",
+              "কিশোরগঞ্জ",
+              "সৈয়দপুর",
+            ],
+          },
+          {
+            id: "panchagarh",
+            name: "পঞ্চগড়",
+            upazilas: [
+              "পঞ্চগড় সদর",
+              "আটোয়ারী",
+              "বোদা",
+              "দেবীগঞ্জ",
+              "তেঁতুলিয়া",
+            ],
+          },
+          {
+            id: "rangpur",
+            name: "রংপুর",
+            upazilas: [
+              "রংপুর সদর",
+              "বদরগঞ্জ",
+              "গংগাচড়া",
+              "কাউনিয়া",
+              "মিঠাপুকুর",
+              "পীরগাছা",
+              "পীরগঞ্জ",
+              "তারাগঞ্জ",
+            ],
+          },
+          {
+            id: "thakurgaon",
+            name: "ঠাকুরগাঁও",
+            upazilas: [
+              "ঠাকুরগাঁও সদর",
+              "বালিয়াডাঙ্গী",
+              "হরিপুর",
+              "পীরগঞ্জ",
+              "রাণীশংকৈল",
+            ],
+          },
+        ],
+        mymensingh: [
+          {
+            id: "jamalpur",
+            name: "জামালপুর",
+            upazilas: [
+              "জামালপুর সদর",
+              "বকশীগঞ্জ",
+              "দেওয়ানগঞ্জ",
+              "ইসলামপুর",
+              "মাদারগঞ্জ",
+              "মেলান্দহ",
+              "সরিষাবাড়ী",
+            ],
+          },
+          {
+            id: "mymensingh",
+            name: "ময়মনসিংহ",
+            upazilas: [
+              "ময়মনসিংহ সদর",
+              "ভালুকা",
+              "ধোবাউড়া",
+              "ফুলবাড়ীয়া",
+              "গফরগাঁও",
+              "গৌরীপুর",
+              "হালুয়াঘাট",
+              "ঈশ্বরগঞ্জ",
+              "মুক্তাগাছা",
+              "নান্দাইল",
+              "ফুলপুর",
+              "ত্রিশাল",
+              "তারাকান্দা",
+            ],
+          },
+          {
+            id: "netrokona",
+            name: "নেত্রকোণা",
+            upazilas: [
+              "নেত্রকোণা সদর",
+              "আটপাড়া",
+              "বারহাট্টা",
+              "দুর্গাপুর",
+              "কলমাকান্দা",
+              "কেন্দুয়া",
+              "খালিয়াজুরী",
+              "মদন",
+              "মোহনগঞ্জ",
+              "পূর্বধলা",
+            ],
+          },
+          {
+            id: "sherpur",
+            name: "শেরপুর",
+            upazilas: [
+              "শেরপুর সদর",
+              "ঝিনাইগাতী",
+              "নকলা",
+              "নালিতাবাড়ী",
+              "শ্রীবরদী",
+            ],
+          },
+        ],
+      };
+
+      function loadDistricts() {
+        const division = document.getElementById("division").value;
+        const districtSelect = document.getElementById("district");
+        const upazilaSelect = document.getElementById("upazila");
+
+        districtSelect.innerHTML =
+          '<option value="">জেলা নির্বাচন করুন</option>';
+        upazilaSelect.innerHTML =
+          '<option value="">আগে জেলা নির্বাচন করুন</option>';
+        upazilaSelect.disabled = true;
+
+        if (!division) {
+          districtSelect.disabled = true;
+          return;
+        }
+
+        districtSelect.disabled = false;
+        districts[division].forEach(function (item) {
+          const opt = document.createElement("option");
+          opt.value = item.id;
+          opt.textContent = item.name;
+          districtSelect.appendChild(opt);
+        });
+      }
+
+      function loadUpazilas() {
+        const division = document.getElementById("division").value;
+        const districtId = document.getElementById("district").value;
+        const upazilaSelect = document.getElementById("upazila");
+
+        upazilaSelect.innerHTML =
+          '<option value="">উপজেলা নির্বাচন করুন</option>';
+
+        if (!districtId) {
+          upazilaSelect.disabled = true;
+          return;
+        }
+
+        const selected = districts[division].find(function (d) {
+          return d.id === districtId;
+        });
+        selected.upazilas.forEach(function (name) {
+          const opt = document.createElement("option");
+          opt.value = name;
+          opt.textContent = name;
+          upazilaSelect.appendChild(opt);
+        });
+        upazilaSelect.disabled = false;
+      }
+
+      function getDistrictName(id) {
+        for (const div in districts) {
+          const found = districts[div].find(function (d) {
+            return d.id === id;
+          });
+          if (found) return found.name;
+        }
+        return id;
+      }
+
+      function searchOffice() {
+        const division = document.getElementById("division").value;
+        const district = document.getElementById("district").value;
+        const upazila = document.getElementById("upazila").value;
+        const resultsDiv = document.getElementById("results");
+        const resultTitle = document.getElementById("resultTitle");
+
+        resultsDiv.innerHTML = "";
+        resultTitle.style.display = "none";
+
+        if (!division || !district || !upazila) {
+          alert("দয়া করে বিভাগ, জেলা এবং উপজেলা নির্বাচন করুন।");
+          return;
+        }
+
+        const districtName = getDistrictName(district);
+
+        // সবসময় জেনেরিক কার্ড তৈরি (নাম্বার ছাড়া সত্য তথ্য)
+        const office = {
+          name: "উপজেলা কৃষি অফিস, " + upazila,
+          districtName: districtName,
+          upazila: upazila,
+          address:
+            upazila + " উপজেলা পরিষদ চত্বর / কৃষি অফিস ভবন, " + districtName,
+          officer: "উপজেলা কৃষি অফিসার",
+          designation: "উপজেলা কৃষি অফিসার (UAO)",
+          time: "সকাল ৯টা – বিকাল ৫টা (সরকারি সময়)",
+          holiday: "শুক্রবার ও শনিবার",
+          services: [
+            "কৃষি বিষয়ক পরামর্শ ও প্রযুক্তি সম্প্রসারণ",
+            "ফসল উৎপাদন ও চাষাবাদ সংক্রান্ত পরামর্শ",
+            "রোগ ও পোকামাকড় ব্যবস্থাপনা",
+            "সার, বীজ ও সেচ সংক্রান্ত পরামর্শ",
+            "সরকারি কৃষি কর্মসূচি ও প্রণোদনার তথ্য",
+            "কৃষক প্রশিক্ষণ ও মাঠ দিবস",
+            "অন্যান্য কৃষি সেবা",
+          ],
+        };
+
+        resultTitle.style.display = "block";
+        resultsDiv.innerHTML = createCard(office);
+      }
+
+      function createCard(office) {
+        let servicesHtml = "";
+        office.services.forEach(function (s) {
+          servicesHtml += "<li>" + s + "</li>";
+        });
+
+        return `
+        <div class="office-card">
+            <h3>🏢 ${office.name}</h3>
+            <div class="info"><strong>জেলা:</strong> ${office.districtName}</div>
+            <div class="info"><strong>উপজেলা:</strong> ${office.upazila}</div>
+            <div class="info"><strong>ঠিকানা:</strong> ${office.address}</div>
+            <div class="info"><strong>অফিস প্রধান:</strong> ${office.officer}</div>
+            <div class="info"><strong>পদবি:</strong> ${office.designation}</div>
+            <div class="info"><strong>অফিস সময়:</strong> ${office.time}</div>
+            <div class="info"><strong>ছুটির দিন:</strong> ${office.holiday}</div>
+
+            <div class="note">
+                <strong>নোট:</strong> স্থানীয় ফোন নম্বর এই মুহূর্তে পাওয়া যায়নি। 
+                যেকোনো কৃষি পরামর্শের জন্য সরাসরি <strong>১৬১২৩</strong> নম্বরে কল করুন।
+            </div>
+
+            <div class="service-box">
+                <h4>🌱 প্রধান সেবাসমূহ</h4>
+                <ul>${servicesHtml}</ul>
+            </div>
+
+            <a class="call-btn" href="tel:16123">📞 কৃষি কল সেন্টারে কল করুন (১৬১২৩)</a>
+        </div>
+    `;
+      }
+    </script>
+  </body>
+</html>
