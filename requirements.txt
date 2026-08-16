@@ -1,14 +1,6 @@
+Flask
 pandas
 numpy
 scikit-learn
-streamlit
-matplotlib
-"""
-from sklearn.preprocessing import MinMaxScaler
-ms = MinMaxScaler()
-
-ms.fit(x_train)
-x_train = ms.transform(x_train)
-x_test = ms.transform(x_test)
-x_train
-"""
+requests
+joblib

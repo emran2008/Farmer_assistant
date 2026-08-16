@@ -15,7 +15,7 @@
 
   <body>
     <header class="page-header">
-      <div class="marine-icon">🌊🐟</div>
+      <div class="marine-icon"></div>
 
       <h1>Marine Culture System</h1>
 
@@ -32,8 +32,9 @@
     ========================================== -->
 
       <section class="panel">
+
         <div class="panel-title">
-          <span>🐟</span>
+          <span></span>
 
           <div>
             <h2>সামুদ্রিক মাছ নির্বাচন</h2>
@@ -44,7 +45,7 @@
 
         <div class="form-grid">
           <div class="field">
-            <label> 🐟 মাছের নাম </label>
+            <label> মাছের নাম </label>
 
             <select id="fishSelect">
               <option value="">-- মাছ নির্বাচন করুন --</option>
@@ -52,7 +53,7 @@
           </div>
 
           <div class="field">
-            <label> 🌊 চাষের পদ্ধতি </label>
+            <label>  চাষের পদ্ধতি </label>
 
             <select id="cultureMethod">
               <option value="seacage">Sea Cage</option>
@@ -71,13 +72,13 @@
         <div id="fishProfile" class="fish-profile hidden"></div>
       </section>
 
-      <!-- =========================================
-         FARM / SITE INFORMATION
-    ========================================== -->
+      
+
+   
 
       <section class="panel">
         <div class="panel-title">
-          <span>📍</span>
+          <span></span>
 
           <div>
             <h2>চাষের স্থান ও পরিবেশ</h2>
@@ -88,13 +89,13 @@
 
         <div class="form-grid">
           <div class="field">
-            <label> 🌊 পানির গভীরতা (মিটার) </label>
+            <label>  পানির গভীরতা (মিটার) </label>
 
             <input id="waterDepth" type="number" step="0.1" min="0" />
           </div>
 
           <div class="field">
-            <label> 🌊 পানির প্রবাহ / Current </label>
+            <label>  পানির প্রবাহ / Current </label>
 
             <select id="current">
               <option value="low">কম</option>
@@ -106,7 +107,7 @@
           </div>
 
           <div class="field">
-            <label> 🌪️ ঢেউ / Wave </label>
+            <label>  ঢেউ / Wave </label>
 
             <select id="wave">
               <option value="low">কম</option>
@@ -118,7 +119,7 @@
           </div>
 
           <div class="field">
-            <label> 🏭 পানিতে দূষণের ঝুঁকি </label>
+            <label>  পানিতে দূষণের ঝুঁকি </label>
 
             <select id="pollution">
               <option value="low">কম</option>
@@ -131,13 +132,13 @@
         </div>
       </section>
 
-      <!-- =========================================
-         CAGE INFORMATION
-    ========================================== -->
+     
+  
+    
 
       <section class="panel">
         <div class="panel-title">
-          <span>🪝</span>
+          <span></span>
 
           <div>
             <h2>খাঁচা / Culture Unit</h2>
@@ -166,26 +167,26 @@
           </div>
 
           <div class="field">
-            <label> 🐟 মোট মাছের সংখ্যা </label>
+            <label>  মোট মাছের সংখ্যা </label>
 
             <input id="fishCount" type="number" min="1" />
           </div>
 
           <div class="field">
-            <label> ⚖️ একটি মাছের গড় ওজন (গ্রাম) </label>
+            <label>  একটি মাছের গড় ওজন (গ্রাম) </label>
 
             <input id="fishWeight" type="number" min="1" />
           </div>
         </div>
       </section>
 
-      <!-- =========================================
-         WATER QUALITY
-    ========================================== -->
+     
+         
+    
 
       <section class="panel">
         <div class="panel-title">
-          <span>💧</span>
+          <span></span>
 
           <div>
             <h2>সমুদ্র / উপকূলীয় পানির গুণমান</h2>
@@ -196,49 +197,49 @@
 
         <div class="form-grid">
           <div class="field">
-            <label> 🧂 Salinity (ppt) </label>
+            <label>  Salinity (ppt) </label>
 
             <input id="salinity" type="number" step="0.1" />
           </div>
 
           <div class="field">
-            <label> 🌡️ Temperature (°C) </label>
+            <label>  Temperature (°C) </label>
 
             <input id="temperature" type="number" step="0.1" />
           </div>
 
           <div class="field">
-            <label> 🧪 pH </label>
+            <label>  pH </label>
 
             <input id="ph" type="number" step="0.1" />
           </div>
 
           <div class="field">
-            <label> 💨 DO (mg/L) </label>
+            <label>  DO (mg/L) </label>
 
             <input id="doValue" type="number" step="0.1" />
           </div>
 
           <div class="field">
-            <label> ☠️ Ammonia (mg/L) </label>
+            <label>  Ammonia (mg/L) </label>
 
             <input id="ammonia" type="number" step="0.001" />
           </div>
 
           <div class="field">
-            <label> ☠️ Nitrite (mg/L) </label>
+            <label>  Nitrite (mg/L) </label>
 
             <input id="nitrite" type="number" step="0.01" />
           </div>
 
           <div class="field">
-            <label> 💧 Water Transparency (cm) </label>
+            <label>  Water Transparency (cm) </label>
 
             <input id="transparency" type="number" />
           </div>
 
           <div class="field">
-            <label> 🌊 Water Exchange </label>
+            <label>  Water Exchange </label>
 
             <select id="waterExchange">
               <option value="good">ভালো</option>
@@ -251,13 +252,12 @@
         </div>
       </section>
 
-      <!-- =========================================
-         FEED
-    ========================================== -->
+     
+    
 
       <section class="panel">
         <div class="panel-title">
-          <span>🍚</span>
+          <span></span>
 
           <div>
             <h2>খাদ্য ও স্বাস্থ্য</h2>
@@ -286,31 +286,27 @@
           </div>
 
           <div class="field">
-            <label> 💀 বর্তমান মৃত্যুহার (%) </label>
+            <label>  বর্তমান মৃত্যুহার (%) </label>
 
             <input id="mortality" type="number" step="0.1" />
           </div>
         </div>
       </section>
 
-      <!-- =========================================
-         ANALYZE
-    ========================================== -->
+  
 
       <button class="analyze-btn" onclick="analyzeMarineCulture()">
         🔍 Marine Culture বিশ্লেষণ করুন
       </button>
 
-      <!-- =========================================
-         RESULTS
-    ========================================== -->
+    
 
       <section id="resultSection" class="hidden">
         <!-- CALCULATION -->
 
         <section class="panel">
           <div class="panel-title">
-            <span>📊</span>
+            <span></span>
 
             <div>
               <h2>Marine Culture হিসাব</h2>
@@ -344,11 +340,11 @@
           </div>
         </section>
 
-        <!-- WATER -->
+      
 
         <section class="panel">
           <div class="panel-title">
-            <span>💧</span>
+            <span></span>
 
             <div>
               <h2>পানির গুণমান বিশ্লেষণ</h2>
@@ -358,11 +354,11 @@
           <div id="waterResults" class="water-results"></div>
         </section>
 
-        <!-- SITE -->
+       
 
         <section class="panel">
           <div class="panel-title">
-            <span>🌊</span>
+            <span></span>
 
             <div>
               <h2>Marine Site Analysis</h2>
@@ -372,11 +368,11 @@
           <div id="siteResults" class="water-results"></div>
         </section>
 
-        <!-- PREDICTION -->
+     
 
         <section class="panel">
           <div class="panel-title">
-            <span>🤖</span>
+            <span></span>
 
             <div>
               <h2>ঝুঁকি ও পূর্বাভাস</h2>
@@ -386,11 +382,11 @@
           <div id="predictionBox"></div>
         </section>
 
-        <!-- ADVICE -->
+       
 
         <section class="panel">
           <div class="panel-title">
-            <span>💡</span>
+            <span></span>
 
             <div>
               <h2>কৃষকের জন্য পরামর্শ</h2>

@@ -143,10 +143,7 @@ def calculate_stocking(
     return density_average, None
 
 
-# =====================================================
-# MAIN PREDICTION FUNCTION
-# =====================================================
-
+#
 def predict_fish(
     pond_size,
     pond_depth,
@@ -160,14 +157,19 @@ def predict_fish(
     # ML INPUT
     # -------------------------------------------------
 
+    FEATURES = [
+        "ph",
+        "temperature",
+        "turbidity"
+    ]
+
     input_data = pd.DataFrame(
-        [
-            {
-                "ph": ph,
-                "temperature": temperature,
-                "turbidity": turbidity
-            }
-        ]
+        [[
+            ph,
+            temperature,
+            turbidity
+        ]],
+        columns=FEATURES
     )
 
     # -------------------------------------------------
@@ -181,6 +183,18 @@ def predict_fish(
     probabilities = model.predict_proba(
         input_data
     )[0]
+
+    confidence = (
+        probabilities.max() * 100
+    )
+
+    # -------------------------------------------------
+    # DATABASE LOOKUP
+    # -------------------------------------------------
+
+    fish_info = get_fish_information(
+        predicted_fish
+    )
 
     confidence = (
         probabilities.max() * 100
@@ -401,3 +415,20 @@ def save_prediction(
     connection.commit()
 
     connection.close()
+    
+if __name__ == "__main__":
+    result = predict_fish(
+        pond_size=10,
+        pond_depth=5,
+        temperature=28,
+        ph=7.5,
+        do=5.5,
+        turbidity=20
+    )
+
+    print("\n================================")
+    print("POND PREDICTION RESULT")
+    print("================================")
+
+    for key, value in result.items():
+        print(f"{key}: {value}")

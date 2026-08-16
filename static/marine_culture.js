@@ -340,9 +340,7 @@ const marineFishDatabase = {
 };
 
 
-/* =========================================================
-   LOAD FISH DROPDOWN
-========================================================= */
+
 
 const fishSelect =
 document.getElementById("fishSelect");
@@ -372,9 +370,7 @@ Object.keys(marineFishDatabase)
 
 
 
-/* =========================================================
-   SHOW FISH INFORMATION
-========================================================= */
+
 
 fishSelect.addEventListener(
     "change",
@@ -1500,18 +1496,18 @@ function getNumber(id){
    BACK
 ========================================================= */
 
-function goBack() {
+function goBack(){
 
-    if (
-        document.referrer &&
-        document.referrer !== window.location.href
-    ) {
+    if(document.referrer){
 
         history.back();
 
-    } else {
+    }
 
-        window.location.href = "marine_culture.html";
+    else{
+
+        window.location.href =
+        "index.html";
 
     }
 

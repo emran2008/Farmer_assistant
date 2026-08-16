@@ -56,8 +56,11 @@ mapping_df = pd.read_csv(MAPPING_CSV)
 
 
 # importing model
-model = pickle.load(open("model.pkl", "rb"))
-scaler = pickle.load(open("scaler.pkl", "rb"))
+model_path = os.path.join(BASE_DIR, "model.pkl")
+scaler_path = os.path.join(BASE_DIR, "scaler.pkl")
+
+model = pickle.load(open(model_path, "rb"))
+scaler = pickle.load(open(scaler_path, "rb"))
 
 #creating flask app
 app = Flask(__name__)
