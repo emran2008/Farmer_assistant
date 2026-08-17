@@ -15,7 +15,7 @@ BIOFLOC_CALCULATOR_DIR = (
 )
 sys.path.insert(0, str(BIOFLOC_CALCULATOR_DIR))
 
-from biofloc_calculator import calculate_biofloc
+
 
 POND_MODEL_DIR = Path(__file__).resolve().parent / "Aquaculture System" / "Pond Culture" / "Pond ML Model"
 
@@ -711,7 +711,7 @@ def aquaculture():
 # BIOFLOC
 @app.route("/biofloc")
 def biofloc():
-    return render_template("biofloc.html")
+    return render_template("biofloc1.html")
 @app.route("/ras")
 def ras():
     return render_template("ras.html")

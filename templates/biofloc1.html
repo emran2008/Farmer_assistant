@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farmer Assistant - Biofloc System</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='biofloc1.css') }}"
+    />
+  </head>
+
+<body>
+
+<div class="container">
+
+    <header>
+        <div class="logo"></div>
+        <h1>Biofloc Culture System</h1>
+        <p>মাছ নির্বাচন করুন এবং Biofloc চাষের জন্য প্রয়োজনীয় তথ্য দেখুন</p>
+    </header>
+
+    <!-- ================= মাছ নির্বাচন (Dropdown) ================= -->
+
+    <section class="card">
+        <div class="section-title">
+            <span></span>
+            <div>
+                <h2>১. মাছ নির্বাচন</h2>
+                <p>আপনি যে মাছ চাষ করছেন সেটি নির্বাচন করুন</p>
+            </div>
+        </div>
+
+        <div class="input-box" style="max-width: 420px;">
+            <label>মাছের নাম</label>
+            <select id="fishSelect">
+                <option value="">-- মাছ নির্বাচন করুন --</option>
+            </select>
+        </div>
+    </section>
+
+
+    <!-- ================= নির্বাচিত মাছের তথ্য ================= -->
+
+    <section id="fishInfoSection" class="card hidden">
+
+        <div class="section-title">
+            <span></span>
+            <div>
+                <h2 id="selectedFishTitle">মাছের তথ্য</h2>
+                <p>Biofloc চাষের জন্য প্রয়োজনীয় আদর্শ মান</p>
+            </div>
+        </div>
+
+        <div id="fishInfo" class="fish-info-grid"></div>
+
+    </section>
+
+
+    <!-- ================= বর্তমান পানি ================= -->
+
+    <section class="card">
+
+        <div class="section-title">
+            <span>💧</span>
+            <div>
+                <h2>২. বর্তমান পানির তথ্য</h2>
+                <p>আপনার ট্যাংকের বর্তমান পানির মান লিখুন</p>
+            </div>
+        </div>
+
+        <div class="input-grid">
+
+            <div class="input-box">
+                <label>পানির তাপমাত্রা (°C)</label>
+                <input type="number" id="temperature" value="27">
+            </div>
+
+            <div class="input-box">
+                <label>pH</label>
+                <input type="number" step="0.1" id="ph" value="7">
+            </div>
+
+            <div class="input-box">
+                <label>DO (mg/L)</label>
+                <input type="number" step="0.1" id="do" value="5">
+            </div>
+
+            <div class="input-box">
+                <label>Ammonia (mg/L)</label>
+                <input type="number" step="0.01" id="ammonia" value="0.02">
+            </div>
+
+            <div class="input-box">
+                <label>Nitrite (mg/L)</label>
+                <input type="number" step="0.01" id="nitrite" value="0.1">
+            </div>
+
+            <div class="input-box">
+                <label>Biofloc (mL/L)</label>
+                <input type="number" id="biofloc" value="20">
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= ট্যাংকের তথ্য ================= -->
+
+    <section class="card">
+
+        <div class="section-title">
+            <span></span>
+            <div>
+                <h2>৩. ট্যাংকের তথ্য</h2>
+                <p>ট্যাংকের আকার ও মাছের সংখ্যা দিন</p>
+            </div>
+        </div>
+
+        <div class="input-grid">
+
+            <div class="input-box">
+                <label>ট্যাংকের দৈর্ঘ্য (মিটার)</label>
+                <input type="number" step="0.1" id="length" value="5">
+            </div>
+
+            <div class="input-box">
+                <label>ট্যাংকের প্রস্থ (মিটার)</label>
+                <input type="number" step="0.1" id="width" value="4">
+            </div>
+
+            <div class="input-box">
+                <label>পানির গভীরতা (মিটার)</label>
+                <input type="number" step="0.1" id="depth" value="1.2">
+            </div>
+
+            <div class="input-box">
+                <label>মোট মাছের সংখ্যা</label>
+                <input type="number" id="fishCount" value="600">
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= খাবার ব্যবস্থাপনা ================= -->
+
+    <section class="card">
+
+        <div class="section-title">
+            <span></span>
+            <div>
+                <h2>৪. খাবার ব্যবস্থাপনা</h2>
+                <p>দৈনিক খাবারের তথ্য দিন</p>
+            </div>
+        </div>
+
+        <div class="input-grid">
+
+            <div class="input-box">
+                <label>Feed Protein (%)</label>
+                <input type="number" id="protein" value="30">
+            </div>
+
+            <div class="input-box">
+                <label>দৈনিক খাবার (kg)</label>
+                <input type="number" step="0.1" id="feed" value="2">
+            </div>
+
+            <div class="input-box">
+                <label>দিনে কতবার খাবার</label>
+                <select id="feedingTimes">
+                    <option value="2">২ বার</option>
+                    <option value="3">৩ বার</option>
+                    <option value="4">৪ বার</option>
+                    <option value="5">৫ বার</option>
+                </select>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= BUTTON ================= -->
+
+    <button class="check-btn" onclick="checkBiofloc()">
+         পরীক্ষা করুন
+    </button>
+
+
+    <!-- ================= হিসাব ================= -->
+
+    <section id="calculation" class="card hidden">
+
+        <div class="section-title">
+            <span></span>
+            <div>
+                <h2>Biofloc-এর হিসাব</h2>
+                <p>আপনার ট্যাংকের হিসাব</p>
+            </div>
+        </div>
+
+        <div class="result-grid">
+
+            <div class="result-box">
+                <span></span>
+                <small>পানির আয়তন</small>
+                <strong id="waterVolume">0 m³</strong>
+            </div>
+
+            <div class="result-box">
+                <span></span>
+                <small>মাছের ঘনত্ব</small>
+                <strong id="density">0 মাছ/m³</strong>
+            </div>
+
+            <div class="result-box">
+                <span></span>
+                <small>দৈনিক Feed</small>
+                <strong id="dailyFeed">0 kg/day</strong>
+            </div>
+
+            <div class="result-box">
+                <span></span>
+                <small>Biofloc</small>
+                <strong id="flocAmount">0 L</strong>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= পানি বিশ্লেষণ ================= -->
+
+    <section id="waterAnalysis" class="card hidden">
+
+        <div class="section-title">
+            <span></span>
+            <div>
+                <h2>পানি বিশ্লেষণ</h2>
+                <p>বর্তমান পানি আদর্শ অবস্থায় আছে কি না</p>
+            </div>
+        </div>
+
+        <div id="analysisGrid" class="analysis-grid"></div>
+
+    </section>
+
+
+    <!-- ================= Biofloc অবস্থা ================= -->
+
+    <section id="condition" class="card hidden">
+
+        <div class="section-title">
+            <span></span>
+            <div>
+                <h2>Biofloc অবস্থা ও পরামর্শ</h2>
+                <p>আপনার দেওয়া তথ্যের ভিত্তিতে ফলাফল</p>
+            </div>
+        </div>
+
+        <div id="conditionBox"></div>
+
+    </section>
+
+
+    <!-- ================= কৃষকের পরামর্শ ================= -->
+
+    <section id="advice" class="card hidden">
+
+        <div class="section-title">
+            <span></span>
+            <div>
+                <h2>কৃষকের জন্য পরামর্শ</h2>
+                <p>Biofloc ব্যবস্থাপনার গুরুত্বপূর্ণ নির্দেশনা</p>
+            </div>
+        </div>
+
+        <div id="adviceList"></div>
+
+    </section>
+
+</div>
+
+<script src="{{ url_for('static', filename='biofloc1.js') }}"></script>
+
+</body>
+</html>
