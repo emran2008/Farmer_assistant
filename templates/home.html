@@ -306,40 +306,50 @@
     <span>Agriculture Office</span>
 
 </a>
+<!-- Agriculture Office -->
+
+<a href="{{ url_for('more') }}" class="nav-item">
+
+    <svg viewBox="0 0 24 24"
+         fill="none"
+         stroke="#198754"
+         stroke-width="2"
+         stroke-linecap="round"
+         stroke-linejoin="round">
+
+        <!-- Office Building -->
+        <path d="M4 21V5L12 2L20 5V21"></path>
+
+        <!-- Entrance -->
+        <path d="M9 21V15H15V21"></path>
+
+        <!-- Windows -->
+        <path d="M7 9H9"></path>
+        <path d="M15 9H17"></path>
+
+        <path d="M7 12H9"></path>
+        <path d="M15 12H17"></path>
+
+        <!-- Ground -->
+        <path d="M2 21H22"></path>
+
+    </svg>
+
+    <span>more</span>
+
+</a>
 
 
 
-    <!-- MAPS -->
-
-    <a href="#maps" class="nav-item">
-
-       
-        <svg viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2.5"
-            stroke-linecap="round">
-
-            <circle
-                cx="10.5"
-                cy="10.5"
-                r="6.5">
-            </circle>
-
-            <line
-                x1="16"
-                y1="16"
-                x2="22"
-                y2="22">
-            </line>
-
-        </svg>
-        <i class="fas fa-location-dot"></i>
-        <span>Maps</span>
-
-    </a>
 
 </nav>
+
+
+</div>
+
+</div>
+
+</section>
 
 
 <!-- JavaScript File -->
@@ -347,6 +357,12 @@
 <script src="script.js"></script>
 <script src="{{ url_for('static', filename='fish_information.js') }}"></script>
 
+
+
+
+    </div>
+
+</section>
 
 </body>
 

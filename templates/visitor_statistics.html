@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="bn">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Visitor Statistics - Farmer Assistant</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='visitor_statistics.css') }}">
+
+</head>
+
+
+<body>
+
+<div class="visitor-app">
+
+
+    <!-- HEADER -->
+
+    <header class="visitor-header">
+
+        <a href="{{ url_for('more') }}"
+           class="back-button">
+
+            ←
+
+        </a>
+
+        <h1>
+            Visitor Statistics
+        </h1>
+
+        <div class="header-space"></div>
+
+    </header>
+
+
+
+    <!-- CONTENT -->
+
+    <main class="visitor-content">
+
+
+        <section class="visitor-intro">
+
+            <div class="visitor-icon">
+                👥
+            </div>
+
+            <h2>
+                Visitor Statistics
+            </h2>
+
+            <p>
+                Farmer Assistant কতজন ব্যবহারকারী
+                ভিজিট করেছেন তার পরিসংখ্যান।
+            </p>
+
+        </section>
+
+
+
+        <!-- VISITOR CARD -->
+
+        <div class="visitor-card">
+
+            <div class="visitor-card-icon">
+                👤
+            </div>
+
+            <div class="visitor-number">
+                {{ visitor_count }}
+            </div>
+
+            <h3>
+                Total Visitors
+            </h3>
+
+            <p>
+                Farmer Assistant ভিজিট করার জন্য
+                আপনাকে ধন্যবাদ।
+            </p>
+
+        </div>
+
+
+
+        <!-- INFORMATION -->
+
+        <div class="visitor-info">
+
+            <div class="info-icon">
+                📊
+            </div>
+
+            <div>
+
+                <h3>
+                    Visitor Information
+                </h3>
+
+                <p>
+                    এই সংখ্যা Farmer Assistant-এর
+                    Home page-এ রেকর্ড হওয়া মোট
+                    visit-এর সংখ্যা নির্দেশ করে।
+                </p>
+
+            </div>
+
+        </div>
+
+
+    </main>
+
+
+
+    <footer class="visitor-footer">
+
+        <strong>
+            Farmer Assistant
+        </strong>
+
+        <span>
+            স্মার্ট কৃষি সহায়তা প্ল্যাটফর্ম
+        </span>
+
+    </footer>
+
+
+</div>
+
+</body>
+
+</html>

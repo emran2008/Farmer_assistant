@@ -1,0 +1,370 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+
+    background: #eaf4f0;
+
+    color: #111827;
+}
+
+
+.visitor-app {
+    min-height: 100vh;
+
+    background: #f4faf7;
+}
+
+
+/* HEADER */
+
+.visitor-header {
+    width: 100%;
+
+    height: 78px;
+
+    background: #ffffff;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 35px;
+
+    border-bottom: 1px solid #e3ebe7;
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 100;
+}
+
+
+.visitor-header h1 {
+    color: #168b4b;
+
+    font-size: 27px;
+}
+
+
+.header-space {
+    width: 45px;
+
+    height: 45px;
+}
+
+
+/* BACK */
+
+.back-button {
+    width: 45px;
+
+    height: 45px;
+
+    border-radius: 50%;
+
+    background: #e8f7ee;
+
+    color: #168b4b;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-decoration: none;
+
+    font-size: 27px;
+
+    transition: 0.25s;
+}
+
+
+.back-button:hover {
+    background: #168b4b;
+
+    color: white;
+}
+
+
+/* CONTENT */
+
+.visitor-content {
+    width: 100%;
+
+    max-width: 800px;
+
+    margin: auto;
+
+    padding: 45px 25px 60px;
+}
+
+
+/* INTRO */
+
+.visitor-intro {
+    text-align: center;
+
+    margin-bottom: 35px;
+}
+
+
+.visitor-icon {
+    width: 75px;
+
+    height: 75px;
+
+    margin: auto;
+
+    margin-bottom: 15px;
+
+    border-radius: 22px;
+
+    background: #e8f7ee;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 38px;
+}
+
+
+.visitor-intro h2 {
+    color: #168b4b;
+
+    font-size: 29px;
+
+    margin-bottom: 8px;
+}
+
+
+.visitor-intro p {
+    color: #6b7280;
+
+    font-size: 14px;
+}
+
+
+/* VISITOR CARD */
+
+.visitor-card {
+    background: #ffffff;
+
+    border-radius: 25px;
+
+    padding: 40px 25px;
+
+    text-align: center;
+
+    box-shadow:
+        0 8px 28px rgba(0, 0, 0, 0.08);
+
+    margin-bottom: 25px;
+}
+
+
+.visitor-card-icon {
+    font-size: 35px;
+
+    margin-bottom: 10px;
+}
+
+
+.visitor-number {
+    color: #168b4b;
+
+    font-size: 55px;
+
+    font-weight: 700;
+
+    margin-bottom: 5px;
+}
+
+
+.visitor-card h3 {
+    color: #111827;
+
+    font-size: 20px;
+
+    margin-bottom: 8px;
+}
+
+
+.visitor-card p {
+    color: #7a8781;
+
+    font-size: 13px;
+}
+
+
+/* INFORMATION */
+
+.visitor-info {
+    background: #e8f7ee;
+
+    border-radius: 20px;
+
+    padding: 25px;
+
+    display: flex;
+
+    gap: 18px;
+
+    align-items: center;
+}
+
+
+.info-icon {
+    font-size: 30px;
+}
+
+
+.visitor-info h3 {
+    color: #168b4b;
+
+    font-size: 18px;
+
+    margin-bottom: 6px;
+}
+
+
+.visitor-info p {
+    color: #4b5563;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+
+/* FOOTER */
+
+.visitor-footer {
+    text-align: center;
+
+    padding: 20px 20px 35px;
+}
+
+
+.visitor-footer strong {
+    display: block;
+
+    color: #168b4b;
+
+    font-size: 16px;
+
+    margin-bottom: 5px;
+}
+
+
+.visitor-footer span {
+    color: #7a8781;
+
+    font-size: 12px;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    .visitor-header {
+        height: 65px;
+
+        padding: 0 15px;
+    }
+
+
+    .visitor-header h1 {
+        font-size: 20px;
+    }
+
+
+    .back-button {
+        width: 40px;
+
+        height: 40px;
+
+        font-size: 24px;
+    }
+
+
+    .header-space {
+        width: 40px;
+
+        height: 40px;
+    }
+
+
+    .visitor-content {
+        padding: 30px 15px 40px;
+    }
+
+
+    .visitor-icon {
+        width: 65px;
+
+        height: 65px;
+
+        font-size: 32px;
+    }
+
+
+    .visitor-intro h2 {
+        font-size: 23px;
+    }
+
+
+    .visitor-intro p {
+        font-size: 12px;
+    }
+
+
+    .visitor-card {
+        padding: 35px 20px;
+
+        border-radius: 20px;
+    }
+
+
+    .visitor-number {
+        font-size: 45px;
+    }
+
+
+    .visitor-card h3 {
+        font-size: 18px;
+    }
+
+
+    .visitor-info {
+        padding: 20px 17px;
+
+        border-radius: 17px;
+
+        gap: 12px;
+    }
+
+
+    .visitor-info h3 {
+        font-size: 16px;
+    }
+
+
+    .visitor-info p {
+        font-size: 12px;
+    }
+
+}

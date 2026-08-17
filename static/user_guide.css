@@ -1,0 +1,479 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #eaf4f0;
+    color: #111827;
+}
+
+.guide-app {
+    width: 100%;
+    min-height: 100vh;
+    background: #f4faf7;
+}
+
+
+/* HEADER */
+
+.guide-header {
+    width: 100%;
+    height: 78px;
+
+    background: #ffffff;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 35px;
+
+    border-bottom: 1px solid #e3ebe7;
+
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.guide-header h1 {
+    color: #168b4b;
+    font-size: 27px;
+}
+
+.header-space {
+    width: 45px;
+    height: 45px;
+}
+
+
+/* BACK BUTTON */
+
+.back-button {
+    width: 45px;
+    height: 45px;
+
+    border-radius: 50%;
+
+    background: #e8f7ee;
+    color: #168b4b;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+
+    font-size: 27px;
+
+    transition: 0.25s;
+}
+
+.back-button:hover {
+    background: #168b4b;
+    color: #ffffff;
+}
+
+
+/* CONTENT */
+
+.guide-content {
+    width: 100%;
+    max-width: 900px;
+
+    margin: auto;
+
+    padding: 40px 30px 60px;
+}
+
+
+/* INTRO */
+
+.guide-intro {
+    text-align: center;
+
+    margin-bottom: 30px;
+}
+
+.guide-icon {
+    width: 75px;
+    height: 75px;
+
+    margin: auto;
+    margin-bottom: 15px;
+
+    border-radius: 22px;
+
+    background: #e8f7ee;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 38px;
+}
+
+.guide-intro h2 {
+    color: #168b4b;
+
+    font-size: 29px;
+
+    margin-bottom: 8px;
+}
+
+.guide-intro p {
+    color: #6b7280;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+/* GUIDE CARD */
+
+.guide-card {
+    width: 100%;
+
+    background: #ffffff;
+
+    border-radius: 19px;
+
+    margin-bottom: 16px;
+
+    box-shadow:
+        0 6px 22px rgba(0, 0, 0, 0.07);
+
+    overflow: hidden;
+
+    cursor: pointer;
+
+    transition: 0.25s;
+}
+
+.guide-card:hover {
+    box-shadow:
+        0 10px 28px rgba(0, 0, 0, 0.10);
+}
+
+
+/* CARD HEADER */
+
+.guide-card-header {
+    min-height: 92px;
+
+    padding: 17px 20px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+}
+
+.step-number {
+    width: 52px;
+    height: 52px;
+
+    min-width: 52px;
+
+    border-radius: 15px;
+
+    background: #e8f7ee;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #168b4b;
+
+    font-size: 23px;
+
+    font-weight: 700;
+}
+
+.guide-title {
+    flex: 1;
+}
+
+.guide-title h3 {
+    color: #111827;
+
+    font-size: 17px;
+
+    margin-bottom: 5px;
+}
+
+.guide-title p {
+    color: #7a8781;
+
+    font-size: 12px;
+}
+
+.toggle-icon {
+    width: 34px;
+    height: 34px;
+
+    min-width: 34px;
+
+    border-radius: 50%;
+
+    background: #eaf7ef;
+
+    color: #168b4b;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 22px;
+
+    transition: 0.25s;
+}
+
+
+/* ANSWER */
+
+.guide-answer {
+    max-height: 0;
+
+    overflow: hidden;
+
+    padding: 0 25px;
+
+    color: #4b5563;
+
+    font-size: 13.5px;
+
+    line-height: 1.7;
+
+    transition:
+        max-height 0.35s ease,
+        padding 0.35s ease;
+}
+
+.guide-card.active .guide-answer {
+    max-height: 1000px;
+
+    padding:
+        0 25px 25px;
+}
+
+.guide-card.active .toggle-icon {
+    transform: rotate(45deg);
+
+    background: #168b4b;
+
+    color: #ffffff;
+}
+
+.guide-answer p {
+    margin-bottom: 12px;
+}
+
+.guide-answer ul {
+    padding-left: 20px;
+}
+
+.guide-answer li {
+    margin-bottom: 8px;
+}
+
+
+/* TIPS */
+
+.tips-card {
+    background: #fff8e6;
+
+    border-radius: 19px;
+
+    padding: 25px;
+
+    margin-top: 25px;
+}
+
+.tips-icon {
+    font-size: 28px;
+
+    margin-bottom: 8px;
+}
+
+.tips-card h3 {
+    color: #b87900;
+
+    font-size: 19px;
+
+    margin-bottom: 12px;
+}
+
+.tips-card ul {
+    padding-left: 20px;
+}
+
+.tips-card li {
+    color: #6b5a32;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+
+    margin-bottom: 7px;
+}
+
+
+/* FOOTER */
+
+.guide-footer {
+    text-align: center;
+
+    padding: 20px 20px 35px;
+}
+
+.guide-footer strong {
+    display: block;
+
+    color: #168b4b;
+
+    font-size: 16px;
+
+    margin-bottom: 5px;
+}
+
+.guide-footer span {
+    color: #7a8781;
+
+    font-size: 12px;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    body {
+        background: #f4faf7;
+    }
+
+    .guide-header {
+        height: 65px;
+
+        padding: 0 15px;
+    }
+
+    .guide-header h1 {
+        font-size: 21px;
+    }
+
+    .back-button {
+        width: 40px;
+        height: 40px;
+
+        font-size: 24px;
+    }
+
+    .header-space {
+        width: 40px;
+        height: 40px;
+    }
+
+    .guide-content {
+        padding:
+            25px
+            15px
+            35px;
+    }
+
+    .guide-icon {
+        width: 65px;
+        height: 65px;
+
+        border-radius: 18px;
+
+        font-size: 32px;
+    }
+
+    .guide-intro h2 {
+        font-size: 23px;
+    }
+
+    .guide-intro p {
+        font-size: 12px;
+    }
+
+    .guide-card {
+        border-radius: 17px;
+
+        margin-bottom: 13px;
+    }
+
+    .guide-card-header {
+        min-height: 82px;
+
+        padding: 14px;
+
+        gap: 11px;
+    }
+
+    .step-number {
+        width: 47px;
+        height: 47px;
+
+        min-width: 47px;
+
+        border-radius: 13px;
+
+        font-size: 20px;
+    }
+
+    .guide-title h3 {
+        font-size: 15px;
+
+        line-height: 1.35;
+    }
+
+    .guide-title p {
+        font-size: 10.5px;
+    }
+
+    .toggle-icon {
+        width: 31px;
+        height: 31px;
+
+        min-width: 31px;
+
+        font-size: 20px;
+    }
+
+    .guide-answer {
+        font-size: 12.5px;
+
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+    .guide-card.active .guide-answer {
+        padding:
+            0 18px 20px;
+    }
+
+    .tips-card {
+        padding: 20px 17px;
+
+        border-radius: 17px;
+    }
+
+    .tips-card h3 {
+        font-size: 17px;
+    }
+
+    .tips-card li {
+        font-size: 12px;
+    }
+}

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="bn">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>About the Developers - Farmer Assistant</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='developers.css') }}">
+
+</head>
+
+
+<body>
+
+<div class="developers-app">
+
+
+    <!-- HEADER -->
+
+    <header class="developers-header">
+
+        <a href="{{ url_for('more') }}"
+           class="back-button">
+
+            ←
+
+        </a>
+
+        <h1>
+            About the Developers
+        </h1>
+
+        <div class="header-space"></div>
+
+    </header>
+
+
+
+    <!-- MAIN CONTENT -->
+
+    <main class="developers-content">
+
+
+        <!-- INTRO -->
+
+        <section class="developers-intro">
+
+            <div class="team-icon">
+                👨‍💻
+            </div>
+
+            <h2>
+               Our Development team
+            </h2>
+
+            <p>
+            Those who worked on creating 
+            and developing the farmer assistance app
+            </p>
+
+        </section>
+
+
+
+        <!-- DEVELOPER 1 -->
+        <div class="developer-card">
+
+            <img
+                src="{{ url_for('static', filename='emran.jpg') }}"
+                class="developer-photo"
+                alt="Developer">
+
+            <div class="developer-info">
+
+                <h3>
+                    Emran Hossen
+                </h3>
+
+                <span>
+                    Developer & Team Member
+                </span>
+
+                <div class="contact-info">
+
+                    <a href="mailto:imran.bspicc.member@gmail.com">
+                        ✉️ Email
+                    </a>
+                        <a href="https://www.linkedin.com/in/emran2008/"
+                        target="_blank">
+                            🔵 linkedln
+                        </a>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- DEVELOPER 2 -->
+            <div class="developer-card">
+
+                <img
+                    src="{{ url_for('static', filename='ashraf.jpg') }}"
+                    class="developer-photo"
+                    alt="Developer">
+
+                <div class="developer-info">
+
+                    <h3>
+                        Ashraful islam
+                    </h3>
+
+                    <span>
+                        Developer & Team Member
+                    </span>
+
+                    <div class="contact-info">
+
+                        <a href="mailto:ashrafulprogram@gmail.com">
+                            ✉️ Email
+                        </a>
+                            <a href=""
+                            target="_blank">
+                                🔵 linkedln
+                            </a>
+
+
+                    </div>
+
+
+                </div>
+
+            </div>
+            <!-- COMMON CONTRIBUTION -->
+
+        <section class="common-contribution">
+
+            <div class="common-icon">
+                
+            </div>
+
+            <h3>
+                যৌথ অবদান
+            </h3>
+
+            <p>
+                আমরা যৌথভাবে Farmer Assistant-এর পরিকল্পনা,
+                ডিজাইন, ডেভেলপমেন্ট, Database Integration,
+                Machine Learning Integration এবং User-friendly
+                Interface তৈরিতে কাজ করেছি।
+            </p>
+
+            <p>
+                আমাদের লক্ষ্য ছিল কৃষকদের জন্য কৃষি, মৎস্য ও
+                অন্যান্য কৃষিভিত্তিক প্রয়োজনীয় তথ্য ও স্মার্ট
+                পরামর্শ একটি সহজ প্ল্যাটফর্মের মাধ্যমে প্রদান করা।
+            </p>
+
+        </section>
+
+
+
+
+        <!-- PROJECT MESSAGE -->
+
+        <section class="developer-message">
+
+            <div>
+                🌱
+            </div>
+
+            <h3>
+                আমাদের উদ্দেশ্য
+            </h3>
+
+            <p>
+                কৃষকদের জন্য প্রয়োজনীয় কৃষি তথ্য,
+                পরামর্শ ও স্মার্ট প্রযুক্তিভিত্তিক
+                সহায়তা সহজলভ্য করার লক্ষ্যে
+                Farmer Assistant তৈরি করা হয়েছে।
+            </p>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- FOOTER -->
+
+    <footer class="developers-footer">
+
+        <strong>
+            Farmer Assistant
+        </strong>
+
+        <span>
+            স্মার্ট কৃষি সহায়তা প্ল্যাটফর্ম
+        </span>
+
+    </footer>
+
+
+</div>
+
+
+</body>
+
+</html>

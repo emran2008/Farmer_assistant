@@ -1,0 +1,841 @@
+/* ==========================================
+   FARMER ASSISTANT
+   ABOUT THE APP
+========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+
+body {
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background: #eaf4f0;
+
+    color: #111827;
+
+}
+
+
+/* ==========================================
+   APP
+========================================== */
+
+.about-app {
+
+    width: 100%;
+
+    min-height: 100vh;
+
+    background: #f4faf7;
+
+    overflow-x: hidden;
+
+}
+
+
+/* ==========================================
+   HEADER
+========================================== */
+
+.about-header {
+
+    width: 100%;
+
+    height: 78px;
+
+    background: #ffffff;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 35px;
+
+    border-bottom:
+        1px solid #e3ebe7;
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 100;
+
+}
+
+
+.about-header h1 {
+
+    color: #168b4b;
+
+    font-size: 28px;
+
+    font-weight: 700;
+
+}
+
+
+.header-space {
+
+    width: 45px;
+
+    height: 45px;
+
+}
+
+
+/* ==========================================
+   BACK BUTTON
+========================================== */
+
+.back-button {
+
+    width: 45px;
+
+    height: 45px;
+
+    border-radius: 50%;
+
+    background: #e8f7ee;
+
+    color: #168b4b;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-decoration: none;
+
+    font-size: 27px;
+
+    transition: 0.25s;
+
+}
+
+
+.back-button:hover {
+
+    background: #168b4b;
+
+    color: #ffffff;
+
+}
+
+
+/* ==========================================
+   CONTENT
+========================================== */
+
+.about-content {
+
+    width: 100%;
+
+    max-width: 950px;
+
+    margin: 0 auto;
+
+    padding: 45px 30px 60px;
+
+}
+
+
+/* ==========================================
+   APP INTRO
+========================================== */
+
+.app-intro {
+
+    text-align: center;
+
+    margin-bottom: 35px;
+
+}
+
+
+.app-logo {
+
+    width: 75px;
+
+    height: 75px;
+
+    margin: 0 auto 15px;
+
+    border-radius: 22px;
+
+    background: #e8f7ee;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 38px;
+
+}
+
+
+.app-intro h2 {
+
+    color: #168b4b;
+
+    font-size: 32px;
+
+    margin-bottom: 7px;
+
+}
+
+
+.app-intro p {
+
+    color: #6b7280;
+
+    font-size: 15px;
+
+}
+
+
+/* ==========================================
+   INFORMATION CARD
+========================================== */
+
+.info-card {
+
+    background: #ffffff;
+
+    border-radius: 20px;
+
+    margin-bottom: 18px;
+
+    box-shadow:
+        0 6px 22px rgba(0, 0, 0, 0.07);
+
+    overflow: hidden;
+
+    cursor: pointer;
+
+    transition: 0.25s;
+
+}
+
+
+.info-card:hover {
+
+    box-shadow:
+        0 10px 28px rgba(0, 0, 0, 0.10);
+
+}
+
+
+/* ==========================================
+   CARD HEADER
+========================================== */
+
+.info-card-header {
+
+    min-height: 100px;
+
+    padding: 20px 22px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 17px;
+
+}
+
+
+.info-icon {
+
+    width: 58px;
+
+    height: 58px;
+
+    min-width: 58px;
+
+    border-radius: 16px;
+
+    background: #e8f7ee;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 28px;
+
+}
+
+
+.info-title {
+
+    flex: 1;
+
+}
+
+
+.info-title h3 {
+
+    font-size: 19px;
+
+    color: #111827;
+
+    margin-bottom: 5px;
+
+}
+
+
+.info-title p {
+
+    font-size: 13px;
+
+    color: #7a8781;
+
+}
+
+
+.toggle-icon {
+
+    width: 35px;
+
+    height: 35px;
+
+    border-radius: 50%;
+
+    background: #eaf7ef;
+
+    color: #168b4b;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 23px;
+
+    font-weight: 400;
+
+    transition: 0.25s;
+
+}
+
+
+/* ==========================================
+   ANSWER
+========================================== */
+
+.info-answer {
+
+    max-height: 0;
+
+    overflow: hidden;
+
+    padding: 0 25px;
+
+    color: #4b5563;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    transition:
+        max-height 0.35s ease,
+        padding 0.35s ease;
+
+}
+
+
+.info-card.active .info-answer {
+
+    max-height: 1000px;
+
+    padding:
+        0 25px 25px;
+
+}
+
+
+.info-card.active .toggle-icon {
+
+    transform: rotate(45deg);
+
+    background: #168b4b;
+
+    color: #ffffff;
+
+}
+
+
+.info-answer p {
+
+    margin-bottom: 13px;
+
+}
+
+
+.info-answer ul {
+
+    padding-left: 20px;
+
+}
+
+
+.info-answer li {
+
+    margin-bottom: 9px;
+
+}
+
+
+/* ==========================================
+   SERVICES
+========================================== */
+
+.service-list {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+}
+
+
+.service-item {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 13px;
+
+    padding: 14px;
+
+    background: #f7fbf9;
+
+    border-radius: 13px;
+
+}
+
+
+.service-item > span {
+
+    font-size: 24px;
+
+    min-width: 30px;
+
+}
+
+
+.service-item strong {
+
+    display: block;
+
+    color: #168b4b;
+
+    font-size: 15px;
+
+    margin-bottom: 4px;
+
+}
+
+
+.service-item p {
+
+    margin: 0;
+
+    font-size: 12.5px;
+
+    line-height: 1.5;
+
+    color: #667085;
+
+}
+
+
+/* ==========================================
+   GOAL
+========================================== */
+
+.goal-card {
+
+    background: #e8f7ee;
+
+    border-radius: 20px;
+
+    padding: 27px;
+
+    text-align: center;
+
+    margin-top: 25px;
+
+}
+
+
+.goal-icon {
+
+    font-size: 30px;
+
+    margin-bottom: 8px;
+
+}
+
+
+.goal-card h3 {
+
+    color: #168b4b;
+
+    font-size: 20px;
+
+    margin-bottom: 8px;
+
+}
+
+
+.goal-card p {
+
+    max-width: 650px;
+
+    margin: auto;
+
+    color: #4b5563;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+}
+
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+.about-footer {
+
+    text-align: center;
+
+    padding: 20px 20px 35px;
+
+}
+
+
+.about-footer strong {
+
+    display: block;
+
+    color: #168b4b;
+
+    font-size: 16px;
+
+    margin-bottom: 5px;
+
+}
+
+
+.about-footer span {
+
+    color: #7a8781;
+
+    font-size: 12px;
+
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 700px) {
+
+    body {
+
+        background: #f4faf7;
+
+    }
+
+
+    .about-header {
+
+        height: 65px;
+
+        padding: 0 15px;
+
+    }
+
+
+    .about-header h1 {
+
+        font-size: 22px;
+
+    }
+
+
+    .back-button {
+
+        width: 40px;
+
+        height: 40px;
+
+        font-size: 24px;
+
+    }
+
+
+    .header-space {
+
+        width: 40px;
+
+        height: 40px;
+
+    }
+
+
+    .about-content {
+
+        padding:
+            25px
+            15px
+            35px;
+
+    }
+
+
+    .app-intro {
+
+        margin-bottom: 25px;
+
+    }
+
+
+    .app-logo {
+
+        width: 65px;
+
+        height: 65px;
+
+        border-radius: 18px;
+
+        font-size: 32px;
+
+    }
+
+
+    .app-intro h2 {
+
+        font-size: 25px;
+
+    }
+
+
+    .app-intro p {
+
+        font-size: 13px;
+
+    }
+
+
+    .info-card {
+
+        border-radius: 17px;
+
+        margin-bottom: 14px;
+
+    }
+
+
+    .info-card-header {
+
+        min-height: 88px;
+
+        padding: 15px;
+
+        gap: 12px;
+
+    }
+
+
+    .info-icon {
+
+        width: 50px;
+
+        height: 50px;
+
+        min-width: 50px;
+
+        border-radius: 14px;
+
+        font-size: 24px;
+
+    }
+
+
+    .info-title h3 {
+
+        font-size: 16px;
+
+        line-height: 1.3;
+
+    }
+
+
+    .info-title p {
+
+        font-size: 11.5px;
+
+    }
+
+
+    .toggle-icon {
+
+        width: 32px;
+
+        height: 32px;
+
+        min-width: 32px;
+
+        font-size: 21px;
+
+    }
+
+
+    .info-answer {
+
+        font-size: 13px;
+
+        line-height: 1.65;
+
+        padding-left: 18px;
+
+        padding-right: 18px;
+
+    }
+
+
+    .info-card.active .info-answer {
+
+        padding:
+            0 18px 20px;
+
+    }
+
+
+    .service-item {
+
+        padding: 12px;
+
+        gap: 10px;
+
+    }
+
+
+    .service-item > span {
+
+        font-size: 21px;
+
+    }
+
+
+    .service-item strong {
+
+        font-size: 14px;
+
+    }
+
+
+    .service-item p {
+
+        font-size: 12px;
+
+    }
+
+
+    .goal-card {
+
+        padding: 22px 17px;
+
+        border-radius: 17px;
+
+    }
+
+
+    .goal-card h3 {
+
+        font-size: 18px;
+
+    }
+
+
+    .goal-card p {
+
+        font-size: 12.5px;
+
+    }
+
+}
+
+
+/* ==========================================
+   SMALL MOBILE
+========================================== */
+
+@media (max-width: 380px) {
+
+    .about-content {
+
+        padding-left: 12px;
+
+        padding-right: 12px;
+
+    }
+
+
+    .info-card-header {
+
+        padding: 13px;
+
+    }
+
+
+    .info-icon {
+
+        width: 46px;
+
+        height: 46px;
+
+        min-width: 46px;
+
+        font-size: 22px;
+
+    }
+
+
+    .info-title h3 {
+
+        font-size: 15px;
+
+    }
+
+}

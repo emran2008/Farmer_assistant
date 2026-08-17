@@ -1,0 +1,585 @@
+/* ==========================================
+   FARMER ASSISTANT - MORE PAGE
+========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #eaf4f0;
+    color: #111827;
+}
+
+
+/* ==========================================
+   MAIN APP
+========================================== */
+
+.more-app {
+    width: 100%;
+    min-height: 100vh;
+    background: #f4faf7;
+    overflow-x: hidden;
+}
+
+
+/* ==========================================
+   HEADER
+========================================== */
+
+.more-header {
+    width: 100%;
+    height: 78px;
+
+    background: #ffffff;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 35px;
+
+    border-bottom: 1px solid #e3ebe7;
+
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.more-header h1 {
+    color: #168b4b;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.header-space {
+    width: 45px;
+    height: 45px;
+}
+
+
+/* ==========================================
+   BACK BUTTON
+========================================== */
+
+.back-button {
+    width: 45px;
+    height: 45px;
+
+    border-radius: 50%;
+
+    background: #e8f7ee;
+
+    color: #168b4b;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+
+    font-size: 27px;
+
+    transition: all 0.25s ease;
+}
+
+.back-button:hover {
+    background: #168b4b;
+    color: white;
+    transform: translateX(-2px);
+}
+
+
+/* ==========================================
+   MAIN CONTENT
+========================================== */
+
+.more-content {
+    width: 100%;
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    padding: 45px 35px 60px;
+}
+
+
+/* ==========================================
+   INTRO
+========================================== */
+
+.more-intro {
+    text-align: center;
+    margin-bottom: 38px;
+}
+
+.more-intro h2 {
+    color: #168b4b;
+    font-size: 34px;
+    margin-bottom: 10px;
+}
+
+.more-intro p {
+    color: #64748b;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+
+/* ==========================================
+   CARDS GRID
+========================================== */
+
+.more-card {
+    width: 100%;
+    min-height: 135px;
+
+    background: #ffffff;
+
+    border-radius: 20px;
+
+    padding: 24px;
+
+    margin-bottom: 20px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 20px;
+
+    box-shadow:
+        0 6px 22px rgba(0, 0, 0, 0.07);
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.more-card:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.10);
+}
+
+.more-card:active {
+    transform: scale(0.99);
+}
+
+
+/* ==========================================
+   ICON
+========================================== */
+
+.card-icon {
+    width: 68px;
+    height: 68px;
+
+    min-width: 68px;
+
+    border-radius: 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 31px;
+}
+
+.about-icon {
+    background: #e8f7ee;
+}
+
+.map-icon {
+    background: #e8f2ff;
+}
+
+.guide-icon {
+    background: #fff5df;
+}
+
+.visitor-icon {
+    background: #f3eaff;
+}
+
+
+/* ==========================================
+   CARD TEXT
+========================================== */
+
+.card-text {
+    flex: 1;
+}
+
+.card-text h3 {
+    font-size: 21px;
+    color: #111827;
+
+    margin-bottom: 7px;
+}
+
+.card-text p {
+    font-size: 15px;
+    line-height: 1.55;
+
+    color: #667085;
+
+    max-width: 700px;
+}
+
+
+/* ==========================================
+   ARROW
+========================================== */
+
+.card-arrow {
+    color: #168b4b;
+
+    font-size: 28px;
+
+    font-weight: 500;
+
+    margin-left: auto;
+}
+
+
+/* ==========================================
+   VISITOR COUNT
+========================================== */
+
+.visitor-count {
+    min-width: 48px;
+    height: 48px;
+
+    padding: 0 12px;
+
+    border-radius: 14px;
+
+    background: #eaf7ef;
+
+    color: #168b4b;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 17px;
+    font-weight: 700;
+}
+
+
+/* ==========================================
+   APP INFORMATION
+========================================== */
+
+.app-info {
+    width: 100%;
+
+    background: #ffffff;
+
+    border-radius: 20px;
+
+    padding: 20px 25px;
+
+    margin-top: 10px;
+
+    box-shadow:
+        0 6px 22px rgba(0, 0, 0, 0.06);
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 13px 0;
+
+    color: #4b5563;
+
+    font-size: 15px;
+}
+
+.info-item:not(:last-child) {
+    border-bottom: 1px solid #edf1ef;
+}
+
+.info-icon {
+    font-size: 21px;
+}
+
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+.more-footer {
+    text-align: center;
+
+    padding: 20px 20px 40px;
+
+    color: #168b4b;
+}
+
+.more-footer p {
+    font-size: 17px;
+
+    font-weight: 700;
+
+    margin-bottom: 5px;
+}
+
+.more-footer span {
+    font-size: 13px;
+
+    color: #7a8781;
+}
+
+
+/* ==========================================
+   LARGE DESKTOP
+========================================== */
+
+@media (min-width: 1200px) {
+
+    .more-content {
+        max-width: 1150px;
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+
+}
+
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (min-width: 701px) and (max-width: 1000px) {
+
+    .more-content {
+        max-width: 850px;
+
+        padding:
+            40px
+            30px
+            50px;
+    }
+
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 700px) {
+
+    body {
+        background: #f4faf7;
+    }
+
+    .more-app {
+        min-height: 100vh;
+    }
+
+    .more-header {
+
+        height: 65px;
+
+        padding: 0 15px;
+
+    }
+
+    .more-header h1 {
+        font-size: 23px;
+    }
+
+    .back-button {
+
+        width: 40px;
+        height: 40px;
+
+        font-size: 24px;
+
+    }
+
+    .header-space {
+
+        width: 40px;
+        height: 40px;
+
+    }
+
+    .more-content {
+
+        width: 100%;
+
+        padding:
+            25px
+            15px
+            35px;
+
+    }
+
+    .more-intro {
+
+        margin-bottom: 25px;
+
+    }
+
+    .more-intro h2 {
+
+        font-size: 25px;
+
+    }
+
+    .more-intro p {
+
+        font-size: 13px;
+
+    }
+
+    .more-card {
+
+        min-height: 105px;
+
+        padding: 16px;
+
+        margin-bottom: 15px;
+
+        border-radius: 17px;
+
+        gap: 14px;
+
+    }
+
+    .card-icon {
+
+        width: 53px;
+        height: 53px;
+
+        min-width: 53px;
+
+        border-radius: 14px;
+
+        font-size: 25px;
+
+    }
+
+    .card-text h3 {
+
+        font-size: 17px;
+
+        margin-bottom: 5px;
+
+    }
+
+    .card-text p {
+
+        font-size: 12.5px;
+
+        line-height: 1.45;
+
+    }
+
+    .card-arrow {
+
+        font-size: 23px;
+
+    }
+
+    .visitor-count {
+
+        min-width: 40px;
+
+        height: 40px;
+
+        border-radius: 12px;
+
+        font-size: 15px;
+
+    }
+
+    .app-info {
+
+        border-radius: 17px;
+
+        padding: 15px 17px;
+
+    }
+
+    .info-item {
+
+        font-size: 13px;
+
+        padding: 10px 0;
+
+    }
+
+    .more-footer {
+
+        padding-bottom: 30px;
+
+    }
+
+}
+
+
+/* ==========================================
+   SMALL MOBILE
+========================================== */
+
+@media (max-width: 380px) {
+
+    .more-content {
+
+        padding-left: 12px;
+        padding-right: 12px;
+
+    }
+
+    .more-card {
+
+        padding: 14px;
+
+        gap: 11px;
+
+    }
+
+    .card-icon {
+
+        width: 48px;
+        height: 48px;
+
+        min-width: 48px;
+
+        font-size: 22px;
+
+    }
+
+    .card-text h3 {
+
+        font-size: 16px;
+
+    }
+
+    .card-text p {
+
+        font-size: 12px;
+
+    }
+
+}

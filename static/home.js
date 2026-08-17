@@ -35,3 +35,24 @@ if (cropCard) {
     });
 
 }
+/* =========================================
+   MORE SCREEN
+========================================= */
+
+function openMore() {
+
+    const moreScreen = document.getElementById("moreScreen");
+
+    moreScreen.style.display = "block";
+
+}
+
+
+function closeMore() {
+
+    const moreScreen = document.getElementById("moreScreen");
+
+    moreScreen.style.display = "none";
+
+}
+

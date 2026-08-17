@@ -30,6 +30,71 @@ from datetime import date, timedelta
 import sklearn
 import pickle
 import sqlite3
+import os
+
+
+VISITOR_DB = "visitor.db"
+
+
+def init_visitor_db():
+
+    conn = sqlite3.connect(VISITOR_DB)
+
+    cursor = conn.cursor()
+
+    cursor.execute("""
+        CREATE TABLE IF NOT EXISTS visitor_stats (
+            id INTEGER PRIMARY KEY,
+            total_visitors INTEGER NOT NULL DEFAULT 0
+        )
+    """)
+
+    cursor.execute("""
+        INSERT OR IGNORE INTO visitor_stats
+        (id, total_visitors)
+        VALUES (1, 0)
+    """)
+
+    conn.commit()
+    conn.close()
+
+
+def increase_visitor_count():
+
+    conn = sqlite3.connect(VISITOR_DB)
+
+    cursor = conn.cursor()
+
+    cursor.execute("""
+        UPDATE visitor_stats
+        SET total_visitors = total_visitors + 1
+        WHERE id = 1
+    """)
+
+    conn.commit()
+    conn.close()
+
+
+def get_visitor_count():
+
+    conn = sqlite3.connect(VISITOR_DB)
+
+    cursor = conn.cursor()
+
+    cursor.execute("""
+        SELECT total_visitors
+        FROM visitor_stats
+        WHERE id = 1
+    """)
+
+    result = cursor.fetchone()
+
+    conn.close()
+
+    if result:
+        return result[0]
+
+    return 0
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 HATCHERY_CSV = os.path.join(
@@ -620,9 +685,12 @@ crop_details = {
     },
 }
     
-
+init_visitor_db()
 @app.route("/")
 def home():
+
+    increase_visitor_count()
+
     return render_template("home.html")
 
 @app.route("/crop-recommendation")
@@ -666,6 +734,27 @@ def market_price():
 @app.route('/fish-information')
 def fish_information():
     return render_template('fish_information.html')
+@app.route("/more")
+def more():
+    return render_template("more.html")
+@app.route("/about-app")
+def about_app():
+    return render_template("about_app.html")
+@app.route("/developers")
+def developers():
+    return render_template("developers.html")
+@app.route("/user-guide")
+def user_guide():
+    return render_template("user_guide.html")
+@app.route("/visitor-statistics")
+def visitor_statistics():
+
+    visitor_count = get_visitor_count()
+
+    return render_template(
+        "visitor_statistics.html",
+        visitor_count=visitor_count
+    )
 
 @app.route("/fish-hatchery")
 def fish_hatchery():

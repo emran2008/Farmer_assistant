@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>More - Farmer Assistant</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='more.css') }}">
+
+</head>
+
+<body>
+
+
+    <!-- APP CONTAINER -->
+
+    <div class="more-app">
+
+
+        <!-- HEADER -->
+
+        <header class="more-header">
+
+            <a href="{{ url_for('home') }}"
+               class="back-button">
+
+                <span>←</span>
+
+            </a>
+
+
+            <h1>More</h1>
+
+
+            <div class="header-space"></div>
+
+        </header>
+
+
+
+        <!-- MAIN CONTENT -->
+
+        <main class="more-content">
+
+
+            <!-- TITLE -->
+
+            <section class="more-intro">
+
+                <h2>Explore More</h2>
+
+                <p>
+                    Learn more about Farmer Assistant
+                    and explore useful features.
+                </p>
+
+            </section>
+
+
+
+            <!-- =========================
+                 ABOUT THE APP
+            ========================== -->
+
+            <div class="more-card"
+                 onclick="openAboutApp()">
+
+
+                <div class="card-icon about-icon">
+
+                    <span>ℹ️</span>
+
+                </div>
+
+
+                <div class="card-text">
+
+                    <h3>
+                        About the App
+                    </h3>
+
+                    <p>
+                        Learn what Farmer Assistant is,
+                        why it was created and how it
+                        helps farmers.
+                    </p>
+
+                </div>
+
+
+                <div class="card-arrow">
+
+                    →
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- ABOUT THE DEVELOPERS -->
+
+            <div class="more-card"
+                onclick="window.location.href='{{ url_for('developers') }}'">
+
+                <div class="card-icon developer-icon">
+                    <span>👨‍💻</span>
+                </div>
+
+                <div class="card-text">
+
+                    <h3>
+                        About the Developers
+                    </h3>
+
+                    <p>
+                        Farmer Assistant-এর নির্মাতাদের সম্পর্কে জানুন
+                        এবং এই অ্যাপ তৈরিতে কাজ করা টিমকে চিনুন।
+                    </p>
+
+                </div>
+
+                <div class="card-arrow">
+                    →
+                </div>
+
+            </div>
+
+
+
+            <!-- =========================
+                 USER GUIDE
+            ========================== -->
+
+            <div class="more-card"
+                onclick="window.location.href='{{ url_for('user_guide') }}'">
+
+                <div class="card-icon">
+                    <span>📖</span>
+                </div>
+
+                <div class="card-text">
+
+                    <h3>
+                        User Guide
+                    </h3>
+
+                    <p>
+                        Farmer Assistant কীভাবে ব্যবহার করবেন
+                        তার সম্পূর্ণ নির্দেশিকা।
+                    </p>
+
+                </div>
+
+                <div class="card-arrow">
+                    →
+                </div>
+
+            </div>
+
+
+
+            <!-- =========================
+                 VISITOR STATISTICS
+            ========================== -->
+
+            <div class="more-card"
+                onclick="window.location.href='{{ url_for('visitor_statistics') }}'">
+
+                <div class="card-icon">
+
+                    <span>
+                        👥
+                    </span>
+
+                </div>
+
+                <div class="card-text">
+
+                    <h3>
+                        Visitor Statistics
+                    </h3>
+
+                    <p>
+                        Farmer Assistant কতজন ভিজিট করেছেন
+                        তার পরিসংখ্যান দেখুন।
+                    </p>
+
+                </div>
+
+                <div class="card-arrow">
+                    →
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 APP INFORMATION
+            ========================== -->
+
+            <div class="app-info">
+
+
+                <div class="info-item">
+
+                    <span class="info-icon">
+                        
+                    </span>
+
+                    <span>
+                        Smart Agriculture
+                    </span>
+
+                </div>
+
+
+                <div class="info-item">
+
+                    <span class="info-icon">
+                        
+                    </span>
+
+                    <span>
+                        Smart Aquaculture
+                    </span>
+
+                </div>
+
+
+                <div class="info-item">
+
+                    <span class="info-icon">
+                        
+                    </span>
+
+                    <span>
+                        Livestock Support
+                    </span>
+
+                </div>
+
+                
+                <div class="info-item">
+
+                    <span class="info-icon">
+                        
+                    </span>
+
+                    <span>
+                        Weather information
+                    </span>
+
+                </div>
+                     <div class="info-item">
+
+                    <span class="info-icon">
+                        
+                    </span>
+
+                    <span>
+                        Agricalture office
+                    </span>
+                </div>
+                    <div class="info-item">
+
+                    <span class="info-icon">
+            
+                    </span>
+
+                    <span>
+                        Market price
+                    </span>
+
+                  
+                </div>
+
+
+
+            </div>
+
+
+        </main>
+
+
+
+        <!-- FOOTER -->
+
+        <footer class="more-footer">
+
+            <p>
+                Farmer Assistant
+            </p>
+
+            <span>
+                Smart agricultural assistance platform
+            </span>
+
+        </footer>
+
+
+    </div>
+
+
+
+<script src="{{ url_for('static', filename='more.js') }}"></script>
+    
+
+</body>
+
+</html>

@@ -1,0 +1,623 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #eaf4f0;
+    color: #111827;
+}
+
+
+/* APP */
+
+.developers-app {
+    width: 100%;
+    min-height: 100vh;
+    background: #f4faf7;
+}
+
+
+/* HEADER */
+
+.developers-header {
+    width: 100%;
+    height: 78px;
+
+    background: #ffffff;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 35px;
+
+    border-bottom: 1px solid #e3ebe7;
+
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.developers-header h1 {
+    color: #168b4b;
+    font-size: 27px;
+}
+
+.header-space {
+    width: 45px;
+    height: 45px;
+}
+
+
+/* BACK BUTTON */
+
+.back-button {
+    width: 45px;
+    height: 45px;
+
+    border-radius: 50%;
+
+    background: #e8f7ee;
+    color: #168b4b;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+
+    font-size: 27px;
+
+    transition: 0.25s;
+}
+
+.back-button:hover {
+    background: #168b4b;
+    color: #ffffff;
+}
+
+
+/* CONTENT */
+
+.developers-content {
+    width: 100%;
+    max-width: 900px;
+
+    margin: auto;
+
+    padding: 45px 30px 60px;
+}
+
+
+/* INTRO */
+
+.developers-intro {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.team-icon {
+    width: 75px;
+    height: 75px;
+
+    margin: auto;
+    margin-bottom: 15px;
+
+    border-radius: 22px;
+
+    background: #e8f7ee;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 38px;
+}
+
+.developers-intro h2 {
+    color: #168b4b;
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+
+.developers-intro p {
+    color: #6b7280;
+    font-size: 15px;
+}
+
+
+/* DEVELOPER CARD */
+
+.developer-card {
+    width: 100%;
+
+    background: #ffffff;
+
+    border-radius: 20px;
+
+    padding: 24px;
+
+    margin-bottom: 18px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 20px;
+
+    box-shadow:
+        0 6px 22px rgba(0, 0, 0, 0.07);
+
+    transition: 0.25s;
+}
+
+.developer-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 28px rgba(0, 0, 0, 0.10);
+}
+
+
+/* DEVELOPER ICON */
+
+.developer-icon {
+    width: 70px;
+    height: 70px;
+
+    min-width: 70px;
+
+    border-radius: 18px;
+
+    background: #e8f7ee;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 32px;
+}
+
+
+/* DEVELOPER INFO */
+
+.developer-info {
+    flex: 1;
+}
+
+.developer-info h3 {
+    font-size: 20px;
+    color: #111827;
+
+    margin-bottom: 5px;
+}
+
+.developer-info span {
+    display: block;
+
+    color: #168b4b;
+
+    font-size: 13px;
+
+    margin-bottom: 8px;
+}
+
+.developer-info p {
+    color: #667085;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+/* ORGANIZATION */
+
+.organization-card {
+    width: 100%;
+
+    background: #ffffff;
+
+    border-radius: 20px;
+
+    padding: 22px 24px;
+
+    margin-top: 25px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 18px;
+
+    box-shadow:
+        0 6px 22px rgba(0, 0, 0, 0.06);
+}
+
+.organization-icon {
+    width: 55px;
+    height: 55px;
+
+    min-width: 55px;
+
+    border-radius: 15px;
+
+    background: #e8f2ff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 26px;
+}
+
+.organization-card h3 {
+    color: #168b4b;
+
+    font-size: 17px;
+
+    margin-bottom: 5px;
+}
+
+.organization-card p {
+    color: #667085;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+}
+
+
+/* MESSAGE */
+
+.developer-message {
+    margin-top: 25px;
+
+    padding: 27px;
+
+    background: #e8f7ee;
+
+    border-radius: 20px;
+
+    text-align: center;
+}
+
+.developer-message > div {
+    font-size: 30px;
+
+    margin-bottom: 8px;
+}
+
+.developer-message h3 {
+    color: #168b4b;
+
+    font-size: 20px;
+
+    margin-bottom: 8px;
+}
+
+.developer-message p {
+    max-width: 650px;
+
+    margin: auto;
+
+    color: #4b5563;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+/* FOOTER */
+
+.developers-footer {
+    text-align: center;
+
+    padding: 20px 20px 35px;
+}
+
+.developers-footer strong {
+    display: block;
+
+    color: #168b4b;
+
+    font-size: 16px;
+
+    margin-bottom: 5px;
+}
+
+.developers-footer span {
+    color: #7a8781;
+
+    font-size: 12px;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    body {
+        background: #f4faf7;
+    }
+
+    .developers-header {
+        height: 65px;
+        padding: 0 15px;
+    }
+
+    .developers-header h1 {
+        font-size: 20px;
+    }
+
+    .back-button {
+        width: 40px;
+        height: 40px;
+
+        font-size: 24px;
+    }
+
+    .header-space {
+        width: 40px;
+        height: 40px;
+    }
+
+    .developers-content {
+        padding: 25px 15px 35px;
+    }
+
+    .developers-intro {
+        margin-bottom: 25px;
+    }
+
+    .team-icon {
+        width: 65px;
+        height: 65px;
+
+        border-radius: 18px;
+
+        font-size: 32px;
+    }
+
+    .developers-intro h2 {
+        font-size: 24px;
+    }
+
+    .developers-intro p {
+        font-size: 12.5px;
+    }
+
+    .developer-card {
+        padding: 16px;
+
+        gap: 14px;
+
+        border-radius: 17px;
+
+        margin-bottom: 14px;
+    }
+
+    .developer-icon {
+        width: 52px;
+        height: 52px;
+
+        min-width: 52px;
+
+        border-radius: 14px;
+
+        font-size: 25px;
+    }
+
+    .developer-info h3 {
+        font-size: 16px;
+    }
+
+    .developer-info span {
+        font-size: 11.5px;
+    }
+
+    .developer-info p {
+        font-size: 12px;
+    }
+
+    .organization-card {
+        padding: 16px;
+
+        border-radius: 17px;
+
+        gap: 12px;
+    }
+
+    .organization-icon {
+        width: 48px;
+        height: 48px;
+
+        min-width: 48px;
+
+        font-size: 23px;
+    }
+
+    .organization-card h3 {
+        font-size: 15px;
+    }
+
+    .organization-card p {
+        font-size: 12px;
+    }
+
+    .developer-message {
+        padding: 22px 16px;
+
+        border-radius: 17px;
+    }
+
+    .developer-message h3 {
+        font-size: 18px;
+    }
+
+    .developer-message p {
+        font-size: 12.5px;
+    }
+}
+/* ================================
+   DEVELOPER PHOTO & CONTACT
+   ================================ */
+
+.developer-photo {
+    width: 85px;
+    height: 85px;
+
+    min-width: 85px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border: 3px solid #e8f7ee;
+}
+
+
+/* CONTACT LINKS */
+
+.contact-info {
+    display: flex;
+
+    gap: 15px;
+
+    margin: 8px 0;
+}
+
+.contact-info a {
+    text-decoration: none;
+
+    color: #168b4b;
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    .developer-photo {
+        width: 60px;
+        height: 60px;
+
+        min-width: 60px;
+    }
+
+    .contact-info {
+        gap: 10px;
+
+        flex-wrap: wrap;
+    }
+
+    .contact-info a {
+        font-size: 12px;
+    }
+
+}
+/* ================================
+   COMMON CONTRIBUTION
+   ================================ */
+
+.common-contribution {
+    width: 100%;
+
+    background: #ffffff;
+
+    border-radius: 20px;
+
+    padding: 28px;
+
+    margin: 25px 0;
+
+    text-align: center;
+
+    box-shadow:
+        0 6px 22px rgba(0, 0, 0, 0.07);
+}
+
+.common-icon {
+    width: 60px;
+    height: 60px;
+
+    margin: 0 auto 12px;
+
+    border-radius: 17px;
+
+    background: #e8f7ee;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 30px;
+}
+
+.common-contribution h3 {
+    color: #168b4b;
+
+    font-size: 21px;
+
+    margin-bottom: 12px;
+}
+
+.common-contribution p {
+    max-width: 700px;
+
+    margin: 0 auto 10px;
+
+    color: #667085;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    .common-contribution {
+        padding: 22px 17px;
+
+        border-radius: 17px;
+    }
+
+    .common-icon {
+        width: 52px;
+        height: 52px;
+
+        font-size: 25px;
+    }
+
+    .common-contribution h3 {
+        font-size: 18px;
+    }
+
+    .common-contribution p {
+        font-size: 12.5px;
+
+        line-height: 1.6;
+    }
+
+}

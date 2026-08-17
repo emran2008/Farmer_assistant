@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="bn">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>User Guide - Farmer Assistant</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='user_guide.css') }}">
+
+</head>
+
+
+<body>
+
+<div class="guide-app">
+
+
+    <!-- ================================
+         HEADER
+    ================================= -->
+
+    <header class="guide-header">
+
+        <a href="{{ url_for('more') }}"
+           class="back-button">
+
+            ←
+
+        </a>
+
+        <h1>
+            ব্যবহার নির্দেশিকা
+        </h1>
+
+        <div class="header-space"></div>
+
+    </header>
+
+
+
+    <!-- ================================
+         MAIN
+    ================================= -->
+
+    <main class="guide-content">
+
+
+        <!-- INTRO -->
+
+        <section class="guide-intro">
+
+            <div class="guide-icon">
+                📖
+            </div>
+
+            <h2>
+                Farmer Assistant ব্যবহার নির্দেশিকা
+            </h2>
+
+            <p>
+                Farmer Assistant-এর বিভিন্ন সেবা
+                কীভাবে ব্যবহার করবেন তা এখানে
+                ধাপে ধাপে জানতে পারবেন।
+            </p>
+
+        </section>
+
+
+
+        <!-- ================================
+             STEP 1
+        ================================= -->
+
+        <div class="guide-card"
+             onclick="toggleGuide(this)">
+
+            <div class="guide-card-header">
+
+                <div class="step-number">
+                    ১
+                </div>
+
+                <div class="guide-title">
+
+                    <h3>
+                        Farmer Assistant কীভাবে শুরু করবেন?
+                    </h3>
+
+                    <p>
+                        অ্যাপের প্রধান পেজ থেকে সেবা নির্বাচন
+                    </p>
+
+                </div>
+
+                <div class="toggle-icon">
+                    +
+                </div>
+
+            </div>
+
+
+            <div class="guide-answer">
+
+                <p>
+                    Farmer Assistant চালু করার পর
+                    প্রধান পেজে বিভিন্ন কৃষি সেবা দেখতে পাবেন।
+                </p>
+
+                <p>
+                    আপনার প্রয়োজন অনুযায়ী নির্দিষ্ট
+                    সেবার বাটনে ক্লিক করুন।
+                </p>
+
+                <ul>
+
+                    <li>
+                        প্রয়োজনীয় সেবা নির্বাচন করুন।
+                    </li>
+
+                    <li>
+                        প্রদর্শিত তথ্যগুলো সঠিকভাবে পূরণ করুন।
+                    </li>
+
+                    <li>
+                        Submit / Calculate / Search বাটনে
+                        ক্লিক করুন।
+                    </li>
+
+                    <li>
+                        আপনার ফলাফল ও প্রয়োজনীয় তথ্য দেখুন।
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ================================
+             CROP RECOMMENDATION
+        ================================= -->
+
+        <div class="guide-card"
+             onclick="toggleGuide(this)">
+
+            <div class="guide-card-header">
+
+                <div class="step-number">
+                    🌱
+                </div>
+
+                <div class="guide-title">
+
+                    <h3>
+                        Crop Recommendation ব্যবহার
+                    </h3>
+
+                    <p>
+                        উপযুক্ত ফসল সম্পর্কে সুপারিশ
+                    </p>
+
+                </div>
+
+                <div class="toggle-icon">
+                    +
+                </div>
+
+            </div>
+
+
+            <div class="guide-answer">
+
+                <p>
+                    Crop Recommendation ব্যবহার করে
+                    আপনার জমির জন্য উপযুক্ত ফসল সম্পর্কে
+                    সুপারিশ পেতে পারেন।
+                </p>
+
+                <ul>
+
+                    <li>
+                        Crop Recommendation নির্বাচন করুন।
+                    </li>
+
+                    <li>
+                        প্রয়োজনীয় মাটি ও আবহাওয়ার তথ্য দিন।
+                    </li>
+
+                    <li>
+                        প্রয়োজনীয় তথ্যগুলো সঠিকভাবে পূরণ করুন।
+                    </li>
+
+                    <li>
+                        Recommendation বাটনে ক্লিক করুন।
+                    </li>
+
+                    <li>
+                        প্রাপ্ত ফসলের সুপারিশ ও তথ্য দেখুন।
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ================================
+             POND CULTURE
+        ================================= -->
+
+        <div class="guide-card"
+             onclick="toggleGuide(this)">
+
+            <div class="guide-card-header">
+
+                <div class="step-number">
+                    🐟
+                </div>
+
+                <div class="guide-title">
+
+                    <h3>
+                        পুকুরে মাছ চাষের তথ্য
+                    </h3>
+
+                    <p>
+                        Pond Culture ব্যবহার করার নিয়ম
+                    </p>
+
+                </div>
+
+                <div class="toggle-icon">
+                    +
+                </div>
+
+            </div>
+
+
+            <div class="guide-answer">
+
+                <p>
+                    Pond Culture সেবার মাধ্যমে পুকুরে
+                    মাছ চাষের জন্য প্রয়োজনীয় তথ্য ও
+                    সুপারিশ পাওয়া যাবে।
+                </p>
+
+                <ul>
+
+                    <li>
+                        Pond Culture নির্বাচন করুন।
+                    </li>
+
+                    <li>
+                        পুকুরের আকার ও গভীরতার তথ্য দিন।
+                    </li>
+
+                    <li>
+                        পানির তাপমাত্রা, pH এবং DO-এর
+                        তথ্য প্রদান করুন।
+                    </li>
+
+                    <li>
+                        প্রয়োজনীয় ইনপুট পূরণ করুন।
+                    </li>
+
+                    <li>
+                        Prediction / Recommendation
+                        বাটনে ক্লিক করুন।
+                    </li>
+
+                    <li>
+                        প্রাপ্ত মাছের সুপারিশ ও
+                        ব্যবস্থাপনা তথ্য দেখুন।
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ================================
+             BIOFLOC
+        ================================= -->
+
+        <div class="guide-card"
+             onclick="toggleGuide(this)">
+
+            <div class="guide-card-header">
+
+                <div class="step-number">
+                    🧪
+                </div>
+
+                <div class="guide-title">
+
+                    <h3>
+                        Biofloc ব্যবহার
+                    </h3>
+
+                    <p>
+                        Biofloc পদ্ধতির জন্য তথ্য ও বিশ্লেষণ
+                    </p>
+
+                </div>
+
+                <div class="toggle-icon">
+                    +
+                </div>
+
+            </div>
+
+
+            <div class="guide-answer">
+
+                <p>
+                    Biofloc সেবার মাধ্যমে Biofloc
+                    পদ্ধতিতে মাছ চাষের বিভিন্ন
+                    পানির মান ও ব্যবস্থাপনা সম্পর্কিত
+                    তথ্য বিশ্লেষণ করা যায়।
+                </p>
+
+                <ul>
+
+                    <li>
+                        মাছের প্রজাতি নির্বাচন করুন।
+                    </li>
+
+                    <li>
+                        ট্যাংকের পানির পরিমাণ দিন।
+                    </li>
+
+                    <li>
+                        মাছের সংখ্যা ও গড় ওজন দিন।
+                    </li>
+
+                    <li>
+                        Temperature, pH ও Dissolved Oxygen
+                        এর তথ্য দিন।
+                    </li>
+
+                    <li>
+                        Ammonia ও Nitrite-এর তথ্য দিন।
+                    </li>
+
+                    <li>
+                        Calculate / Predict বাটনে ক্লিক করুন।
+                    </li>
+
+                    <li>
+                        পানির অবস্থা ও প্রয়োজনীয়
+                        Action Plan দেখুন।
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ================================
+             WEATHER
+        ================================= -->
+
+        <div class="guide-card"
+             onclick="toggleGuide(this)">
+
+            <div class="guide-card-header">
+
+                <div class="step-number">
+                    🌦️
+                </div>
+
+                <div class="guide-title">
+
+                    <h3>
+                        আবহাওয়ার তথ্য দেখা
+                    </h3>
+
+                    <p>
+                        কৃষিকাজের জন্য আবহাওয়ার তথ্য
+                    </p>
+
+                </div>
+
+                <div class="toggle-icon">
+                    +
+                </div>
+
+            </div>
+
+
+            <div class="guide-answer">
+
+                <p>
+                    Weather সেবা ব্যবহার করে
+                    নির্দিষ্ট এলাকার আবহাওয়ার
+                    প্রয়োজনীয় তথ্য দেখা যাবে।
+                </p>
+
+                <ul>
+
+                    <li>
+                        Weather নির্বাচন করুন।
+                    </li>
+
+                    <li>
+                        প্রয়োজনীয় স্থান বা শহরের নাম দিন।
+                    </li>
+
+                    <li>
+                        Search বাটনে ক্লিক করুন।
+                    </li>
+
+                    <li>
+                        Temperature, Humidity ও
+                        Rainfall-এর তথ্য দেখুন।
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ================================
+             MARKET PRICE
+        ================================= -->
+
+        <div class="guide-card"
+             onclick="toggleGuide(this)">
+
+            <div class="guide-card-header">
+
+                <div class="step-number">
+                    💰
+                </div>
+
+                <div class="guide-title">
+
+                    <h3>
+                        বাজারদর দেখা
+                    </h3>
+
+                    <p>
+                        কৃষিপণ্যের বাজারমূল্য
+                    </p>
+
+                </div>
+
+                <div class="toggle-icon">
+                    +
+                </div>
+
+            </div>
+
+
+            <div class="guide-answer">
+
+                <p>
+                    Market Price সেবার মাধ্যমে
+                    কৃষিপণ্যের বর্তমান বাজারদর
+                    সম্পর্কে তথ্য পাওয়া যাবে।
+                </p>
+
+                <ul>
+
+                    <li>
+                        Market Price নির্বাচন করুন।
+                    </li>
+
+                    <li>
+                        প্রয়োজনীয় পণ্য নির্বাচন বা অনুসন্ধান করুন।
+                    </li>
+
+                    <li>
+                        প্রদর্শিত বাজারদরের তথ্য দেখুন।
+                    </li>
+
+                    <li>
+                        প্রয়োজন হলে সরকারি বাজারদরের
+                        উৎসও দেখতে পারবেন।
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ================================
+             LIVESTOCK
+        ================================= -->
+
+        <div class="guide-card"
+             onclick="toggleGuide(this)">
+
+            <div class="guide-card-header">
+
+                <div class="step-number">
+                    🐄
+                </div>
+
+                <div class="guide-title">
+
+                    <h3>
+                        Live Stock তথ্য
+                    </h3>
+
+                    <p>
+                        প্রাণিসম্পদ সম্পর্কিত তথ্য
+                    </p>
+
+                </div>
+
+                <div class="toggle-icon">
+                    +
+                </div>
+
+            </div>
+
+
+            <div class="guide-answer">
+
+                <p>
+                    Live Stock সেবার মাধ্যমে
+                    প্রাণিসম্পদ ও গবাদিপশু সম্পর্কিত
+                    প্রয়োজনীয় তথ্য পাওয়া যাবে।
+                </p>
+
+                <ul>
+
+                    <li>
+                        Live Stock নির্বাচন করুন।
+                    </li>
+
+                    <li>
+                        প্রয়োজনীয় প্রাণী বা বিষয় নির্বাচন করুন।
+                    </li>
+
+                    <li>
+                        প্রদর্শিত তথ্য ও নির্দেশনা পড়ুন।
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ================================
+             IMPORTANT TIPS
+        ================================= -->
+
+        <section class="tips-card">
+
+            <div class="tips-icon">
+                💡
+            </div>
+
+            <h3>
+                গুরুত্বপূর্ণ নির্দেশনা
+            </h3>
+
+            <ul>
+
+                <li>
+                    তথ্য দেওয়ার সময় সঠিক মান ব্যবহার করুন।
+                </li>
+
+                <li>
+                    প্রয়োজনীয় ঘরগুলো খালি রাখবেন না।
+                </li>
+
+                <li>
+                    Prediction বা Recommendation
+                    পাওয়ার পর ফলাফল ভালোভাবে পড়ুন।
+                </li>
+
+                <li>
+                    কৃষি সংক্রান্ত গুরুত্বপূর্ণ সিদ্ধান্তের
+                    ক্ষেত্রে স্থানীয় কৃষি বিশেষজ্ঞের
+                    পরামর্শ নেওয়া ভালো।
+                </li>
+
+            </ul>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- FOOTER -->
+
+    <footer class="guide-footer">
+
+        <strong>
+            Farmer Assistant
+        </strong>
+
+        <span>
+            স্মার্ট কৃষি সহায়তা প্ল্যাটফর্ম
+        </span>
+
+    </footer>
+
+
+</div>
+
+
+
+<script src="{{ url_for('static', filename='user_guide.js') }}">
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>About the App - Farmer Assistant</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='about_app.css') }}">
+
+</head>
+
+
+<body>
+
+
+    <!-- =================================
+         APP
+    ================================== -->
+
+    <div class="about-app">
+
+
+        <!-- =================================
+             HEADER
+        ================================== -->
+
+        <header class="about-header">
+
+            <a href="{{ url_for('more') }}"
+               class="back-button">
+
+                ←
+
+            </a>
+
+
+            <h1>
+                About the App
+            </h1>
+
+
+            <div class="header-space"></div>
+
+        </header>
+
+
+
+        <!-- =================================
+             MAIN
+        ================================== -->
+
+        <main class="about-content">
+
+
+            <!-- APP INTRO -->
+
+            <section class="app-intro">
+
+                <div class="app-logo">
+                    🌱
+                </div>
+
+                <h2>
+                    Farmer Assistant
+                </h2>
+
+                <p>
+                    Smart Agricultural Assistance App
+                </p>
+
+            </section>
+
+
+
+            <!-- =================================
+                 WHAT IS FARMER ASSISTANT
+            ================================== -->
+
+            <div class="info-card"
+                 onclick="toggleCard(this)">
+
+
+                <div class="info-card-header">
+
+                    <div class="info-icon">
+                        🌾
+                    </div>
+
+
+                    <div class="info-title">
+
+                        <h3>
+                           What is Farmer Assistant?
+                        </h3>
+
+                        <p>
+                            Learn about Farmer Assistant
+                        </p>
+
+                    </div>
+
+
+                    <div class="toggle-icon">
+                        +
+                    </div>
+
+                </div>
+
+
+                <div class="info-answer">
+
+                    <p>
+                        Farmer Assistant একটি স্মার্ট কৃষি সহায়তা অ্যাপ,
+                        যেখানে কৃষক একই প্ল্যাটফর্ম থেকে ফসল চাষ,
+                        মৎস্য চাষ, আবহাওয়া, বাজারদরসহ বিভিন্ন
+                        কৃষি সংক্রান্ত প্রয়োজনীয় তথ্য ও সেবা পেতে পারেন।
+                    </p>
+
+                    <p>
+                    এই অ্যাপের মূল উদ্দেশ্য হলো কৃষকদের জন্য
+                    প্রয়োজনীয় কৃষি তথ্য সহজ, দ্রুত এবং
+                    ব্যবহারবান্ধব উপায়ে পৌঁছে দেওয়া।
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================
+                 WHY WAS IT MADE
+            ================================== -->
+
+            <div class="info-card"
+                 onclick="toggleCard(this)">
+
+
+                <div class="info-card-header">
+
+                    <div class="info-icon">
+                        💡
+                    </div>
+
+
+                    <div class="info-title">
+
+                        <h3>
+                            Why was Farmer Assistant made?
+                        </h3>
+
+                        <p>
+                            The purpose behind this app
+                        </p>
+
+                    </div>
+
+
+                    <div class="toggle-icon">
+                        +
+                    </div>
+
+                </div>
+
+
+                <div class="info-answer">
+
+                    <p>
+                        কৃষকদের ফসল চাষ, মৎস্য চাষ ও অন্যান্য কৃষি
+                        কার্যক্রমের সময় বিভিন্ন ধরনের তথ্য ও পরামর্শের
+                        প্রয়োজন হয়।
+
+                    <p>
+
+                    অনেক সময় সঠিক তথ্য খুঁজে পেতে বিভিন্ন
+                    উৎসে যেতে হয়, ফলে সময় ও পরিশ্রম দুটোই বেশি লাগে।
+                    </p>
+
+                    <p>
+                    এই সমস্যা কমানোর জন্য Farmer Assistant তৈরি করা হয়েছে,
+                    যাতে কৃষক একটি প্ল্যাটফর্ম থেকেই প্রয়োজনীয়
+                    কৃষি তথ্য ও সহায়তা পেতে পারেন।
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================
+                 HOW IT HELPS FARMERS
+            ================================== -->
+
+            <div class="info-card"
+                 onclick="toggleCard(this)">
+
+
+                <div class="info-card-header">
+
+                    <div class="info-icon">
+                        👨‍🌾
+                    </div>
+
+
+                    <div class="info-title">
+
+                        <h3>
+                            How does it help farmers?
+                        </h3>
+
+                        <p>
+                            How farmers can benefit
+                        </p>
+
+                    </div>
+
+
+                    <div class="toggle-icon">
+                        +
+                    </div>
+
+                </div>
+
+
+                <div class="info-answer">
+
+                    <p>
+                    Farmer Assistant কৃষকদের বিভিন্ন কৃষি সিদ্ধান্ত
+                    গ্রহণে প্রয়োজনীয় তথ্য ও পরামর্শ প্রদান করে।
+                    এর মাধ্যমে কৃষক সহজে নিজের প্রয়োজন অনুযায়ী
+                    বিভিন্ন সেবা ব্যবহার করতে পারেন।
+                    </p>
+
+                    <ul>
+
+                        <li>
+                            ফসল নির্বাচন ও চাষের ক্ষেত্রে পরামর্শ প্রদান করে।
+                        </li>
+
+                        <li>
+                        মৎস্য চাষের জন্য প্রয়োজনীয় তথ্য ও
+                        সুপারিশ প্রদান করে।
+                        </li>
+
+                        <li>
+
+                        আবহাওয়া সম্পর্কিত তথ্য জানতে সহায়তা করে।
+                        </li>
+
+                        <li>
+                         কৃষিপণ্যের বাজারদর সম্পর্কে তথ্য পেতে সহায়তা করে।
+                        </li>
+
+                        <li>
+                        কৃষি সংক্রান্ত বিভিন্ন তথ্য ও সেবা
+                        একটি প্ল্যাটফর্মে প্রদান করে।
+                        </li>
+                        <li>
+                        কৃষকের সময় ও পরিশ্রম কমাতে সহায়তা করে।
+                        </li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================
+                 SERVICES
+            ================================== -->
+
+            <div class="info-card"
+                 onclick="toggleCard(this)">
+
+
+                <div class="info-card-header">
+
+                    <div class="info-icon">
+                        ⚙️
+                    </div>
+
+
+                    <div class="info-title">
+
+                        <h3>
+                            What services does it provide?
+                        </h3>
+
+                        <p>
+                            Explore the main services
+                        </p>
+
+                    </div>
+
+
+                    <div class="toggle-icon">
+                        +
+                    </div>
+
+                </div>
+
+
+                <div class="info-answer">
+
+                    <div class="service-list">
+
+
+                        <div class="service-item">
+
+                            <span>
+                                🌱
+                            </span>
+
+                            <div>
+
+                                <strong>
+                                    Crop Recommendation
+                                </strong>
+
+                                <p>
+                                    Get crop recommendations
+                                    based on agricultural
+                                    conditions.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="service-item">
+
+                            <span>
+                                🐟
+                            </span>
+
+                            <div>
+
+                                <strong>
+                                    Aquaculture
+                                </strong>
+
+                                <p>
+                                    Get useful information and
+                                    recommendations for fish
+                                    farming.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="service-item">
+
+                            <span>
+                                🐄
+                            </span>
+
+                            <div>
+
+                                <strong>
+                                    Livestock Support
+                                </strong>
+
+                                <p>
+                                    Access useful livestock
+                                    farming information.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="service-item">
+
+                            <span>
+                                🌦️
+                            </span>
+
+                            <div>
+
+                                <strong>
+                                    Weather Information
+                                </strong>
+
+                                <p>
+                                    Access weather-related
+                                    information useful for
+                                    farming.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                            <div class="service-item">
+
+                            <span>
+                                🐟
+                            </span>
+
+                            <div>
+
+                                <strong>
+                                    Fish hatchery
+                                </strong>
+
+                                <p>
+                                    Access Fish hatchery
+                                    information.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                        <div class="service-item">
+
+                            <span>
+                                💰
+                            </span>
+
+                            <div>
+
+                                <strong>
+                                    Market Price
+                                </strong>
+
+                                <p>
+                                    Access agricultural market
+                                    price information.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="service-item">
+
+                            <span>
+                                🏢
+                            </span>
+
+                            <div>
+
+                                <strong>
+                                    Agriculture Office
+                                </strong>
+
+                                <p>
+                                    Find useful agricultural
+                                    office information and
+                                    services.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================
+                 OUR GOAL
+            ================================== -->
+
+            <section class="goal-card">
+
+                <div class="goal-icon">
+                    🎯
+                </div>
+
+                <h3>
+                    Our Goal
+                </h3>
+
+                <p>
+                    কৃষকদের কাছে প্রয়োজনীয় কৃষি তথ্য ও
+                    স্মার্ট সিদ্ধান্ত গ্রহণের সহায়তা সহজ,
+                    দ্রুত এবং সহজলভ্য করে তোলা।
+                </p>
+
+            </section>
+
+
+        </main>
+
+
+
+        <!-- =================================
+             FOOTER
+        ================================== -->
+
+        <footer class="about-footer">
+
+            <strong>
+                Farmer Assistant
+            </strong>
+
+            <span>
+                Smart Agricultural Assistance Platform
+            </span>
+
+        </footer>
+
+
+    </div>
+
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="{{ url_for('static', filename='about_app.js') }}">
+    </script>
+
+</body>
+
+</html>
