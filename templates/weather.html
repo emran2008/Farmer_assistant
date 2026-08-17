@@ -39,10 +39,21 @@
         padding: 35px 20px;
       }
 
-      .title {
-        text-align: center;
-        margin-bottom: 30px;
-      }
+ .title {
+    background: white;
+
+    text-align: center;
+
+    padding: 24px 20px;
+
+    margin-bottom: 25px;
+
+    border-radius: 22px;
+
+    border: 1px solid #e5e7eb;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+}
 
       .title h2 {
         color: #168b4d;
@@ -306,23 +317,35 @@
         }
       }
 
-      @media (max-width: 500px) {
-        .header h1 {
-          font-size: 27px;
-        }
+@media (max-width: 500px) {
 
-        .title h2 {
-          font-size: 25px;
-        }
+    .header h1 {
+        font-size: 27px;
+    }
 
-        .weather-cards {
-          grid-template-columns: 1fr 1fr;
-        }
+    .title {
+        padding: 18px 12px;
+        margin-bottom: 18px;
+        border-radius: 18px;
+    }
 
-        .forecast {
-          grid-template-columns: 1fr 1fr;
-        }
-      }
+    .title h2 {
+        font-size: 25px;
+    }
+
+    .title p {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .weather-cards {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .forecast {
+        grid-template-columns: 1fr 1fr;
+    }
+}
     </style>
     <style>
       .back-button {
@@ -346,14 +369,6 @@
     </style>
   </head>
 
-  <body>
-    <div class="back-button">
-      <a href="{{ url_for('home') }}">← Back</a>
-    </div>
-    <!-- Header -->
-    <header class="header">
-      <h1>Farmer Assistant</h1>
-    </header>
 
     <main class="container">
       <div class="title">

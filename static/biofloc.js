@@ -210,11 +210,6 @@ try {
             );
         }
 
-
-        // ====================================================
-        // DISPLAY RESULT
-        // ====================================================
-
         displayResults(
             responseData.result
         );
@@ -267,9 +262,26 @@ function displayResults(result) {
             "Not available";
 
 
-    // ========================================================
-    // PRODUCTION
-    // ========================================================
+   // ========================================================
+        // SELECTED FISH INFORMATION
+        // ========================================================
+
+        const selectedFish = result.fish_name || "-";
+
+        const fishNameElement =
+            document.getElementById("fishName");
+
+        if (fishNameElement) {
+            fishNameElement.textContent = selectedFish;
+        }
+
+        const fishBioflocElement =
+            document.getElementById("fishBioflocSuitability");
+
+        if (fishBioflocElement) {
+            fishBioflocElement.textContent =
+                result.biofloc_suitability || "Good";
+        }
 
     document
         .getElementById("currentBiomass")

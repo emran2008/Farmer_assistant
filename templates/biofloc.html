@@ -2,20 +2,8 @@
 <html lang="en">
   <head>
     <style>
-      .back-btn {
-        background-color: #2aaa13;
-        color: rgb(248, 237, 237);
-        border: none;
-        padding: 10px 20px;
-        border-radius: 8px;
-        cursor: pointer;
-        font-size: 16px;
-        margin-bottom: 20px;
-      }
-
-      .back-btn:hover {
-        background-color: #458229;
-      }
+      
+     
     </style>
     <meta charset="UTF-8" />
 
@@ -37,9 +25,7 @@
     <header class="top-header">
       <div class="header-content">
         <div>
-          <button type="button" class="back-btn" onclick="history.back()">
-            ← Back
-          </button>
+        
           <h1>🐟 Biofloc Farm Assistant</h1>
 
           <p>Smart Biofloc Production & Water Quality Analysis</p>
@@ -94,7 +80,7 @@
               </div>
             </div>
 
-            <select id="fish_name">
+            <select id="fish_name" onchange="updateFishInfo()">
               <option value="Tilapia">Tilapia</option>
 
               <option value="Pangasius">Pangasius</option>
