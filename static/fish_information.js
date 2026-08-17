@@ -738,9 +738,7 @@ const LOCATION_DATA = {
 };
 
 
-/* =========================================================
-   FISH LIST
-========================================================= */
+/*  FISH LIST */
 
 const FISH_LIST = [
 
@@ -761,9 +759,7 @@ const FISH_LIST = [
 
 
 
-/* =========================================================
-   OFFICIAL SOURCES
-========================================================= */
+/* OFFICIAL SOURCES */
 
 const OFFICIAL_SOURCES = [
 
@@ -1147,7 +1143,7 @@ division.addEventListener(
         if(!division.value){
 
             locationStatus.textContent =
-                "📍 প্রথমে বিভাগ নির্বাচন করুন";
+                "প্রথমে বিভাগ নির্বাচন করুন";
 
             return;
 
@@ -1180,7 +1176,7 @@ division.addEventListener(
 
 
         locationStatus.textContent =
-            "✅ এখন জেলা নির্বাচন করুন";
+            "এখন জেলা নির্বাচন করুন";
 
     }
 );
@@ -1239,7 +1235,7 @@ district.addEventListener(
 
 
         locationStatus.textContent =
-            "✅ এখন উপজেলা নির্বাচন করুন";
+            " এখন উপজেলা নির্বাচন করুন";
 
     }
 );
@@ -1263,7 +1259,7 @@ upazila.addEventListener(
 
         locationStatus.textContent =
 
-            `✅ ${division.value}
+            ` ${division.value}
              → ${district.value}
              → ${upazila.value}`;
 
@@ -1362,7 +1358,7 @@ function showHatcheryResults(data){
                 <div class="result-header">
 
                     <h3>
-                        🔎 হ্যাচারি পাওয়া যায়নি
+                         হ্যাচারি পাওয়া যায়নি
                     </h3>
 
                     <p>
@@ -1396,7 +1392,7 @@ function showHatcheryResults(data){
             <div class="result-header">
 
                 <h3>
-                    ✅ ${data.length} টি হ্যাচারি পাওয়া গেছে
+                     ${data.length} টি হ্যাচারি পাওয়া গেছে
                 </h3>
 
                 <p>
@@ -1406,7 +1402,7 @@ function showHatcheryResults(data){
                     →
                     ${upazila.value}
                     |
-                    🐟 ${fish.value}
+                     ${fish.value}
                 </p>
 
             </div>
@@ -1443,7 +1439,7 @@ function showBuyResults(data){
                 <div class="result-header">
 
                     <h3>
-                        🛒 বিক্রেতা পাওয়া যায়নি
+                         বিক্রেতা পাওয়া যায়নি
                     </h3>
 
                     <p>
@@ -1473,7 +1469,7 @@ function showBuyResults(data){
             <div class="result-header">
 
                 <h3>
-                    🛒 মাছ / পোনা কিনুন
+                     মাছ / পোনা কিনুন
                 </h3>
 
                 <p>
@@ -1514,24 +1510,24 @@ function createSellerCard(h){
         <div class="seller-card">
 
             <h3>
-                🏭 ${h.name}
+                 ${h.name}
             </h3>
 
             <div class="seller-row">
-                📍 ${h.district},
+                 ${h.district},
                 ${h.upazila}
             </div>
 
             <div class="seller-row">
-                🐟 ${h.fish.join(", ")}
+                 ${h.fish.join(", ")}
             </div>
 
             <div class="seller-row">
-                📞 ${h.phone}
+                 ${h.phone}
             </div>
 
             <div class="seller-row">
-                ✉️ ${h.email}
+                 ${h.email}
             </div>
 
         </div>
@@ -1553,28 +1549,28 @@ function createBuyCard(h,index){
         <div class="seller-card">
 
             <h3>
-                🐟 ${h.name}
+                 ${h.name}
             </h3>
 
             <div class="seller-row">
-                📍 ${h.district},
+                 ${h.district},
                 ${h.upazila}
             </div>
 
             <div class="seller-row">
-                🐟 ${h.fish.join(", ")}
+                 ${h.fish.join(", ")}
             </div>
 
             <div class="seller-row">
-                📞 ${h.phone}
+                 ${h.phone}
             </div>
 
             <div class="seller-row">
-                ✉️ ${h.email}
+                 ${h.email}
             </div>
 
             <div class="seller-row">
-                💰 মূল্য:
+                 মূল্য:
                 বিক্রেতার সাথে নিশ্চিত করুন
             </div>
 
@@ -1583,7 +1579,7 @@ function createBuyCard(h,index){
                 class="buy-btn"
                 onclick="openOrder(${index})">
 
-                🛒 অর্ডার করুন
+                 অর্ডার করুন
 
             </button>
 
@@ -1643,22 +1639,22 @@ window.openOrder = function(index){
     sellerInfo.innerHTML = `
 
         <strong>
-            🏭 ${currentSeller.name}
+             ${currentSeller.name}
         </strong>
 
         <br>
 
-        📍 ${currentSeller.district},
+         ${currentSeller.district},
         ${currentSeller.upazila}
 
         <br>
 
-        🐟 মাছ:
+         মাছ:
         ${fish.value}
 
         <br>
 
-        📞 ${currentSeller.phone}
+         ${currentSeller.phone}
 
     `;
 
@@ -1793,7 +1789,7 @@ orderForm.addEventListener(
 
 
         alert(
-            "✅ অর্ডার রিকোয়েস্ট সফলভাবে সংরক্ষণ হয়েছে।"
+            " অর্ডার রিকোয়েস্ট সফলভাবে সংরক্ষণ হয়েছে।"
         );
 
     }
@@ -1827,7 +1823,7 @@ function renderOrders(){
 
             <div class="empty">
 
-                📦 এখনো কোনো অর্ডার নেই।
+                 এখনো কোনো অর্ডার নেই।
 
             </div>
 
@@ -1847,38 +1843,38 @@ function renderOrders(){
                     <div class="order-card">
 
                         <strong>
-                            🐟 ${order.fish}
+                             ${order.fish}
                         </strong>
 
                         <br>
 
-                        📦 পরিমাণ:
+                         পরিমাণ:
                         ${order.quantity}
                         ${order.unit}
 
                         <br>
 
-                        🏭 বিক্রেতা:
+                         বিক্রেতা:
                         ${order.seller}
 
                         <br>
 
-                        👤 ক্রেতা:
+                         ক্রেতা:
                         ${order.name}
 
                         <br>
 
-                        📞 মোবাইল:
+                         মোবাইল:
                         ${order.phone}
 
                         <br>
 
-                        📍 ঠিকানা:
+                         ঠিকানা:
                         ${order.address}
 
                         <br>
 
-                        🗺️ এলাকা:
+                         এলাকা:
                         ${order.division}
                         →
                         ${order.district}
@@ -1887,12 +1883,12 @@ function renderOrders(){
 
                         <br>
 
-                        🕒 সময়:
+                         সময়:
                         ${order.date}
 
                         <br>
 
-                        🟢 অবস্থা:
+                         অবস্থা:
                         ${order.status}
 
                     </div>

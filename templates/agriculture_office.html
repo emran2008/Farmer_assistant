@@ -41,8 +41,8 @@
         border-radius: 8px;
 
         text-decoration: none;
-        font-size: 17px;
-        font-weight: 600;
+        font-size: 15px;
+        font-weight: 300;
 
         transition: all 0.2s ease;
       }
@@ -237,12 +237,12 @@
 
     <main class="container">
       <div class="title">
-        <h2>📍 নিকটবর্তী কৃষি অফিস খুঁজুন</h2>
+        <h2> নিকটবর্তী কৃষি অফিস খুঁজুন</h2>
         <p>বিভাগ, জেলা ও উপজেলা নির্বাচন করে কৃষি অফিসের তথ্য দেখুন</p>
       </div>
 
       <div class="search-box">
-        <h3>🔎 কৃষি অফিস অনুসন্ধান</h3>
+        <h3> কৃষি অফিস অনুসন্ধান</h3>
         <div class="form-grid">
           <div class="form-group">
             <label>বিভাগ</label>
@@ -272,11 +272,12 @@
           </div>
         </div>
         <button class="search-btn" onclick="searchOffice()">
-          🔍 কৃষি অফিস খুঁজুন
+           কৃষি অফিস খুঁজুন
         </button>
       </div>
 
-      <h3 class="result-title" id="resultTitle">🏢 কৃষি অফিসের তথ্য</h3>
+      <h3 class="result-title" id="resultTitle">  
+         কৃষি অফিসের তথ্য</h3>
       <div class="results" id="results"></div>
 
       <div class="hotline">
@@ -1276,7 +1277,7 @@
 
         return `
         <div class="office-card">
-            <h3>🏢 ${office.name}</h3>
+            <h3> ${office.name}</h3>
             <div class="info"><strong>জেলা:</strong> ${office.districtName}</div>
             <div class="info"><strong>উপজেলা:</strong> ${office.upazila}</div>
             <div class="info"><strong>ঠিকানা:</strong> ${office.address}</div>
@@ -1291,7 +1292,7 @@
             </div>
 
             <div class="service-box">
-                <h4>🌱 প্রধান সেবাসমূহ</h4>
+                <h4>প্রধান সেবাসমূহ</h4>
                 <ul>${servicesHtml}</ul>
             </div>
 

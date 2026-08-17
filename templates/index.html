@@ -10,81 +10,152 @@
       rel="stylesheet"
     />
     
-    <style>
+<style>
 
-    h1{
-        color: rgb(65, 157, 165);
-        text-align:center;
+    body {
+        color: #1F2937;
     }
 
-    .warning{
-        color: rgba(18, 225, 215, 0.749);
-        font-weight:bold;
-        text-align:center;
-    }
-
-    .card{
-        margin-top:20px;
-        border-radius:20px;
-    }
-
-    .card img{
-        border-radius:20px 20px 0 0;
-    }
-
-    .card-body{
-        font-size:16px;
-    }
-
-    h4{
-        font-weight:bold;
-    }
-
-    p{
-        margin-bottom:8px;
-    }
-
-    .container{
-        background:white;
-        border-radius:20px;
-        padding:30px;
-        box-shadow:0px 8px 25px rgba(0,0,0,0.15);
-    }
-
-    </style>
-
-   </head>
-  <style>
     h1 {
-      color: rgb(116, 208, 157);
-      text-align: center;
+        color: #15803D;
+        text-align: center;
+    }
+
+    h2,
+    h3,
+    h4 {
+        color: #15803D;
+        font-weight: 700;
     }
 
     .warning {
-      color: rgba(67, 142, 148, 0.749);
-      font-weight: bold;
-      text-align: center;
+        color: #15803D;
+        font-weight: bold;
+        text-align: center;
     }
 
     .card {
-      margin-left: 410px;
-      margin-top: 20px;
-      color: rgb(20, 57, 99);
+        margin-top: 20px;
+        border-radius: 20px;
     }
+
+    .card img {
+        border-radius: 20px 20px 0 0;
+    }
+
+    .card-body {
+        font-size: 16px;
+    }
+
+    p {
+        margin-bottom: 8px;
+    }
+
     .container {
-      background: rgb(143, 212, 210);
-
-      border-radius: 20px;
-
-      padding: 30px;
-
-      box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.15);
+        background: white;
+        border-radius: 20px;
+        padding: 30px;
+        box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.08);
     }
-  </style>
+    .back-button {
+    text-decoration: none;
+    color: #4ecdd3;
+    font-weight: 600;
+    font-size: 30px;
+    margin-right: 20px;
+}
+
+.back-button:hover {
+    color: #166534;
+}
+
+</style>
+
+   </head>
+<style>
+
+    body {
+        background: #F5F9F6;
+        color: #1F2937;
+    }
+
+    h1 {
+        color: #15803D;
+        text-align: center;
+    }
+
+    .warning {
+        color: #15803D;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .card {
+        margin-top: 20px;
+        color: #1F2937;
+        width: 100%;
+        max-width: 900px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .container {
+        background: #F5F9F6;
+        border-radius: 20px;
+        padding: 30px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    }
+
+
+    /* MOBILE */
+
+    @media (max-width: 768px) {
+
+        .container {
+            width: 100%;
+            max-width: 100%;
+            padding: 16px;
+            margin: 0;
+            border-radius: 14px;
+            box-sizing: border-box;
+        }
+
+        .card {
+            width: 100%;
+            max-width: 100%;
+            margin: 20px 0 0 0;
+            box-sizing: border-box;
+        }
+
+        .card-body {
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        input,
+        select,
+        button {
+            max-width: 100%;
+            box-sizing: border-box;
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+
+    }
+
+</style>
   <body style="background: #f3f6f8">
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">Crop Recommendation</a>
+        <a href="{{ url_for('home') }}" class="back-button">
+    ← Back
+</a>
+
+<a class="navbar-brand" href="#">
+    
+</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -99,16 +170,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           </ul>
-          <form class="d-flex" role="search">
-            <input
-              class="form-control me-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-            <button class="btn btn-outline-success" type="submit">
-              Search
-            </button>
+          
           </form>
         </div>
       </div>
@@ -320,7 +382,7 @@
 
         {% if details %}
 
-        <h4 class="text-primary">🌱 Basic Information</h4>
+        <h4 class="text-primary"> Basic Information</h4>
         <hr>
 
         <p><strong>বাংলা নাম:</strong> {{ details.name_bn }}</p>
@@ -331,7 +393,7 @@
 
         <!-- Growing Conditions -->
 
-        <h4 class="text-success mt-4">🌦 Growing Conditions</h4>
+        <h4 class="text-success mt-4"> Growing Conditions</h4>
         <hr>
 
         <p><strong>Soil:</strong> {{ details.soil }}</p>
@@ -344,7 +406,7 @@
 
         <!-- Management -->
 
-        <h4 class="text-warning mt-4">🌾 Crop Management</h4>
+        <h4 class="text-warning mt-4"> Crop Management</h4>
         <hr>
 
         <p><strong>Fertilizer:</strong> {{ details.fertilizer }}</p>
@@ -353,7 +415,7 @@
 
         <!-- Disease -->
 
-        <h4 class="text-danger mt-4">🦠 Disease & Pest</h4>
+        <h4 class="text-danger mt-4"> Disease & Pest</h4>
         <hr>
 
         <p><strong>Disease:</strong> {{ details.disease }}</p>
@@ -362,7 +424,7 @@
 
         <!-- Yield -->
 
-        <h4 class="text-info mt-4">📈 Production</h4>
+        <h4 class="text-info mt-4"> Production</h4>
         <hr>
 
         <p><strong>Expected Yield:</strong> {{ details.yield }}</p>

@@ -195,110 +195,117 @@
 
 
 
-    <!-- WEATHER INFORMATION -->
+   <!-- WEATHER INFORMATION -->
 
-    <a href="{{ url_for('weather_info') }}" class="nav-item">
+<a href="{{ url_for('weather_info') }}" class="nav-item">
 
-        <svg viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2.5"
-            stroke-linecap="round">
+    <svg viewBox="0 0 24 24"
+         fill="none"
+         stroke="#198754"
+         stroke-width="2"
+         stroke-linecap="round"
+         stroke-linejoin="round">
 
-            <circle
-                cx="10.5"
-                cy="10.5"
-                r="6.5">
-            </circle>
+        <!-- Sun -->
+        <circle cx="9" cy="9" r="3"></circle>
 
-            <line
-                x1="16"
-                y1="16"
-                x2="22"
-                y2="22">
-            </line>
+        <path d="M9 2V4"></path>
+        <path d="M9 14V16"></path>
+        <path d="M2 9H4"></path>
+        <path d="M14 9H16"></path>
 
-        </svg>
+        <!-- Cloud -->
+        <path d="M7 19H18
+                 C20.2 19 22 17.2 22 15
+                 C22 12.8 20.2 11 18 11
+                 C17.7 8.7 15.7 7 13.3 7
+                 C11.4 7 9.8 8.1 9.1 9.7">
+        </path>
 
-        <i class="fas fa-cloud-sun"></i>
-        <span>Weather Information</span>
+    </svg>
 
-    </a>
+    <span>Weather Information</span>
+
+</a>
 
 
-    <!-- fish_information -->
+<!-- FISH INFORMATION -->
 
-    <a href="{{ url_for('fish_information') }}" class="nav-item">
+<a href="{{ url_for('fish_information') }}" class="nav-item">
 
-        <svg viewBox="0 0 24 24">
+    <svg viewBox="0 0 24 24"
+         fill="none"
+         stroke="#198754"
+         stroke-width="2"
+         stroke-linecap="round"
+         stroke-linejoin="round">
 
-            <path d="
-            M3 16
-            C5 14 7 14 9 15
-            L12 17
-            H20
-            C21 17 22 18 21 19
-            C20 21 16 21 13 21
-            H7
-            L3 19
-            Z">
-            </path>
+        <!-- Fish Body -->
+        <path d="M3 12
+                 C6 8
+                 11 8
+                 16 10
+                 C18 10.8
+                 20 11.5
+                 22 12
+                 C20 12.5
+                 18 13.2
+                 16 14
+                 C11 16
+                 6 16
+                 3 12Z">
+        </path>
 
-            <rect
-                x="11.3"
-                y="8"
-                width="1.5"
-                height="8">
-            </rect>
+        <!-- Tail -->
+        <path d="M3 12
+                 L6 9
+                 L6 15
+                 Z">
+        </path>
 
-            <path d="
-            M12 11
-            C8 11 7 8 7 6
-            C10 6 12 8 12 11
-            Z">
-            </path>
+        <!-- Eye -->
+        <circle cx="17" cy="11.5" r="0.8"
+                fill="#198754"
+                stroke="none">
+        </circle>
 
-            <path d="
-            M13 10
-            C13 6 16 4 19 4
-            C19 7 17 10 13 10
-            Z">
-            </path>
+    </svg>
 
-        </svg>
+    <span>Fish Information</span>
 
-        <span>Fish Information</span>
-
-    </a>
-    
+</a>
 <!-- Agriculture Office -->
-   <a href="{{ url_for('agriculture_office') }}" class="nav-item">
-     <svg viewBox="0 0 24 24">
 
-            <path d="
-            M12 2
-            C7.6 2 4 5.5 4 9.8
-            C4 15.5 12 22 12 22
-            C12 22 20 15.5 20 9.8
-            C20 5.5 16.4 2 12 2
-            Z">
-            </path>
+<a href="{{ url_for('agriculture_office') }}" class="nav-item">
 
-            <circle
-                cx="12"
-                cy="9.5"
-                r="3.2"
-                fill="white">
-            </circle>
+    <svg viewBox="0 0 24 24"
+         fill="none"
+         stroke="#198754"
+         stroke-width="2"
+         stroke-linecap="round"
+         stroke-linejoin="round">
 
-        </svg>
-<!--  -->
-        
+        <!-- Office Building -->
+        <path d="M4 21V5L12 2L20 5V21"></path>
 
-        <i class="fas fa-building"></i>
-        <span>Agriculture Office</span>
+        <!-- Entrance -->
+        <path d="M9 21V15H15V21"></path>
 
-    </a>
+        <!-- Windows -->
+        <path d="M7 9H9"></path>
+        <path d="M15 9H17"></path>
+
+        <path d="M7 12H9"></path>
+        <path d="M15 12H17"></path>
+
+        <!-- Ground -->
+        <path d="M2 21H22"></path>
+
+    </svg>
+
+    <span>Agriculture Office</span>
+
+</a>
 
 
 
