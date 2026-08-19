@@ -10,12 +10,12 @@
 
     <title>Farmer Assistant</title>
 
-    <link rel="stylesheet"
-      href="{{ url_for('static', filename='chatbot.css') }}">
-
+    <link rel="stylesheet" href="{{ url_for('static', filename='chatbot.css') }}">
 </head>
 
-<body>
+
+
+    <body>
 
     <div class="chatbot-page">
 
@@ -45,26 +45,26 @@
 
 
         <!-- INPUT -->
-        <div class="chatbot-input">
-
+        
+        <div class="chat-input-wrapper">
             <input
                 type="text"
-                id="userInput"
+                id="chat-input"
                 placeholder="আপনার প্রশ্ন লিখুন..."
-                autocomplete="off"
             >
 
-            <button id="sendButton">
+            <button
+                type="button"
+                id="send-button"
+            >
                 ➤
             </button>
-
         </div>
+   
 
-    </div>
 
-</body>
-
-  <script src="{{ url_for('static', filename='chatbot.js') }}"></script>
+    <!-- CHATBOT JAVASCRIPT -->
+    <script src="{{ url_for('static', filename='chatbot.js') }}"></script>
 
 </body>
 
