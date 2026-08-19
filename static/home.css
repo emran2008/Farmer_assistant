@@ -289,3 +289,36 @@ main {
 
     padding: 25px 20px !important;
 }
+/* =====================================
+   MOBILE RESPONSIVE
+===================================== */
+
+@media (max-width: 768px) {
+
+    .feature-container {
+        grid-template-columns: 1fr;
+        width: 100%;
+        max-width: 420px;
+        padding: 15px;
+        gap: 20px;
+        margin: 0 auto;
+    }
+
+    .feature-card {
+        width: 100%;
+        height: 300px;
+        min-height: 300px;
+        padding: 25px 20px;
+        box-sizing: border-box;
+    }
+
+    /* Farmer Assistant নিচে থাকবে */
+    .chatbot-card {
+        grid-column: auto;
+        width: 80% !important;
+        height: 270px !important;
+        min-height: 270px !important;
+        justify-self: center;
+    }
+
+}
