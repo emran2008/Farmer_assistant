@@ -17,46 +17,52 @@
 
 <body>
 
-    <div class="chatbot-container">
+    <div class="chatbot-page">
 
-        <div class="chatbot-header">
+        <!-- HEADER -->
+        <header class="chatbot-header">
 
-            <div class="bot-icon">🤖</div>
+            <div class="chatbot-logo">
+                🤖
+            </div>
 
             <div>
                 <h1>Farmer Assistant</h1>
                 <p>Your AI Farming Companion</p>
             </div>
 
-        </div>
+        </header>
 
 
-            <div id="chat-box" class="chat-box">
+        <!-- CHAT AREA -->
+        <main class="chatbot-messages" id="chatBox">
 
-                <div class="bot-message">
-                    How can I help you today?
-                </div>
-
+            <div class="bot-message">
+                How can I help you today?
             </div>
 
+        </main>
 
-        <div class="chat-input-area">
+
+        <!-- INPUT -->
+        <div class="chatbot-input">
 
             <input
                 type="text"
-                id="chat-input"
+                id="userInput"
                 placeholder="আপনার প্রশ্ন লিখুন..."
-                onkeydown="handleKey(event)"
+                autocomplete="off"
             >
 
-                <button type="button" onclick="sendMessage()">
-                    ➤
-                </button>
+            <button id="sendButton">
+                ➤
+            </button>
 
         </div>
 
     </div>
 
+</body>
 
   <script src="{{ url_for('static', filename='chatbot.js') }}"></script>
 
