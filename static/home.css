@@ -344,3 +344,57 @@ main {
     }
 
 }
+/* =====================================
+   MOBILE CARD LAYOUT
+===================================== */
+
+@media screen and (max-width: 768px) {
+
+    .feature-container {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+
+        width: 100% !important;
+        max-width: 420px !important;
+
+        margin: 0 auto !important;
+        padding: 15px !important;
+
+        gap: 20px !important;
+    }
+
+
+    .feature-card {
+        width: 100% !important;
+        height: 300px !important;
+        min-height: 300px !important;
+
+        box-sizing: border-box !important;
+    }
+
+
+    /* Floating chatbot */
+    .floating-chatbot {
+        position: fixed !important;
+
+        right: 15px !important;
+        bottom: 75px !important;
+
+        z-index: 99999 !important;
+    }
+
+
+    .floating-chatbot-btn {
+        width: 52px !important;
+        height: 52px !important;
+
+        font-size: 27px !important;
+
+        border-radius: 50% !important;
+
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+}
