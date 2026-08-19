@@ -1,12 +1,23 @@
 from flask import Flask, request, render_template, jsonify
+from flask import Flask, render_template, request, jsonify
 from flask import Flask, render_template
 from flask import Flask, render_template, request
 from pathlib import Path
 import sys
 import sys
 import os
+import json
 import pandas as pd
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
+CROPS_FILE = os.path.join(
+    BASE_DIR,
+    "database",
+    "crops.json"
+)
+
+with open(CROPS_FILE, "r", encoding="utf-8") as f:
+    CROP_DATA = json.load(f)
 BIOFLOC_CALCULATOR_DIR = (
     Path(__file__).resolve().parent
     / "Aquaculture System"
@@ -20,7 +31,7 @@ sys.path.insert(0, str(BIOFLOC_CALCULATOR_DIR))
 POND_MODEL_DIR = Path(__file__).resolve().parent / "Aquaculture System" / "Pond Culture" / "Pond ML Model"
 
 sys.path.insert(0, str(POND_MODEL_DIR))
-
+from chatbot.chatbot_routes import chatbot_bp
 from pond_predictor import predict_fish
 from weather import get_weather
 import numpy as np
@@ -30,7 +41,10 @@ from datetime import date, timedelta
 import sklearn
 import pickle
 import sqlite3
-import os
+import pandas
+
+from flask import Flask
+
 
 
 VISITOR_DB = "visitor.db"
@@ -128,8 +142,12 @@ model = pickle.load(open(model_path, "rb"))
 scaler = pickle.load(open(scaler_path, "rb"))
 
 #creating flask app
+# creating flask app
 app = Flask(__name__)
 
+# Register Blueprints
+
+app.register_blueprint(chatbot_bp)
 # =========================
 # Crop Details Dictionary
 # =========================
@@ -702,6 +720,30 @@ details=None,
 prediction=None,
 confidence=None
 )
+
+
+@app.route("/api/chatbot", methods=["POST"])
+def api_chatbot():
+
+    data = request.get_json()
+
+    message = data.get("message", "").strip()
+
+    if not message:
+        return jsonify({
+            "reply": "দয়া করে একটি প্রশ্ন লিখুন।"
+        })
+
+    result = process_question(message)
+    print("CHATBOT RESULT:", result)
+
+    return jsonify({
+        "reply": result.get("reply", ""),
+        "type": result.get("type", "general"),
+        "link": result.get("link"),
+        "link_text": result.get("link_text")
+    })
+
 @app.route("/live-stock")
 def live_stock():
     return render_template("live_stock.html")
@@ -755,7 +797,9 @@ def visitor_statistics():
         "visitor_statistics.html",
         visitor_count=visitor_count
     )
-
+@app.route("/chatbot")
+def chatbot():
+    return render_template("chatbot.html")
 @app.route("/fish-hatchery")
 def fish_hatchery():
 

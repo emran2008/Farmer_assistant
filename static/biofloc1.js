@@ -426,32 +426,7 @@ function checkBiofloc() {
     `).join("");
 
     document.getElementById("waterAnalysis").classList.remove("hidden");
-
-    /* CONDITION */
-    let problems = [];
-    if (doValue < 5) problems.push("DO কম");
-    if (ph < 6.5 || ph > 8) problems.push("pH আদর্শ নয়");
-    if (ammonia > 0.05) problems.push("Ammonia বেশি");
-    if (nitrite > 0.5) problems.push("Nitrite বেশি");
-
-    if (problems.length === 0) {
-        document.getElementById("conditionBox").innerHTML = `
-            <div class="condition-box good">
-                <div class="condition-title">Biofloc-এর অবস্থা ভালো</div>
-                <div>বর্তমানে বড় কোনো পানি-সংক্রান্ত সমস্যা পাওয়া যায়নি। নিয়মিত পানি পরীক্ষা এবং Aeration চালু রাখুন।</div>
-            </div>
-        `;
-    } else {
-        document.getElementById("conditionBox").innerHTML = `
-            <div class="condition-box danger">
-                <div class="condition-title">⚠️ মনোযোগ প্রয়োজন</div>
-                <div>${problems.join(" • ")}</div>
-            </div>
-        `;
-    }
-
     document.getElementById("condition").classList.remove("hidden");
-
     /* ADVICE */
     let advice = [];
 
@@ -495,5 +470,63 @@ function getRange(text) {
     return {
         min: Number(numbers[0]),
         max: Number(numbers[1])
+    };
+}
+
+    /* CONDITION */
+    let problems = [];
+    if (doValue < 5) problems.push("DO কম");
+    if (ph < 6.5 || ph > 8) problems.push("pH আদর্শ নয়");
+    if (ammonia > 0.05) problems.push("Ammonia বেশি");
+    if (nitrite > 0.5) problems.push("Nitrite বেশি");
+
+    if (problems.length === 0) {
+        document.getElementById("conditionBox").innerHTML = `
+            <div class="condition-box good">
+                <div class="condition-title">Biofloc-এর অবস্থা ভালো</div>
+                <div>বর্তমানে বড় কোনো পানি-সংক্রান্ত সমস্যা পাওয়া যায়নি। নিয়মিত পানি পরীক্ষা এবং Aeration চালু রাখুন।</div>
+            </div>
+        `;
+    } else {
+        document.getElementById("conditionBox").innerHTML = `
+            <div class="condition-box danger">
+                <div class="condition-title">⚠️ মনোযোগ প্রয়োজন</div>
+                <div>${problems.join(" • ")}</div>
+            </div>
+        `;
+    }
+
+
+    function getBioflocAnalysis(data) {
+
+    const temperature = Number(data.temperature);
+    const ph = Number(data.ph);
+    const doValue = Number(data.do);
+    const ammonia = Number(data.ammonia);
+    const nitrite = Number(data.nitrite);
+    const biofloc = Number(data.biofloc);
+
+    const length = Number(data.length);
+    const width = Number(data.width);
+    const depth = Number(data.depth);
+    const fishCount = Number(data.fishCount);
+    const feed = Number(data.feed);
+
+    const volume = length * width * depth;
+    const density = volume > 0 ? fishCount / volume : 0;
+    const flocAmount = volume * biofloc;
+
+    return {
+        temperature: temperature,
+        ph: ph,
+        do: doValue,
+        ammonia: ammonia,
+        nitrite: nitrite,
+        biofloc: biofloc,
+        volume: volume,
+        density: density,
+        fishCount: fishCount,
+        feed: feed,
+        flocAmount: flocAmount
     };
 }

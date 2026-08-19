@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="bn">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Farmer Assistant</title>
+
+    <link rel="stylesheet"
+      href="{{ url_for('static', filename='chatbot.css') }}">
+
+</head>
+
+<body>
+
+    <div class="chatbot-container">
+
+        <div class="chatbot-header">
+
+            <div class="bot-icon">🤖</div>
+
+            <div>
+                <h1>Farmer Assistant</h1>
+                <p>Your AI Farming Companion</p>
+            </div>
+
+        </div>
+
+
+            <div id="chat-box" class="chat-box">
+
+                <div class="bot-message">
+                    How can I help you today?
+                </div>
+
+            </div>
+
+
+        <div class="chat-input-area">
+
+            <input
+                type="text"
+                id="chat-input"
+                placeholder="আপনার প্রশ্ন লিখুন..."
+                onkeydown="handleKey(event)"
+            >
+
+                <button type="button" onclick="sendMessage()">
+                    ➤
+                </button>
+
+        </div>
+
+    </div>
+
+
+  <script src="{{ url_for('static', filename='chatbot.js') }}"></script>
+
+</body>
+
+</html>
