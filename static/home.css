@@ -615,37 +615,36 @@ main {
 @media (max-width: 768px) {
 
     .features-container {
+        display: grid;
         grid-template-columns: 1fr;
-
         gap: 20px;
-
         padding: 20px;
+        width: 100%;
+        box-sizing: border-box;
     }
 
     .feature-card {
+        display: block;
         width: 100%;
-
-        height: 390px;
         min-height: 390px;
+        height: auto;
+        box-sizing: border-box;
     }
 
     /* Disease Detection */
 
     .disease-wrapper {
         width: 100%;
-
         margin: 20px 0 50px;
-
         padding: 0 20px;
-
         box-sizing: border-box;
     }
 
     .disease-card {
         width: 100%;
         max-width: 390px;
-
         height: 390px;
         min-height: 390px;
+        box-sizing: border-box;
     }
 }
