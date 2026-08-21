@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Disease Detection - Farmer Assistant</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='disease_detection.css') }}">
+
+</head>
+
+<body>
+
+    <main class="disease-page">
+
+        <!-- Header -->
+
+        <div class="disease-header">
+
+            <h1>
+                Disease Detection
+            </h1>
+
+            <p>
+                Choose a category to detect diseases
+            </p>
+
+        </div>
+
+
+        <!-- Disease Cards -->
+
+        <div class="disease-cards">
+
+
+           <!-- Crop Disease -->
+
+        <a href="{{ url_for('crop_disease') }}"
+        class="disease-card">
+
+            <div class="disease-card-icon">
+                
+            </div>
+
+            <h2>
+                Crop Disease Detection
+            </h2>
+
+            <p>
+                Detect and identify diseases in crops
+                using smart agricultural technology.
+            </p>
+
+            <span class="disease-button">
+                Explore →
+            </span>
+
+        </a>
+
+            <!-- Fish Disease -->
+
+            <a href="#"
+               class="disease-card">
+
+                <div class="disease-card-icon">
+                    
+                </div>
+
+                <h2>
+                    Fish Disease Detection
+                </h2>
+
+                <p>
+                    Detect and identify diseases in fish
+                    for healthier aquaculture farming.
+                </p>
+
+                <span class="disease-button">
+                    Explore →
+                </span>
+
+            </a>
+
+
+            <!-- Live Stock Disease -->
+
+            <a href="#"
+               class="disease-card">
+
+                <div class="disease-card-icon">
+                    
+                </div>
+
+                <h2>
+                    Live Stock Disease Detection
+                </h2>
+
+                <p>
+                    Detect and identify diseases in livestock
+                    for better animal health management.
+                </p>
+
+                <span class="disease-button">
+                    Explore →
+                </span>
+
+            </a>
+
+        </div>
+
+
+        <!-- Back Button -->
+
+        <a href="{{ url_for('home') }}"
+           class="back-button">
+            ← Back to Home
+        </a>
+
+    </main>
+
+</body>
+
+</html>

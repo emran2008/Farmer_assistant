@@ -80,6 +80,8 @@
 
 <!-- FISH -->
 
+<!-- FISH -->
+
 <a href="{{ url_for('aquaculture') }}"
    class="feature-card">
 
@@ -100,7 +102,13 @@
         Explore →
     </span>
 
-<a href="{{ url_for('live_stock') }}" class="feature-card">
+</a>
+
+
+<!-- LIVE STOCK -->
+
+<a href="{{ url_for('live_stock') }}"
+   class="feature-card">
 
     <div class="card-icon">
         🐄
@@ -121,19 +129,47 @@
 
 </a>
 
-    <!-- FLOATING FARMER ASSISTANT -->
-    <div class="floating-chatbot">
+</div>
+<!-- Disease Detection -->
 
-        <a href="{{ url_for('chatbot') }}"
-        class="floating-chatbot-btn"
-        title="Farmer Assistant">
+<div class="disease-wrapper">
 
-            🤖
+    <div class="disease-card">
 
+        <div class="disease-icon">
+            🩺
+        </div>
+
+        <h2>
+            Disease Detection
+        </h2>
+
+        <p>
+            Detect diseases in crops, fish and livestock
+            using smart agricultural technology.
+        </p>
+
+        <a href="{{ url_for('disease_detection') }}"
+           class="explore-btn">
+            Explore →
         </a>
 
     </div>
 
+</div>
+
+
+<!-- FLOATING FARMER ASSISTANT -->
+
+<div class="floating-chatbot">
+
+    <a href="{{ url_for('chatbot') }}"
+       class="floating-chatbot-btn"
+       title="Farmer Assistant">
+        🤖
+    </a>
+
+</div> 
 </section> 
 
 </main>

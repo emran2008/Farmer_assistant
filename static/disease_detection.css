@@ -1,0 +1,246 @@
+/* ==============================
+   DISEASE DETECTION PAGE
+   ============================== */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+
+    background: #f1f9f5;
+    color: #172033;
+}
+
+
+/* ==============================
+   PAGE
+   ============================== */
+
+.disease-page {
+    min-height: 100vh;
+
+    padding: 60px 20px 80px;
+
+    text-align: center;
+}
+
+
+/* ==============================
+   HEADER
+   ============================== */
+
+.disease-header {
+    margin-bottom: 45px;
+}
+
+.disease-header h1 {
+    margin: 0 0 12px;
+
+    font-size: 42px;
+
+    color: #159447;
+}
+
+.disease-header p {
+    margin: 0;
+
+    font-size: 18px;
+
+    color: #667085;
+}
+
+
+/* ==============================
+   CARDS
+   ============================== */
+
+.disease-cards {
+    width: 100%;
+    max-width: 1150px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 30px;
+
+    align-items: stretch;
+}
+
+
+/* ==============================
+   SINGLE CARD
+   ============================== */
+
+.disease-card {
+    width: 100%;
+    height: 390px;
+
+    padding: 40px 30px;
+
+    background: #ffffff;
+
+    border-radius: 25px;
+
+    text-decoration: none;
+
+    color: inherit;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.08);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.disease-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 18px 40px rgba(0, 0, 0, 0.12);
+}
+
+
+/* ==============================
+   ICON
+   ============================== */
+
+.disease-card-icon {
+    font-size: 65px;
+
+    height: 85px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-bottom: 15px;
+}
+
+
+/* ==============================
+   TITLE
+   ============================== */
+
+.disease-card h2 {
+    margin: 10px 0;
+
+    font-size: 22px;
+
+    line-height: 1.35;
+
+    color: #172033;
+}
+
+
+/* ==============================
+   DESCRIPTION
+   ============================== */
+
+.disease-card p {
+    min-height: 75px;
+
+    margin: 5px 0 25px;
+
+    color: #667085;
+
+    line-height: 1.6;
+}
+
+
+/* ==============================
+   BUTTON
+   ============================== */
+
+.disease-button {
+    display: inline-block;
+
+    margin-top: auto;
+
+    padding: 12px 28px;
+
+    border-radius: 25px;
+
+    background: #159447;
+
+    color: #ffffff;
+
+    font-weight: 600;
+}
+
+
+/* ==============================
+   BACK BUTTON
+   ============================== */
+
+.back-button {
+    display: inline-block;
+
+    margin-top: 45px;
+
+    padding: 11px 25px;
+
+    border-radius: 25px;
+
+    background: #ffffff;
+
+    color: #159447;
+
+    text-decoration: none;
+
+    font-weight: 600;
+
+    box-shadow:
+        0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+
+/* ==============================
+   MOBILE
+   ============================== */
+
+@media (max-width: 768px) {
+
+    .disease-page {
+        padding: 40px 20px 60px;
+    }
+
+    .disease-header h1 {
+        font-size: 32px;
+    }
+
+    .disease-header p {
+        font-size: 16px;
+    }
+
+    .disease-cards {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+    }
+
+    .disease-card {
+        width: 100%;
+
+        height: 390px;
+    }
+}

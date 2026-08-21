@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="bn">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>ফসলের রোগ শনাক্তকরণ</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='crop_disease.css') }}">
+
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+        🌱 Farmer Assistant
+    </div>
+
+    <div class="subtitle">
+        AI Crop Disease Detection
+    </div>
+
+</header>
+
+
+<main>
+
+    <section class="hero">
+
+        <h1>
+            🌾 ফসলের রোগ শনাক্ত করুন
+        </h1>
+
+        <p>
+            ফসলের আক্রান্ত পাতার পরিষ্কার ছবি দিন।
+            AI ছবিটি বিশ্লেষণ করে সম্ভাব্য রোগ শনাক্ত করবে।
+        </p>
+
+    </section>
+
+
+    <section class="card">
+
+        <h2>📷 ছবি দিন</h2>
+
+        <div id="dropArea"
+             class="drop-area">
+
+            <div class="upload-icon">
+                📸
+            </div>
+
+            <p>
+                ছবি এখানে টেনে আনুন
+            </p>
+
+            <span>
+                অথবা
+            </span>
+
+            <label class="choose-btn">
+
+                ছবি নির্বাচন করুন
+
+                <input
+                    type="file"
+                    id="imageInput"
+                    accept="image/png,image/jpeg,image/webp"
+                    hidden
+                >
+
+            </label>
+
+        </div>
+        <div id="previewContainer" class="preview-container">
+            <img id="imagePreview" src="" alt="Selected Image">
+        </div>
+
+
+        <div id="previewBox"
+             class="preview-box"
+             style="display:none;">
+
+            <img id="previewImage">
+
+        </div>
+
+
+        <button
+            id="analyzeBtn"
+            class="analyze-btn"
+            disabled>
+
+            🔍 রোগ শনাক্ত করুন
+
+        </button>
+
+    </section>
+
+
+    <section
+        id="loadingBox"
+        class="loading"
+        style="display:none;">
+
+        <div class="loader"></div>
+
+        <p>
+            ছবি বিশ্লেষণ করা হচ্ছে...
+        </p>
+
+    </section>
+
+
+    <section
+        id="resultBox"
+        class="result"
+        style="display:none;">
+
+        <h2>
+            📊 বিশ্লেষণের ফলাফল
+        </h2>
+
+        <div id="resultContent"></div>
+
+    </section>
+
+
+    <section class="crop-section">
+
+        <h2>
+            🌱 সমর্থিত ফসল
+        </h2>
+
+        <div class="crop-grid">
+
+            {% for crop in crops %}
+
+            <div class="crop-card">
+
+                <span>🌿</span>
+
+                <strong>
+                    {{ crop.crop_name_bn }}
+                </strong>
+
+                <small>
+                    {{ crop.crop_name_en }}
+                </small>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    <p>
+        ⚠️ AI-এর ফলাফল সহায়ক তথ্য হিসেবে ব্যবহার করুন।
+        কৃষি বিশেষজ্ঞ/সরকারি কৃষি কর্মকর্তার পরামর্শ ছাড়া
+        রাসায়নিক প্রয়োগ করবেন না।
+    </p>
+
+</footer>
+
+
+<script
+    src="{{ url_for('static', filename='crop_disease.js') }}">
+</script>
+
+</body>
+
+</html>

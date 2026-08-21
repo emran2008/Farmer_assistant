@@ -1,4 +1,5 @@
 from flask import Flask, request, render_template, jsonify
+from flask import Flask, request, jsonify, render_template
 from flask import Flask, render_template, request, jsonify
 from flask import Flask, render_template
 from flask import Flask, render_template, request
@@ -8,6 +9,12 @@ import sys
 import os
 import json
 import pandas as pd
+import json
+import torch
+
+from PIL import Image
+from torchvision import transforms, models
+from torch import nn
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 CROPS_FILE = os.path.join(
@@ -743,7 +750,14 @@ def api_chatbot():
         "link": result.get("link"),
         "link_text": result.get("link_text")
     })
-
+@app.route("/crop-disease")
+def crop_disease():
+    return render_template(
+        "crop_disease.html"
+    )
+@app.route('/disease-detection')
+def disease_detection():
+    return render_template('disease_detection.html')
 @app.route("/live-stock")
 def live_stock():
     return render_template("live_stock.html")
@@ -983,11 +997,141 @@ def predict():
 
     probabilities = model.predict_proba(single_pred)[0]
     
-    
+@app.route("/predict-disease", methods=["POST"])
+def predict_disease():
+
+    try:
+
+        # ==========================================
+        # GET IMAGE
+        # ==========================================
+
+        file = request.files.get("image")
+
+        if file is None:
+
+            return jsonify({
+                "success": False,
+                "message": "কোনো ছবি পাওয়া যায়নি।"
+            })
+
+
+        if file.filename == "":
+
+            return jsonify({
+                "success": False,
+                "message": "কোনো ছবি নির্বাচন করা হয়নি।"
+            })
+
+
+        # ==========================================
+        # OPEN IMAGE
+        # ==========================================
+
+        image = Image.open(file)
+
+        image = image.convert("RGB")
+
+
+        # ==========================================
+        # TRANSFORM
+        # ==========================================
+
+        image_tensor = disease_transform(
+            image
+        ).unsqueeze(0)
+
+
+        image_tensor = image_tensor.to(
+            device
+        )
+
+
+        # ==========================================
+        # PREDICTION
+        # ==========================================
+
+        with torch.no_grad():
+
+            outputs = disease_model(
+                image_tensor
+            )
+
+            probabilities = torch.softmax(
+                outputs,
+                dim=1
+            )
+
+            confidence, predicted = torch.max(
+                probabilities,
+                1
+            )
+
+
+        predicted_index = (
+            predicted.item()
+        )
+
+        confidence_value = (
+            confidence.item() * 100
+        )
+
+
+        disease_name = disease_classes[
+            predicted_index
+        ]
+
+
+        print(
+            "🌱 Disease:",
+            disease_name
+        )
+
+        print(
+            "📊 Confidence:",
+            f"{confidence_value:.2f}%"
+        )
+
+
+        # ==========================================
+        # RESPONSE
+        # ==========================================
+
+        return jsonify({
+
+            "success": True,
+
+            "disease": disease_name,
+
+            "confidence": round(
+                confidence_value,
+                2
+            ),
+
+            "information": None
+
+        })
+
+
+    except Exception as e:
+
+        print(
+            "❌ Disease Prediction Error:",
+            str(e)
+        )
+
+        return jsonify({
+
+            "success": False,
+
+            "message": str(e)
+
+        }), 500
 
 
     # ==========================
     # Crop Dictionary
+    # ==========================
 
     crop_dict = {
         1: "rice",
@@ -1016,10 +1160,46 @@ def predict():
 
 
     # ==========================
+    # Final Prediction
+    # ==========================
+
+    prediction = model.predict(single_pred)[0]
+
+    probabilities = model.predict_proba(
+        single_pred
+    )[0]
+
+    confidence = (
+        np.max(probabilities) * 100
+    )
+
+    crop = crop_dict[prediction]
+
+
+    # ==========================
+    # Confidence Level
+    # ==========================
+
+    if confidence >= 95:
+
+        level = "Excellent"
+
+    elif confidence >= 80:
+
+        level = "Good"
+
+    else:
+
+        level = "Low"
+
+
+    # ==========================
     # Top 3 Recommended Crops
     # ==========================
 
-    top_indices = np.argsort(probabilities)[::-1][:4]
+    top_indices = np.argsort(
+        probabilities
+    )[::-1][:4]
 
     top3 = []
 
@@ -1028,51 +1208,42 @@ def predict():
         crop_name = crop_dict[i + 1]
 
         # Main prediction বাদ দেওয়া
-        if crop_name != prediction:
+        if crop_name != crop:
 
             top3.append({
+
                 "name": crop_name,
-                "image": crop_name + ".jpg",
-                "confidence": round(
-                    probabilities[i] * 100,
-                    2
-                )
+
+                "image":
+                    crop_name + ".jpg",
+
+                "confidence":
+                    round(
+                        probabilities[i] * 100,
+                        2
+                    )
             })
 
     top3 = top3[:3]
 
 
     # ==========================
-    # Confidence
+    # Debug
     # ==========================
-
-    confidence = np.max(probabilities) * 100
-
-    if confidence >= 95:
-        level = "Excellent"
-
-    elif confidence >= 80:
-        level = "Good"
-
-    else:
-        level = "Low"
-
 
     print(feature_list)
+
     print(type(model))
 
-
-    # ==========================
-    # Final Prediction
-    # ==========================
-
-    prediction = model.predict(single_pred)[0]
-
-    confidence = (
-        max(model.predict_proba(single_pred)[0]) * 100
+    print(
+        "Prediction:",
+        crop
     )
 
-    crop = crop_dict[prediction]
+    print(
+        "Confidence:",
+        round(confidence, 2)
+    )
 
 
     # ==========================
@@ -1088,21 +1259,18 @@ def predict():
     )
 
 
+    # ==========================
+    # Final Result
+    # ==========================
+
     return render_template(
         "index.html",
-
         prediction=crop,
-
         result=f"{crop} is the best crop to be cultivated",
-
         confidence=round(confidence, 2),
-
         details=details,
-
         crop=details,
-
         top3=top3,
-
         level=level
     )
 
@@ -1119,7 +1287,6 @@ def get_historical_weather(latitude, longitude, season):
 
     current_year = date.today().year
 
-    # গত 5 বছরের data
     start_date = f"{current_year - 5}-01-01"
     end_date = f"{current_year - 1}-12-31"
 
@@ -1390,6 +1557,83 @@ def weather():
         "humidity": humidity,
         "rainfall": historical_rainfall
     })
+# =========================================================
+# CROP DISEASE MODEL
+# =========================================================
+
+DISEASE_MODEL_PATH = os.path.join(
+    BASE_DIR,
+    "models",
+    "crop_disease_model.pth"
+)
+
+DISEASE_CLASSES_PATH = os.path.join(
+    BASE_DIR,
+    "models",
+    "classes.json"
+)
+
+device = torch.device(
+    "cuda" if torch.cuda.is_available() else "cpu"
+)
+
+with open(
+    DISEASE_CLASSES_PATH,
+    "r",
+    encoding="utf-8"
+) as f:
+    disease_classes = json.load(f)
+
+
+disease_model = models.resnet18(
+    weights=None
+)
+
+disease_model.fc = nn.Linear(
+    disease_model.fc.in_features,
+    len(disease_classes)
+)
+
+disease_model.load_state_dict(
+    torch.load(
+        DISEASE_MODEL_PATH,
+        map_location=device
+    )
+)
+
+disease_model = disease_model.to(device)
+
+disease_model.eval()
+
+
+disease_transform = transforms.Compose([
+
+    transforms.Resize(
+        (224, 224)
+    ),
+
+    transforms.ToTensor(),
+
+    transforms.Normalize(
+        mean=[
+            0.485,
+            0.456,
+            0.406
+        ],
+        std=[
+            0.229,
+            0.224,
+            0.225
+        ]
+    )
+])
+
+
+print("✅ Crop Disease Model Loaded")
+print(
+    "Disease Classes:",
+    len(disease_classes)
+)
 
 
 if __name__ == "__main__":

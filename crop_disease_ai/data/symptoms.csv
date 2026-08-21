@@ -1,0 +1,25 @@
+crop_name_en,disease_name_en,symptom_bn,affected_part
+Rice,Rice Blast,পাতায় চোখের মতো বাদামি বা ধূসর দাগ,পাতা
+Rice,Brown Spot,পাতায় ছোট বাদামি দাগ,পাতা
+Rice,Bacterial Leaf Blight,পাতার কিনারা হলুদ ও শুকিয়ে যায়,পাতা
+Rice,Sheath Blight,খোলে সবুজাভ ধূসর দাগ,খোল
+Rice,Rice Tungro,পাতা হলুদ এবং গাছের বৃদ্ধি কমে যায়,পাতা
+Wheat,Wheat Brown Rust,পাতায় বাদামি মরিচা রঙের দাগ,পাতা
+Wheat,Wheat Yellow Rust,পাতায় হলুদ মরিচা রঙের দাগ,পাতা
+Maize,Maize Common Rust,পাতায় মরিচা রঙের pustule,পাতা
+Maize,Gray Leaf Spot,পাতায় লম্বা ধূসর দাগ,পাতা
+Potato,Potato Early Blight,পাতায় concentric ring সহ বাদামি দাগ,পাতা
+Potato,Potato Late Blight,পাতায় পানিভেজা কালচে দাগ,পাতা
+Tomato,Tomato Early Blight,পাতায় বৃত্তাকার দাগ,পাতা
+Tomato,Tomato Late Blight,পাতায় কালচে পানিভেজা দাগ,পাতা
+Tomato,Tomato Bacterial Spot,পাতা ও ফলে ছোট কালচে দাগ,পাতা ও ফল
+Chilli,Chilli Anthracnose,ফলে ডুবে যাওয়া কালচে দাগ,ফল
+Chilli,Chilli Leaf Curl,পাতা কুঁকড়ে যায়,পাতা
+Onion,Purple Blotch,পাতায় বেগুনি দাগ,পাতা
+Cucumber,Cucumber Downy Mildew,পাতায় হলুদ কোণাকৃতি দাগ,পাতা
+Cucumber,Cucumber Powdery Mildew,পাতায় সাদা গুঁড়ার মতো আবরণ,পাতা
+Mango,Mango Anthracnose,পাতা ও ফলে কালচে দাগ,পাতা ও ফল
+Mango,Mango Powdery Mildew,ফুল ও মুকুলে সাদা আবরণ,ফুল
+Banana,Banana Sigatoka,পাতায় লম্বা কালচে দাগ,পাতা
+Papaya,Papaya Ringspot Virus,পাতায় মোজাইক এবং ফলে ring pattern,পাতা ও ফল
+Coconut,Coconut Bud Rot,কচি শাঁস ও কেন্দ্রীয় অংশ পচে যায়,কচি অংশ

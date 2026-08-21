@@ -1,0 +1,14 @@
+Flask==3.1.2
+Flask-Cors==6.0.1
+Pillow==11.3.0
+numpy==2.2.6
+pandas==2.3.2
+SQLAlchemy==2.0.43
+
+torch
+torchvision
+transformers
+datasets
+huggingface_hub
+scikit-learn
+tqdm

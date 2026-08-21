@@ -1,0 +1,40 @@
+crop_name_en,disease_name_bn,disease_name_en,pathogen_type,pathogen_name,description,severity
+Rice,ধানের ব্লাস্ট,Rice Blast,Fungus,Magnaporthe oryzae,ধানের গুরুত্বপূর্ণ ছত্রাকজনিত রোগ,High
+Rice,ধানের বাদামি দাগ,Brown Spot,Fungus,Bipolaris oryzae,পাতায় বাদামি দাগ সৃষ্টি করে,Medium
+Rice,ব্যাকটেরিয়াজনিত পাতাপোড়া,Bacterial Leaf Blight,Bacteria,Xanthomonas oryzae,পাতা হলুদ ও শুকিয়ে যেতে পারে,High
+Rice,খোলপোড়া,Sheath Blight,Fungus,Rhizoctonia solani,গাছের খোলে দাগ সৃষ্টি করে,High
+Rice,টুংরো,Rice Tungro,Virus,Rice tungro viruses,পাতা হলুদ হয়ে বৃদ্ধি কমে যায়,High
+Rice,লক্ষ্মীর গু,False Smut,Fungus,Ustilaginoidea virens,ধানের শীষে অস্বাভাবিক গুটি তৈরি হয়,Medium
+Wheat,বাদামি মরিচা,Wheat Brown Rust,Fungus,Puccinia triticina,পাতায় মরিচা রঙের দাগ দেখা যায়,Medium
+Wheat,হলুদ মরিচা,Wheat Yellow Rust,Fungus,Puccinia striiformis,পাতায় হলুদ রঙের মরিচা দাগ,High
+Maize,কমন রাস্ট,Maize Common Rust,Fungus,Puccinia sorghi,পাতায় মরিচা রঙের pustule তৈরি হয়,Medium
+Maize,গ্রে লিফ স্পট,Gray Leaf Spot,Fungus,Cercospora zeae-maydis,পাতায় লম্বা ধূসর দাগ দেখা যায়,High
+Maize,পাতা ঝলসানো,Maize Leaf Blight,Fungus,Exserohilum turcicum,পাতায় বড় বাদামি দাগ দেখা যায়,High
+Potato,আর্লি ব্লাইট,Potato Early Blight,Fungus,Alternaria solani,পাতায় বৃত্তাকার দাগ তৈরি হয়,Medium
+Potato,লেট ব্লাইট,Potato Late Blight,Oomycete,Phytophthora infestans,পাতা দ্রুত পচে যেতে পারে,High
+Tomato,আর্লি ব্লাইট,Tomato Early Blight,Fungus,Alternaria solani,পাতায় বৃত্তাকার দাগ তৈরি হয়,Medium
+Tomato,লেট ব্লাইট,Tomato Late Blight,Oomycete,Phytophthora infestans,পাতা ও ফল আক্রান্ত হয়,High
+Tomato,ব্যাকটেরিয়াল স্পট,Tomato Bacterial Spot,Bacteria,Xanthomonas spp.,পাতা ও ফলে ছোট দাগ তৈরি হয়,Medium
+Eggplant,ফোমপসিস ফল পচা,Phomopsis Fruit Rot,Fungus,Phomopsis vexans,ফলে পচন সৃষ্টি করে,High
+Chilli,অ্যানথ্রাকনোজ,Chilli Anthracnose,Fungus,Colletotrichum spp.,ফলে ডুবে যাওয়া দাগ সৃষ্টি করে,High
+Chilli,পাতা কুঁকড়ে যাওয়া,Chilli Leaf Curl,Virus,Begomovirus,পাতা কুঁকড়ে যায় ও গাছ খর্ব হয়,High
+Onion,পার্পল ব্লচ,Purple Blotch,Fungus,Alternaria porri,পাতায় বেগুনি রঙের দাগ হয়,Medium
+Garlic,পার্পল ব্লচ,Garlic Purple Blotch,Fungus,Alternaria porri,পাতায় বেগুনি দাগ দেখা যায়,Medium
+Cucumber,ডাউনি মিলডিউ,Cucumber Downy Mildew,Oomycete,Pseudoperonospora cubensis,পাতায় হলুদ কোণাকৃতি দাগ হয়,High
+Cucumber,পাউডারি মিলডিউ,Cucumber Powdery Mildew,Fungus,Podosphaera xanthii,পাতায় সাদা গুঁড়ার মতো আবরণ হয়,Medium
+Pumpkin,পাউডারি মিলডিউ,Pumpkin Powdery Mildew,Fungus,Podosphaera spp.,পাতায় সাদা আবরণ সৃষ্টি করে,Medium
+Bitter Gourd,ডাউনি মিলডিউ,Bitter Gourd Downy Mildew,Oomycete,Pseudoperonospora cubensis,পাতায় হলুদ দাগ হয়,Medium
+Okra,ইয়েলো ভেইন মোজাইক,Okra Yellow Vein Mosaic,Virus,Begomovirus,পাতার শিরা হলুদ হয়ে যায়,High
+Cabbage,ডাউনি মিলডিউ,Cabbage Downy Mildew,Oomycete,Peronospora parasitica,পাতায় দাগ সৃষ্টি হয়,Medium
+Lentil,স্টেমফাইলিয়াম ব্লাইট,Lentil Stemphylium Blight,Fungus,Stemphylium botryosum,পাতা ও কাণ্ড আক্রান্ত হয়,High
+Mustard,অল্টারনারিয়া ব্লাইট,Mustard Alternaria Blight,Fungus,Alternaria brassicae,পাতায় বৃত্তাকার দাগ তৈরি হয়,Medium
+Jute,স্টেম রট,Jute Stem Rot,Fungus,Macrophomina phaseolina,কাণ্ডে পচন সৃষ্টি করে,High
+Mango,অ্যানথ্রাকনোজ,Mango Anthracnose,Fungus,Colletotrichum gloeosporioides,পাতা ফুল ও ফলে কালচে দাগ সৃষ্টি করে,High
+Mango,পাউডারি মিলডিউ,Mango Powdery Mildew,Fungus,Oidium mangiferae,ফুলে সাদা গুঁড়ার মতো আবরণ হয়,High
+Banana,সিগাটোকা,Banana Sigatoka,Fungus,Pseudocercospora musae,পাতায় লম্বা কালচে দাগ হয়,High
+Banana,পানামা রোগ,Banana Panama Disease,Fungus,Fusarium oxysporum f.sp. cubense,গাছের vascular system আক্রান্ত হয়,High
+Papaya,রিংস্পট,Papaya Ringspot Virus,Virus,Papaya ringspot virus,পাতায় মোজাইক ও ফলে ring pattern হয়,High
+Guava,অ্যানথ্রাকনোজ,Guava Anthracnose,Fungus,Colletotrichum spp.,ফলে কালচে পচা দাগ হয়,Medium
+Litchi,অ্যানথ্রাকনোজ,Litchi Anthracnose,Fungus,Colletotrichum spp.,পাতা ও ফলে দাগ হয়,Medium
+Coconut,বাড রট,Coconut Bud Rot,Fungus,Phytophthora palmivora,কচি অংশ পচে যায়,High
+Pineapple,হার্ট রট,Pineapple Heart Rot,Fungus,Phytophthora spp.,গাছের কেন্দ্রীয় অংশ পচে যায়,High

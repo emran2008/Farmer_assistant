@@ -1,0 +1,31 @@
+crop_name_bn,crop_name_en,scientific_name,category
+ধান,Rice,Oryza sativa,Cereal
+গম,Wheat,Triticum aestivum,Cereal
+ভুট্টা,Maize,Zea mays,Cereal
+আলু,Potato,Solanum tuberosum,Tuber
+টমেটো,Tomato,Solanum lycopersicum,Vegetable
+বেগুন,Eggplant,Solanum melongena,Vegetable
+মরিচ,Chilli,Capsicum annuum,Vegetable
+পেঁয়াজ,Onion,Allium cepa,Vegetable
+রসুন,Garlic,Allium sativum,Vegetable
+পটল,Pointed Gourd,Trichosanthes dioica,Vegetable
+লাউ,Bottle Gourd,Lagenaria siceraria,Vegetable
+কুমড়া,Pumpkin,Cucurbita moschata,Vegetable
+শসা,Cucumber,Cucumis sativus,Vegetable
+করলা,Bitter Gourd,Momordica charantia,Vegetable
+ঢেঁড়স,Okra,Abelmoschus esculentus,Vegetable
+বাঁধাকপি,Cabbage,Brassica oleracea,Vegetable
+ফুলকপি,Cauliflower,Brassica oleracea,Vegetable
+শিম,Hyacinth Bean,Lablab purpureus,Vegetable
+মসুর,Lentil,Lens culinaris,Pulse
+মুগ,Mung Bean,Vigna radiata,Pulse
+ছোলা,Chickpea,Cicer arietinum,Pulse
+সরিষা,Mustard,Brassica juncea,Oilseed
+পাট,Jute,Corchorus olitorius,Fiber
+আম,Mango,Mangifera indica,Fruit
+কলা,Banana,Musa spp.,Fruit
+পেয়ারা,Guava,Psidium guajava,Fruit
+পেঁপে,Papaya,Carica papaya,Fruit
+লিচু,Litchi,Litchi chinensis,Fruit
+নারিকেল,Coconut,Cocos nucifera,Fruit
+আনারস,Pineapple,Ananas comosus,Fruit
