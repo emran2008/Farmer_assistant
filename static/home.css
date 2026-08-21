@@ -612,9 +612,13 @@ main {
    MOBILE
    ============================== */
 
+/* ==============================
+   MOBILE
+   ============================== */
+
 @media (max-width: 768px) {
 
-    .features-container {
+    .feature-container {
         display: grid;
         grid-template-columns: 1fr;
         gap: 20px;
@@ -634,6 +638,7 @@ main {
     /* Disease Detection */
 
     .disease-wrapper {
+        display: block;
         width: 100%;
         margin: 20px 0 50px;
         padding: 0 20px;
@@ -641,10 +646,12 @@ main {
     }
 
     .disease-card {
+        display: block;
         width: 100%;
         max-width: 390px;
-        height: 390px;
         min-height: 390px;
+        height: auto;
+        margin: 0 auto;
         box-sizing: border-box;
     }
 }
