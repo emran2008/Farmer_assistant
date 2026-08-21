@@ -3,3 +3,4 @@ echo *.h5 >> .gitignore
 echo *.model >> .gitignore
 echo __pycache__/ >> .gitignore
 echo *.pyc >> .gitignoremodels/*.pth
+models/*.pth
