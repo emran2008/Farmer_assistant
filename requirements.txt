@@ -6,3 +6,4 @@ requests
 joblib
 gunicorn
 torch
+Pillow
