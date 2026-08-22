@@ -1601,7 +1601,6 @@ disease_model.load_state_dict(
         weights_only=True
     )
 )
-
 disease_model = disease_model.to(device)
 
 disease_model.eval()
