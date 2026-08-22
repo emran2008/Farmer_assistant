@@ -153,7 +153,7 @@
 
 </a>
 
-</div>
+
 
 
 <!-- FLOATING FARMER ASSISTANT -->
@@ -349,50 +349,34 @@
 
 <!-- more -->
 
-<a href="{{ url_for('more') }}" class="nav-item">
+    <a href="{{ url_for('more') }}" class="nav-item">
 
-    <svg viewBox="0 0 24 24"
-         fill="none"
-         stroke="#198754"
-         stroke-width="2"
-         stroke-linecap="round"
-         stroke-linejoin="round">
+        <svg viewBox="0 0 24 24"
+             fill="none"
+             stroke="#198754"
+             stroke-width="2"
+             stroke-linecap="round"
+             stroke-linejoin="round">
 
-        <!-- Hamburger Menu -->
-        <path d="M4 7H20"></path>
-        <path d="M4 12H20"></path>
-        <path d="M4 17H20"></path>
+            <path d="M4 7H20"></path>
+            <path d="M4 12H20"></path>
+            <path d="M4 17H20"></path>
 
-    </svg>
+        </svg>
 
-    <span>more</span>
+        <span>more</span>
 
-</a>
-
-
-
+    </a>
 
 </nav>
 
 
-</div>
-
-</div>
-
-</section>
-
-
 <!-- JavaScript File -->
 
-<script src="script.js"></script>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
 <script src="{{ url_for('static', filename='fish_information.js') }}"></script>
 
-
-
-
-    </div>
-
-</section>
 
 </body>
 
