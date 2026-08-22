@@ -638,165 +638,24 @@ main {
         box-sizing: border-box;
     }
 
-/* =====================================
-   DISEASE DETECTION CARD
-===================================== */
+/* DISEASE DETECTION CARD */
 
-.disease-wrapper {
+.feature-card.disease-card {
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    margin: 35px 0 100px;
-    padding: 0 20px;
-
-    box-sizing: border-box;
-}
-
-.disease-card {
-    width: 370px;
+    height: 420px;
     min-height: 420px;
-
-    background: #ffffff;
-
-    border-radius: 25px;
-
-    padding: 40px 35px;
-
-    display: flex;
-    flex-direction: column;
-
-    align-items: center;
-    justify-content: center;
-
-    text-align: center;
-
-    text-decoration: none;
-    color: inherit;
-
     box-sizing: border-box;
-
-    box-shadow:
-        0 12px 30px rgba(0, 0, 0, 0.08);
-
-    transition: 0.3s ease;
-}
-
-.disease-card:hover {
-    transform: translateY(-10px);
-
-    box-shadow:
-        0 20px 40px rgba(0, 0, 0, 0.15);
-}
-
-.disease-icon {
-    font-size: 60px;
-
-    height: 80px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    margin-bottom: 15px;
-}
-
-.disease-card h2 {
-    color: #159447;
-
-    font-size: 22px;
-
-    margin: 10px 0;
-}
-
-.disease-card p {
-    color: #667085;
-
-    line-height: 1.6;
-
-    margin: 10px 0 25px;
-}
-
-.explore-btn {
-    display: inline-block;
-
-    padding: 12px 28px;
-
-    background: #159447;
-
-    color: white;
-
-    border-radius: 25px;
-
-    text-decoration: none;
-
-    font-weight: 600;
 }
 
 
-/* =====================================
-   DISEASE DETECTION - MOBILE
-===================================== */
+/* MOBILE */
 
 @media screen and (max-width: 768px) {
 
-    .disease-wrapper {
-        display: flex !important;
-
-        width: 100% !important;
-
-        margin: 25px 0 100px !important;
-
-        padding: 15px !important;
-
-        justify-content: center !important;
-
-        align-items: center !important;
-
-        box-sizing: border-box !important;
+    .feature-card.disease-card {
+        width: 100%;
+        height: 300px;
+        min-height: 300px;
     }
 
-    .disease-card {
-        display: flex !important;
-
-        width: 100% !important;
-
-        max-width: 390px !important;
-
-        min-height: 320px !important;
-
-        height: auto !important;
-
-        padding: 30px 20px !important;
-
-        box-sizing: border-box !important;
-
-        flex-direction: column !important;
-
-        align-items: center !important;
-
-        justify-content: center !important;
-    }
-
-    .disease-icon {
-        font-size: 55px;
-
-        height: 70px;
-
-        margin-bottom: 10px;
-    }
-
-    .disease-card h2 {
-        font-size: 22px;
-    }
-
-    .disease-card p {
-        font-size: 15px;
-    }
-
-    .explore-btn {
-        padding: 11px 24px;
-    }
 }
