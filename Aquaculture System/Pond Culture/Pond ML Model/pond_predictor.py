@@ -196,17 +196,8 @@ def predict_fish(
         predicted_fish
     )
 
-    confidence = (
-        probabilities.max() * 100
-    )
+    
 
-    # -------------------------------------------------
-    # DATABASE LOOKUP
-    # -------------------------------------------------
-
-    fish_info = get_fish_information(
-        predicted_fish
-    )
 
     if fish_info is None:
 

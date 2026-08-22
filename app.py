@@ -1564,7 +1564,7 @@ def weather():
 DISEASE_MODEL_PATH = os.path.join(
     BASE_DIR,
     "models",
-    "crop_disease_model.pth"
+    "best_crop_disease_model.pth"
 )
 
 DISEASE_CLASSES_PATH = os.path.join(
@@ -1597,7 +1597,8 @@ disease_model.fc = nn.Linear(
 disease_model.load_state_dict(
     torch.load(
         DISEASE_MODEL_PATH,
-        map_location=device
+        map_location="cpu",
+        weights_only=True
     )
 )
 
