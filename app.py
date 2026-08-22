@@ -1585,25 +1585,43 @@ with open(
     disease_classes = json.load(f)
 
 
-disease_model = models.resnet18(
-    weights=None
-)
+# =====================================================
+# CROP DISEASE MODEL - LAZY LOADING
+# =====================================================
 
-disease_model.fc = nn.Linear(
-    disease_model.fc.in_features,
-    len(disease_classes)
-)
+disease_model = None
 
-disease_model.load_state_dict(
-    torch.load(
-        DISEASE_MODEL_PATH,
-        map_location="cpu",
-        weights_only=True
-    )
-)
-disease_model = disease_model.to(device)
 
-disease_model.eval()
+def load_disease_model():
+
+    global disease_model
+
+    if disease_model is None:
+
+        print("Loading Crop Disease Model...")
+
+        disease_model = models.resnet18(
+            weights=None
+        )
+
+        disease_model.fc = nn.Linear(
+            disease_model.fc.in_features,
+            len(disease_classes)
+        )
+
+        disease_model.load_state_dict(
+            torch.load(
+                DISEASE_MODEL_PATH,
+                map_location="cpu",
+                weights_only=True
+            )
+        )
+
+        disease_model = disease_model.to(device)
+
+        disease_model.eval()
+
+        print("✅ Crop Disease Model Loaded")
 
 
 disease_transform = transforms.Compose([
