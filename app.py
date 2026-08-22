@@ -1623,7 +1623,7 @@ def load_disease_model():
 
         disease_model.eval()
 
-        print("✅ Crop Disease Model Loaded")
+        print("✅ Crop Disease System Ready")
 
 
 disease_transform = transforms.Compose([
