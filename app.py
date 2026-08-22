@@ -1585,9 +1585,11 @@ with open(
     disease_classes = json.load(f)
 
 
-# =====================================================
+
+
+# =========================================================
 # CROP DISEASE MODEL - LAZY LOADING
-# =====================================================
+# =========================================================
 
 disease_model = None
 
@@ -1647,7 +1649,7 @@ disease_transform = transforms.Compose([
 ])
 
 
-print("✅ Crop Disease Model Loaded")
+print("✅ Crop Disease System Ready")
 print(
     "Disease Classes:",
     len(disease_classes)
